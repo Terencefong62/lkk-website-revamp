@@ -10,6 +10,12 @@
   const videoToggle = document.querySelector(".G10-carousel-ctas .btn.-play");
   const storySection = document.getElementById("our-story");
   const storyChunks = Array.from(document.querySelectorAll(".home-story__chunk"));
+  const storyMemories = Array.from(document.querySelectorAll(".home-story__memory"));
+  const storyStepCount = Math.max(
+    ...storyMemories.map((memory) => Number(memory.dataset.step || 0)),
+    storyChunks.length,
+    1
+  ) + 1;
 
   function setMenuOpen(isOpen) {
     header?.classList.toggle("-active", isOpen);
@@ -34,7 +40,7 @@
   }
 
   function updateStoryHighlights() {
-    if (!storySection || !storyChunks.length) {
+    if (!storySection) {
       return;
     }
 
@@ -45,7 +51,15 @@
     }
 
     const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
+    const activeStep = Math.min(
+      storyStepCount - 1,
+      Math.floor(progress * storyStepCount)
+    );
     const activeCount = Math.max(1, Math.ceil(progress * storyChunks.length));
+
+    storyMemories.forEach((memory) => {
+      memory.classList.toggle("is-active", Number(memory.dataset.step) === activeStep);
+    });
 
     storyChunks.forEach((chunk, index) => {
       chunk.classList.toggle("is-active", index < activeCount);

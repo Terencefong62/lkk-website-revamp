@@ -16,7 +16,7 @@ body.header-transparent .lkk {
 
 .home-story {
   position: relative;
-  min-height: 320vh;
+  min-height: 420vh;
   background: var(--classic-combinaisons-surface-page-primary, #fff5e0);
 }
 
@@ -29,24 +29,90 @@ body.header-transparent .lkk {
   overflow: hidden;
 }
 
-.home-story__bg {
+.home-story__scene {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-xl, 4rem) var(--global-sizes-margin, 1.25rem);
+}
+
+.home-story__memories {
+  position: absolute;
+  top: 50%;
+  width: min(22vw, 17.5rem);
+  height: min(42vh, 26rem);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.home-story__memories--left {
+  left: clamp(1rem, 4vw, 4rem);
+}
+
+.home-story__memories--right {
+  right: clamp(1rem, 4vw, 4rem);
+}
+
+.home-story__memory {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(255, 245, 224, 0.96) 0%, rgba(255, 245, 224, 0.82) 45%, rgba(255, 245, 224, 0.35) 100%),
-    url("/zh-cn/files/home/oyster-illustration.jpg") center right / min(52vw, 720px) auto no-repeat;
-  pointer-events: none;
+  margin: 0;
+  opacity: 0;
+  transform: scale(0.88) translateY(1.5rem);
+  filter: blur(10px);
+  transition:
+    opacity 0.9s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+    transform 0.9s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+    filter 0.9s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.home-story__memories--left .home-story__memory {
+  transform: scale(0.88) translateX(-1.5rem) translateY(1.5rem);
+}
+
+.home-story__memories--right .home-story__memory {
+  transform: scale(0.88) translateX(1.5rem) translateY(1.5rem);
+}
+
+.home-story__memory.is-active {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1) translateY(0);
+}
+
+.home-story__memories--left .home-story__memory.is-active {
+  transform: scale(1) translateX(0) translateY(0);
+}
+
+.home-story__memories--right .home-story__memory.is-active {
+  transform: scale(1) translateX(0) translateY(0);
+}
+
+.home-story__memory img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 1.25rem 2.5rem rgba(83, 72, 56, 0.18));
 }
 
 .home-story__content {
   position: relative;
   z-index: 1;
-  width: min(42rem, 100%);
-  padding-block: var(--padding-xl, 4rem);
+  width: min(40rem, 100%);
+  margin-inline: auto;
+  text-align: center;
 }
 
-.home-story__title {
+.home-story__lead {
   margin: 0 0 var(--gap-lg, 2.5rem);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.45;
+  letter-spacing: 0.02em;
   color: var(--jahia-components-g28-4x2-card-presentation-content-title, #570378);
 }
 
@@ -60,13 +126,17 @@ body.header-transparent .lkk {
   margin: 0;
   font-weight: 400;
   font-size: var(--body-font-size-lg, 1.125rem);
-  line-height: 1.85;
-  color: color-mix(in srgb, var(--jahia-components-g28-4x2-card-presentation-content-body, #534838) 28%, transparent);
-  transition: color 0.35s ease;
+  line-height: 1.9;
+  color: color-mix(in srgb, var(--jahia-components-g28-4x2-card-presentation-content-body, #534838) 24%, transparent);
+  transition: color 0.45s ease, transform 0.45s ease, opacity 0.45s ease;
+  transform: translateY(0.35rem);
+  opacity: 0.72;
 }
 
 .home-story__chunk.is-active {
   color: var(--jahia-components-g28-4x2-card-presentation-content-body, #534838);
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .home-business-block + .home-business-block {
@@ -88,17 +158,34 @@ body.header-transparent .lkk {
   .home-flavours-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .home-story__memories {
+    width: min(26vw, 12rem);
+    height: min(34vh, 16rem);
+  }
 }
 
 @media (max-width: 47.99875em) {
   .home-story {
-    min-height: 260vh;
+    min-height: 340vh;
   }
 
-  .home-story__bg {
-    background:
-      linear-gradient(180deg, rgba(255, 245, 224, 0.94) 0%, rgba(255, 245, 224, 0.88) 100%),
-      url("/zh-cn/files/home/oyster-illustration.jpg") center bottom / min(88vw, 420px) auto no-repeat;
+  .home-story__memories {
+    width: min(34vw, 7.5rem);
+    height: min(22vh, 9rem);
+    opacity: 0.72;
+  }
+
+  .home-story__memories--left {
+    left: 0.5rem;
+  }
+
+  .home-story__memories--right {
+    right: 0.5rem;
+  }
+
+  .home-story__lead {
+    font-size: clamp(1.5rem, 6.5vw, 2rem);
   }
 
   .home-flavours-grid {
