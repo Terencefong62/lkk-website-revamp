@@ -8,14 +8,7 @@
   const searchToggleBtn = document.querySelector('[ref="searchToggleBtn"]');
   const heroVideo = document.getElementById("video-1");
   const videoToggle = document.querySelector(".G10-carousel-ctas .btn.-play");
-  const storySection = document.getElementById("our-story");
-  const storyChunks = Array.from(document.querySelectorAll(".home-story__chunk"));
-  const storyMemories = Array.from(document.querySelectorAll(".home-story__memory"));
-  const storyStepCount = Math.max(
-    ...storyMemories.map((memory) => Number(memory.dataset.step || 0)),
-    storyChunks.length,
-    1
-  ) + 1;
+  const storySections = Array.from(document.querySelectorAll(".home-story"));
 
   function setMenuOpen(isOpen) {
     header?.classList.toggle("-active", isOpen);
@@ -39,22 +32,22 @@
     document.body.classList.toggle("is-scrolled", window.scrollY > 40);
   }
 
-  function updateStoryHighlights() {
-    if (!storySection) {
-      return;
-    }
+  function updateStorySection(section) {
+    const storyChunks = Array.from(section.querySelectorAll(".home-story__chunk"));
+    const storyMemories = Array.from(section.querySelectorAll(".home-story__memory"));
+    const rect = section.getBoundingClientRect();
+    const scrollable = section.offsetHeight - window.innerHeight;
 
-    const rect = storySection.getBoundingClientRect();
-    const scrollable = storySection.offsetHeight - window.innerHeight;
     if (scrollable <= 0) {
       return;
     }
 
     const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
-    const activeStep = Math.min(
-      storyStepCount - 1,
-      Math.floor(progress * storyStepCount)
-    );
+    const memorySteps = storyMemories.map((memory) => Number(memory.dataset.step || 0));
+    const storyStepCount = memorySteps.length
+      ? Math.max(...memorySteps) + 1
+      : storyChunks.length;
+    const activeStep = Math.min(storyStepCount - 1, Math.floor(progress * storyStepCount));
     const activeCount = Math.max(1, Math.ceil(progress * storyChunks.length));
 
     storyMemories.forEach((memory) => {
@@ -64,6 +57,10 @@
     storyChunks.forEach((chunk, index) => {
       chunk.classList.toggle("is-active", index < activeCount);
     });
+  }
+
+  function updateStoryHighlights() {
+    storySections.forEach(updateStorySection);
   }
 
   menuToggleButtons.forEach((button) => {

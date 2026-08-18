@@ -198,3 +198,64 @@ body.header-transparent .lkk {
 .home-cta-wrap {
   margin-top: var(--gap-lg, 2.5rem);
 }
+
+.home-story--immersive {
+  min-height: 460vh;
+  background: #3b0000;
+}
+
+.home-story--immersive .home-story__sticky {
+  position: sticky;
+}
+
+.home-story--immersive .home-story__backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(35, 0, 0, 0.78) 0%, rgba(35, 0, 0, 0.42) 38%, rgba(35, 0, 0, 0.88) 100%),
+    radial-gradient(circle at 50% 46%, rgba(10, 0, 0, 0.35) 0%, rgba(10, 0, 0, 0.78) 68%),
+    url("/zh-cn/files/home/oyster-shell-red-bg.png") center center / cover no-repeat;
+}
+
+.home-story__scene--immersive {
+  min-height: 100vh;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+}
+
+.home-story__content--immersive {
+  width: min(46rem, 100%);
+}
+
+.home-story__lead--immersive {
+  margin-bottom: clamp(2rem, 5vh, 3.5rem);
+  font-size: clamp(2.25rem, 5.4vw, 4.25rem);
+  line-height: 1.35;
+  color: #fffceb;
+  text-shadow: 0 0.15rem 1.5rem rgba(0, 0, 0, 0.55);
+}
+
+.home-story--immersive .home-story__chunk {
+  font-size: clamp(1.2rem, 2.35vw, 1.95rem);
+  line-height: 1.95;
+  color: rgba(255, 252, 235, 0.26);
+  text-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.35);
+}
+
+.home-story--immersive .home-story__chunk.is-active {
+  color: #fffceb;
+  text-shadow: 0 0.15rem 1.25rem rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 47.99875em) {
+  .home-story--immersive {
+    min-height: 360vh;
+  }
+
+  .home-story__lead--immersive {
+    font-size: clamp(1.85rem, 8vw, 2.6rem);
+  }
+
+  .home-story--immersive .home-story__chunk {
+    font-size: clamp(1.05rem, 4.5vw, 1.35rem);
+  }
+}
