@@ -91,6 +91,9 @@ body.header-transparent .lkk {
 }
 
 .home-story__lead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 0 var(--gap-lg, 2.5rem);
   font-weight: 700;
   font-size: clamp(1.75rem, 3.2vw, 2.75rem);
@@ -99,8 +102,11 @@ body.header-transparent .lkk {
   color: var(--jahia-components-g28-4x2-card-presentation-content-title, #570378);
 }
 
-.home-story__lead-line2 {
-  white-space: nowrap;
+.home-story__lead-line {
+  display: block;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
 }
 
 .home-story__text {
@@ -173,6 +179,10 @@ body.header-transparent .lkk {
     font-size: clamp(1.5rem, 6.5vw, 2rem);
   }
 
+  .home-story__lead--immersive {
+    font-size: clamp(1.45rem, 5.8vw, 2.6rem);
+  }
+
   .home-flavours-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -225,7 +235,7 @@ body.header-transparent .lkk {
 
 .home-story__lead--immersive {
   margin-bottom: clamp(2rem, 5vh, 3.5rem);
-  font-size: clamp(2.25rem, 5.4vw, 4.25rem);
+  font-size: clamp(2rem, 4.8vw, 4.25rem);
   line-height: 1.35;
   color: #f3e8d4;
   letter-spacing: 0.03em;
@@ -250,10 +260,6 @@ body.header-transparent .lkk {
 @media (max-width: 47.99875em) {
   .home-story--immersive {
     min-height: 240vh;
-  }
-
-  .home-story__lead--immersive {
-    font-size: clamp(1.85rem, 8vw, 2.6rem);
   }
 
   .home-story--immersive .home-story__chunk {
