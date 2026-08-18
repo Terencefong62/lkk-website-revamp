@@ -222,14 +222,16 @@ body.header-transparent .lkk {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  filter: brightness(0.5) saturate(0.82);
+  transform: scale(1.02);
 }
 
 .home-story__backdrop-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(35, 0, 0, 0.72) 0%, rgba(35, 0, 0, 0.38) 40%, rgba(35, 0, 0, 0.84) 100%),
-    radial-gradient(circle at 50% 46%, rgba(10, 0, 0, 0.28) 0%, rgba(10, 0, 0, 0.72) 70%);
+    linear-gradient(180deg, rgba(18, 0, 0, 0.78) 0%, rgba(18, 0, 0, 0.52) 42%, rgba(18, 0, 0, 0.88) 100%),
+    radial-gradient(circle at 50% 44%, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.74) 72%);
 }
 
 .home-story__scene--immersive {
