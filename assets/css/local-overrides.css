@@ -1,0 +1,51 @@
+body.header-transparent .lkk {
+  padding-top: 0;
+}
+
+@media (min-width: 48em) {
+  body.header-transparent .G01-header {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  body.header-transparent.is-scrolled .G01-header {
+    background: var(--jahia-components-g01-header-top-nav-corporate-surface, #fff5e0);
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (min-width: 48em) {
+  .G29-basic-slider-swiper.swiper {
+    overflow: visible !important;
+  }
+
+  .G29-basic-slider-wrapper.swiper-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 1rem;
+    transform: none !important;
+    translate: none !important;
+    width: min(90rem, calc(100vw - 10rem)) !important;
+    max-width: 100%;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .G29-basic-slider-wrapper.swiper-wrapper > .swiper-slide,
+  .G29-basic-slider-wrapper.swiper-wrapper > .G29-basic-slider-slide {
+    width: 100% !important;
+    max-width: none !important;
+    margin-right: 0 !important;
+    height: auto;
+  }
+
+  .G29-basic-slider-footer {
+    display: none !important;
+  }
+}
+
+@media (max-width: 47.99875em) {
+  .G29-basic-slider-swiper {
+    overflow: hidden;
+  }
+}

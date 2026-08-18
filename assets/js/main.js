@@ -1,72 +1,78 @@
 (function () {
-  const header = document.getElementById("site-header");
-  const menuWrapper = document.getElementById("menu-wrapper");
-  const menuToggle = document.getElementById("menu-toggle");
-  const menuClose = document.getElementById("menu-close");
-  const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
-  const mobileSearchToggle = document.getElementById("mobile-search-toggle");
-  const searchOpen = document.getElementById("search-open");
-  const searchClose = document.getElementById("search-close");
+  const header = document.querySelector(".G01-header");
+  const menuToggleButtons = document.querySelectorAll('[ref="headerToggleBtn"], [ref="menuToggleBtn"]');
+  const menuCloseButtons = document.querySelectorAll('[ref="menuCloseBtn"], .G01-header-menu-top .btn-close');
   const searchWrapper = document.getElementById("search-wrapper");
-  const heroVideo = document.getElementById("hero-video");
-  const videoToggle = document.getElementById("video-toggle");
-  const statsSlides = Array.from(document.querySelectorAll(".G29-basic-slider-slide"));
-  const statsPrev = document.getElementById("stats-prev");
-  const statsNext = document.getElementById("stats-next");
-  let statsIndex = 0;
+  const searchOpenBtn = document.querySelector('[ref="searchOpenBtn"]');
+  const searchCloseBtn = document.querySelector('[ref="searchCloseBtn"]');
+  const searchToggleBtn = document.querySelector('[ref="searchToggleBtn"]');
+  const heroVideo = document.getElementById("video-1");
+  const videoToggle = document.querySelector(".G10-carousel-ctas .btn.-play");
+  const desktopQuery = window.matchMedia("(min-width: 48em)");
+  let statsSwiper = null;
 
   function setMenuOpen(isOpen) {
-    document.body.classList.toggle("menu-open", isOpen);
-    menuWrapper.classList.toggle("is-open", isOpen);
-    if (menuToggle) {
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-    }
-    if (mobileMenuToggle) {
-      mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
-      mobileMenuToggle.classList.toggle("is-active", isOpen);
-    }
-  }
-
-  function setSearchOpen(isOpen) {
-    searchWrapper.classList.toggle("is-open", isOpen);
-    if (searchOpen) {
-      searchOpen.setAttribute("aria-expanded", String(isOpen));
-    }
-    if (mobileSearchToggle) {
-      mobileSearchToggle.setAttribute("aria-expanded", String(isOpen));
-      mobileSearchToggle.classList.toggle("is-active", isOpen);
-    }
-  }
-
-  function updateHeaderOnScroll() {
-    const scrolled = window.scrollY > 40;
-    header.classList.toggle("is-scrolled", scrolled);
-    document.body.classList.toggle("is-scrolled", scrolled);
-  }
-
-  function showStatsSlide(index) {
-    if (!statsSlides.length) {
-      return;
-    }
-
-    statsIndex = (index + statsSlides.length) % statsSlides.length;
-    statsSlides.forEach((slide, i) => {
-      slide.classList.toggle("is-active", i === statsIndex);
+    header?.classList.toggle("-active", isOpen);
+    menuToggleButtons.forEach((button) => {
+      button.setAttribute("aria-expanded", String(isOpen));
     });
   }
 
-  menuToggle?.addEventListener("click", () => setMenuOpen(true));
-  menuClose?.addEventListener("click", () => setMenuOpen(false));
-  mobileMenuToggle?.addEventListener("click", () => {
-    const isOpen = !menuWrapper.classList.contains("is-open");
-    setMenuOpen(isOpen);
+  function setSearchOpen(isOpen) {
+    header?.classList.toggle("-search-mobile", isOpen);
+    if (isOpen) {
+      searchWrapper?.removeAttribute("inert");
+    } else {
+      searchWrapper?.setAttribute("inert", "");
+    }
+    searchOpenBtn?.setAttribute("aria-expanded", String(isOpen));
+    searchToggleBtn?.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  function updateHeaderOnScroll() {
+    document.body.classList.toggle("is-scrolled", window.scrollY > 40);
+  }
+
+  function setupStatsSlider() {
+    const statsSlider = document.querySelector(".G29-basic-slider-swiper");
+    if (!statsSlider || typeof Swiper === "undefined") {
+      return;
+    }
+
+    if (desktopQuery.matches) {
+      if (statsSwiper) {
+        statsSwiper.destroy(true, true);
+        statsSwiper = null;
+      }
+      return;
+    }
+
+    if (!statsSwiper) {
+      statsSwiper = new Swiper(statsSlider, {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        navigation: {
+          nextEl: ".G29-basic-slider .swiper-button-next",
+          prevEl: ".G29-basic-slider .swiper-button-prev",
+        },
+      });
+    }
+  }
+
+  menuToggleButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setMenuOpen(!header?.classList.contains("-active"));
+    });
   });
 
-  searchOpen?.addEventListener("click", () => setSearchOpen(true));
-  searchClose?.addEventListener("click", () => setSearchOpen(false));
-  mobileSearchToggle?.addEventListener("click", () => {
-    const isOpen = !searchWrapper.classList.contains("is-open");
-    setSearchOpen(isOpen);
+  menuCloseButtons.forEach((button) => {
+    button.addEventListener("click", () => setMenuOpen(false));
+  });
+
+  searchOpenBtn?.addEventListener("click", () => setSearchOpen(true));
+  searchCloseBtn?.addEventListener("click", () => setSearchOpen(false));
+  searchToggleBtn?.addEventListener("click", () => {
+    setSearchOpen(!header?.classList.contains("-search-mobile"));
   });
 
   document.querySelectorAll(".submenu-btn").forEach((button) => {
@@ -80,13 +86,11 @@
         }
       });
       document.querySelectorAll(".G01-header-submenu").forEach((panel) => {
-        if (panel !== submenu) {
-          panel.classList.remove("is-open");
-        }
+        panel.classList.remove("-active");
       });
 
       button.setAttribute("aria-expanded", String(!isOpen));
-      submenu?.classList.toggle("is-open", !isOpen);
+      submenu?.classList.toggle("-active", !isOpen);
     });
   });
 
@@ -94,13 +98,9 @@
     button.addEventListener("click", () => {
       const submenu = button.closest(".G01-header-submenu");
       const trigger = document.querySelector(`[aria-controls="${submenu?.id}"]`);
-      submenu?.classList.remove("is-open");
+      submenu?.classList.remove("-active");
       trigger?.setAttribute("aria-expanded", "false");
     });
-  });
-
-  document.querySelectorAll(".submenu-close").forEach((button) => {
-    button.addEventListener("click", () => setMenuOpen(false));
   });
 
   videoToggle?.addEventListener("click", () => {
@@ -110,23 +110,16 @@
 
     if (heroVideo.paused) {
       heroVideo.play();
-      videoToggle.classList.add("is-playing");
-      videoToggle.setAttribute("aria-label", "暂停视频");
+      videoToggle.classList.remove("-play");
     } else {
       heroVideo.pause();
-      videoToggle.classList.remove("is-playing");
-      videoToggle.setAttribute("aria-label", "播放视频");
+      videoToggle.classList.add("-play");
     }
   });
 
-  if (heroVideo && !heroVideo.paused) {
-    videoToggle?.classList.add("is-playing");
-  }
-
-  statsPrev?.addEventListener("click", () => showStatsSlide(statsIndex - 1));
-  statsNext?.addEventListener("click", () => showStatsSlide(statsIndex + 1));
-
+  desktopQuery.addEventListener("change", setupStatsSlider);
   window.addEventListener("scroll", updateHeaderOnScroll, { passive: true });
+
+  setupStatsSlider();
   updateHeaderOnScroll();
-  showStatsSlide(0);
 })();
