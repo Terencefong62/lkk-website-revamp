@@ -1,0 +1,111 @@
+body.header-transparent .lkk {
+  padding-top: 0;
+}
+
+@media (min-width: 48em) {
+  body.header-transparent .G01-header {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  body.header-transparent.is-scrolled .G01-header {
+    background: var(--jahia-components-g01-header-top-nav-corporate-surface, #fff5e0);
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.15);
+  }
+}
+
+.home-story {
+  position: relative;
+  min-height: 320vh;
+  background: var(--classic-combinaisons-surface-page-primary, #fff5e0);
+}
+
+.home-story__sticky {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.home-story__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 245, 224, 0.96) 0%, rgba(255, 245, 224, 0.82) 45%, rgba(255, 245, 224, 0.35) 100%),
+    url("/zh-cn/files/home/oyster-illustration.jpg") center right / min(52vw, 720px) auto no-repeat;
+  pointer-events: none;
+}
+
+.home-story__content {
+  position: relative;
+  z-index: 1;
+  width: min(42rem, 100%);
+  padding-block: var(--padding-xl, 4rem);
+}
+
+.home-story__title {
+  margin: 0 0 var(--gap-lg, 2.5rem);
+  color: var(--jahia-components-g28-4x2-card-presentation-content-title, #570378);
+}
+
+.home-story__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md, 1.5rem);
+}
+
+.home-story__chunk {
+  margin: 0;
+  font-weight: 400;
+  font-size: var(--body-font-size-lg, 1.125rem);
+  line-height: 1.85;
+  color: color-mix(in srgb, var(--jahia-components-g28-4x2-card-presentation-content-body, #534838) 28%, transparent);
+  transition: color 0.35s ease;
+}
+
+.home-story__chunk.is-active {
+  color: var(--jahia-components-g28-4x2-card-presentation-content-body, #534838);
+}
+
+.home-business-block + .home-business-block {
+  margin-top: var(--gap-xl, 4rem);
+}
+
+.home-business-block__title {
+  margin: 0 0 var(--gap-sm, 1rem);
+  color: var(--jahia-components-g28-4x2-card-presentation-content-title-highlight, #c7000b);
+}
+
+.home-flavours-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--gap-md, 1.5rem);
+}
+
+@media (max-width: 63.99875em) {
+  .home-flavours-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 47.99875em) {
+  .home-story {
+    min-height: 260vh;
+  }
+
+  .home-story__bg {
+    background:
+      linear-gradient(180deg, rgba(255, 245, 224, 0.94) 0%, rgba(255, 245, 224, 0.88) 100%),
+      url("/zh-cn/files/home/oyster-illustration.jpg") center bottom / min(88vw, 420px) auto no-repeat;
+  }
+
+  .home-flavours-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.home-cta-wrap {
+  margin-top: var(--gap-lg, 2.5rem);
+}

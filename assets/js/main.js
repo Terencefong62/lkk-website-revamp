@@ -8,8 +8,8 @@
   const searchToggleBtn = document.querySelector('[ref="searchToggleBtn"]');
   const heroVideo = document.getElementById("video-1");
   const videoToggle = document.querySelector(".G10-carousel-ctas .btn.-play");
-  const desktopQuery = window.matchMedia("(min-width: 48em)");
-  let statsSwiper = null;
+  const storySection = document.getElementById("our-story");
+  const storyChunks = Array.from(document.querySelectorAll(".home-story__chunk"));
 
   function setMenuOpen(isOpen) {
     header?.classList.toggle("-active", isOpen);
@@ -33,30 +33,23 @@
     document.body.classList.toggle("is-scrolled", window.scrollY > 40);
   }
 
-  function setupStatsSlider() {
-    const statsSlider = document.querySelector(".G29-basic-slider-swiper");
-    if (!statsSlider || typeof Swiper === "undefined") {
+  function updateStoryHighlights() {
+    if (!storySection || !storyChunks.length) {
       return;
     }
 
-    if (desktopQuery.matches) {
-      if (statsSwiper) {
-        statsSwiper.destroy(true, true);
-        statsSwiper = null;
-      }
+    const rect = storySection.getBoundingClientRect();
+    const scrollable = storySection.offsetHeight - window.innerHeight;
+    if (scrollable <= 0) {
       return;
     }
 
-    if (!statsSwiper) {
-      statsSwiper = new Swiper(statsSlider, {
-        slidesPerView: 1,
-        spaceBetween: 16,
-        navigation: {
-          nextEl: ".G29-basic-slider .swiper-button-next",
-          prevEl: ".G29-basic-slider .swiper-button-prev",
-        },
-      });
-    }
+    const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
+    const activeCount = Math.max(1, Math.ceil(progress * storyChunks.length));
+
+    storyChunks.forEach((chunk, index) => {
+      chunk.classList.toggle("is-active", index < activeCount);
+    });
   }
 
   menuToggleButtons.forEach((button) => {
@@ -117,9 +110,11 @@
     }
   });
 
-  desktopQuery.addEventListener("change", setupStatsSlider);
-  window.addEventListener("scroll", updateHeaderOnScroll, { passive: true });
+  window.addEventListener("scroll", () => {
+    updateHeaderOnScroll();
+    updateStoryHighlights();
+  }, { passive: true });
 
-  setupStatsSlider();
   updateHeaderOnScroll();
+  updateStoryHighlights();
 })();
