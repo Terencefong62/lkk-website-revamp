@@ -60,6 +60,15 @@
     document.body.classList.toggle("is-scrolled", scrolled);
   }
 
+  function applyInitialStoryStates() {
+    storySections.forEach((config) => {
+      config.chunks.forEach((chunk, index) => {
+        chunk.classList.toggle("is-active", index === 0);
+      });
+      config.lastCount = 1;
+    });
+  }
+
   function cacheStoryLayouts() {
     const scrollY = window.scrollY;
 
@@ -70,6 +79,8 @@
       config.lastStep = -1;
       config.lastCount = -1;
     });
+
+    applyInitialStoryStates();
   }
 
   function updateStorySection(config) {
@@ -88,7 +99,10 @@
 
     const progress = Math.min(1, Math.max(0, (scrollY - sectionTop) / scrollable));
     const activeStep = Math.min(config.stepCount - 1, Math.floor(progress * config.stepCount));
-    const activeCount = Math.max(1, Math.ceil(progress * config.chunks.length));
+    const chunkTotal = config.chunks.length;
+    const activeCount = chunkTotal <= 1
+      ? 1
+      : Math.min(chunkTotal, 1 + Math.floor(progress * (chunkTotal - 1)));
 
     if (activeStep !== config.lastStep) {
       config.memories.forEach((memory) => {
@@ -181,6 +195,7 @@
   });
 
   if (storySections.length) {
+    applyInitialStoryStates();
     cacheStoryLayouts();
 
     const storyVisibility = new Map();

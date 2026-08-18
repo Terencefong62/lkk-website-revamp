@@ -247,10 +247,10 @@ body.header-transparent .lkk {
 .home-story--immersive .home-story__chunk {
   font-size: clamp(1.2rem, 2.35vw, 1.95rem);
   line-height: 1.95;
-  color: rgba(228, 206, 161, 0.22);
-  text-shadow: 0 0.12rem 0.85rem rgba(0, 0, 0, 0.75);
+  color: rgba(228, 206, 161, 0.18);
+  text-shadow: none;
   transition: opacity 0.25s ease, color 0.25s ease;
-  opacity: 0.38;
+  opacity: 0.28;
 }
 
 .home-story--immersive .home-story__chunk.is-active {
