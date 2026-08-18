@@ -99,6 +99,10 @@ body.header-transparent .lkk {
   color: var(--jahia-components-g28-4x2-card-presentation-content-title, #570378);
 }
 
+.home-story__lead-line2 {
+  white-space: nowrap;
+}
+
 .home-story__text {
   display: flex;
   flex-direction: column;
