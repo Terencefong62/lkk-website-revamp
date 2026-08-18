@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>百年酱料专家 | 李锦记企业</title>
+  <meta name="description" content="李锦记企业官网中文主页静态 HTML 版本">
+  <style>
+    :root {
+      --brand-red: #9d2235;
+      --brand-gold: #c9a25d;
+      --text: #1f2328;
+      --muted: #5f6368;
+      --bg: #faf7f2;
+      --card: #ffffff;
+      --line: #ebe6dc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      color: var(--brand-red);
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-left: 1.1rem;
+    }
+
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(157, 34, 53, 0.92), rgba(201, 162, 93, 0.85)),
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 60%);
+      color: #fff;
+      padding: 5.5rem 0 4.5rem;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 5.2vw, 3.25rem);
+      line-height: 1.2;
+      max-width: 16ch;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--brand-red);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0.4rem 0 1rem;
+      font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+      line-height: 1.3;
+    }
+
+    .lead {
+      color: var(--muted);
+      margin: 0;
+      max-width: 74ch;
+    }
+
+    .mission {
+      background: #fff;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .mission-grid {
+      display: grid;
+      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      margin-top: 2rem;
+    }
+
+    .mission-grid article {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.3rem;
+    }
+
+    .mission-grid h3 {
+      margin: 0;
+      color: var(--brand-red);
+      font-size: 1.05rem;
+    }
+
+    .mission-grid p {
+      margin: 0.6rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .stats {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 2rem;
+    }
+
+    .stat {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.4rem 1.2rem;
+    }
+
+    .value {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 800;
+      color: var(--brand-red);
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .label {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.5rem 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="logo">李锦记企业</div>
+      <nav aria-label="主导航">
+        <a href="#about">认识我们</a>
+        <a href="#mission">使命愿景</a>
+        <a href="#highlights">企业亮点</a>
+        <a href="#news">媒体动态</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>亚洲饮食文化的全球门户</h1>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <p class="eyebrow">认识我们</p>
+        <h2>百年酱料专家</h2>
+        <p class="lead">
+          自1888年创立以来，李锦记的味道便陪伴着无数家庭走过岁月流转，承载着团聚的温暖，也见证了餐桌上一个个珍贵的时刻。
+          从一锅蚝油开始，至今走进全球超过100个国家及地区，我们始终坚守对味道的初心与承诺。
+        </p>
+        <p class="lead" style="margin-top: 0.9rem;">
+          扎根中国香港，连结世界，我们以深厚的传统为根、坚持卓越品质，并以永远创业的精神不断突破。因为我们深信，
+          每一道好味道，都能让世界更靠近一点；李锦记，就是那份将全球消费者凝聚在一起的味道。
+        </p>
+      </div>
+    </section>
+
+    <section id="mission" class="mission">
+      <div class="container">
+        <p class="eyebrow">我们的愿景</p>
+        <h2>有人的地方，有李锦记</h2>
+        <p class="eyebrow" style="margin-top: 1.4rem;">我们的使命</p>
+        <h2>发扬中华优秀饮食文化</h2>
+
+        <div class="mission-grid">
+          <article>
+            <h3>1888 · 传承百载</h3>
+            <p>始创于1888年，我们恪守传统工艺。</p>
+          </article>
+          <article>
+            <h3>100+ · 连接全球</h3>
+            <p>产品远销全球100多个国家及地区，深受专业厨师与家庭信赖。</p>
+          </article>
+          <article>
+            <h3>300+ · 创新风味</h3>
+            <p>提供超过300种酱料和调味品，满足全球消费者需求。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="highlights">
+      <div class="container">
+        <p class="eyebrow">企业亮点</p>
+        <h2>百年传承与全球发展</h2>
+        <div class="stats">
+          <article class="stat">
+            <p class="value">1888</p>
+            <p class="label">品牌创立年份，传承百余年品质标准</p>
+          </article>
+          <article class="stat">
+            <p class="value">100+</p>
+            <p class="label">全球业务覆盖国家及地区</p>
+          </article>
+          <article class="stat">
+            <p class="value">300+</p>
+            <p class="label">酱料和调味品品类，覆盖多元烹饪需求</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="container">
+        <p class="eyebrow">媒体动态</p>
+        <h2>最新企业资讯</h2>
+        <p class="lead">媒体动态版块已预留，后续可接入真实新闻列表与跳转链接。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 李锦记企业（静态示例页面）</div>
+  </footer>
+</body>
+</html>
