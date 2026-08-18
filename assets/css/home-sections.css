@@ -211,10 +211,25 @@ body.header-transparent .lkk {
 .home-story--immersive .home-story__backdrop {
   position: absolute;
   inset: 0;
+  overflow: hidden;
+  background: #3b0000;
+}
+
+.home-story__backdrop-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-story__backdrop-overlay {
+  position: absolute;
+  inset: 0;
   background:
-    linear-gradient(180deg, rgba(35, 0, 0, 0.78) 0%, rgba(35, 0, 0, 0.42) 38%, rgba(35, 0, 0, 0.88) 100%),
-    radial-gradient(circle at 50% 46%, rgba(10, 0, 0, 0.35) 0%, rgba(10, 0, 0, 0.78) 68%),
-    url("/zh-cn/files/home/oyster-shell-red-bg.png") center center / cover no-repeat;
+    linear-gradient(180deg, rgba(35, 0, 0, 0.72) 0%, rgba(35, 0, 0, 0.38) 40%, rgba(35, 0, 0, 0.84) 100%),
+    radial-gradient(circle at 50% 46%, rgba(10, 0, 0, 0.28) 0%, rgba(10, 0, 0, 0.72) 70%);
 }
 
 .home-story__scene--immersive {
