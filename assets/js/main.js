@@ -62,10 +62,10 @@
 
   function applyInitialStoryStates() {
     storySections.forEach((config) => {
-      config.chunks.forEach((chunk, index) => {
-        chunk.classList.toggle("is-active", index === 0);
+      config.chunks.forEach((chunk) => {
+        chunk.classList.remove("is-active");
       });
-      config.lastCount = 1;
+      config.lastCount = 0;
     });
   }
 
@@ -79,8 +79,6 @@
       config.lastStep = -1;
       config.lastCount = -1;
     });
-
-    applyInitialStoryStates();
   }
 
   function updateStorySection(config) {
@@ -100,9 +98,7 @@
     const progress = Math.min(1, Math.max(0, (scrollY - sectionTop) / scrollable));
     const activeStep = Math.min(config.stepCount - 1, Math.floor(progress * config.stepCount));
     const chunkTotal = config.chunks.length;
-    const activeCount = chunkTotal <= 1
-      ? 1
-      : Math.min(chunkTotal, 1 + Math.floor(progress * (chunkTotal - 1)));
+    const activeCount = Math.min(chunkTotal, Math.ceil(progress * chunkTotal));
 
     if (activeStep !== config.lastStep) {
       config.memories.forEach((memory) => {

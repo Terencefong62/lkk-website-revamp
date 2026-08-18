@@ -122,9 +122,9 @@ body.header-transparent .lkk {
   font-weight: 400;
   font-size: var(--body-font-size-lg, 1.125rem);
   line-height: 1.9;
-  color: color-mix(in srgb, var(--jahia-components-g28-4x2-card-presentation-content-body, #534838) 24%, transparent);
+  color: color-mix(in srgb, var(--jahia-components-g28-4x2-card-presentation-content-body, #534838) 42%, transparent);
   transition: opacity 0.25s ease, color 0.25s ease;
-  opacity: 0.45;
+  opacity: 0.52;
 }
 
 .home-story__chunk.is-active {
@@ -247,10 +247,10 @@ body.header-transparent .lkk {
 .home-story--immersive .home-story__chunk {
   font-size: clamp(1.2rem, 2.35vw, 1.95rem);
   line-height: 1.95;
-  color: rgba(228, 206, 161, 0.18);
-  text-shadow: none;
+  color: rgba(228, 206, 161, 0.46);
+  text-shadow: 0 0.08rem 0.65rem rgba(0, 0, 0, 0.45);
   transition: opacity 0.25s ease, color 0.25s ease;
-  opacity: 0.28;
+  opacity: 0.5;
 }
 
 .home-story--immersive .home-story__chunk.is-active {
