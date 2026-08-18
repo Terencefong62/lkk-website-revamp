@@ -180,14 +180,14 @@ body.header-transparent .lkk {
 
 .home-story--immersive {
   min-height: 280vh;
-  background: #120000;
+  background: #180000;
 }
 
 .home-story--immersive .home-story__backdrop {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  background: #120000;
+  background: #180000;
 }
 
 .home-story__backdrop-image {
@@ -197,16 +197,16 @@ body.header-transparent .lkk {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0.82;
+  opacity: 0.88;
 }
 
 .home-story__backdrop-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(8, 0, 0, 0.78) 0%, rgba(8, 0, 0, 0.52) 38%, rgba(8, 0, 0, 0.56) 62%, rgba(8, 0, 0, 0.82) 100%),
-    radial-gradient(ellipse 62% 52% at 50% 48%, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.28) 58%, rgba(0, 0, 0, 0) 78%),
-    linear-gradient(135deg, rgba(103, 0, 0, 0.42) 0%, rgba(18, 0, 0, 0.55) 100%);
+    linear-gradient(180deg, rgba(8, 0, 0, 0.72) 0%, rgba(8, 0, 0, 0.46) 38%, rgba(8, 0, 0, 0.5) 62%, rgba(8, 0, 0, 0.75) 100%),
+    radial-gradient(ellipse 62% 52% at 50% 48%, rgba(0, 0, 0, 0.64) 0%, rgba(0, 0, 0, 0.22) 58%, rgba(0, 0, 0, 0) 78%),
+    linear-gradient(135deg, rgba(103, 0, 0, 0.36) 0%, rgba(18, 0, 0, 0.48) 100%);
   pointer-events: none;
 }
 
