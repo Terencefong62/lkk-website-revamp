@@ -104,6 +104,8 @@ body.header-transparent .lkk {
 
 .home-story__lead-line {
   display: block;
+  width: max-content;
+  margin-inline: auto;
   white-space: nowrap !important;
   word-break: keep-all !important;
   overflow-wrap: normal !important;
@@ -180,7 +182,7 @@ body.header-transparent .lkk {
   }
 
   .home-story__lead--immersive {
-    font-size: clamp(1.45rem, 5.8vw, 2.6rem);
+    font-size: clamp(1.35rem, 5.2vw, 2.2rem);
   }
 
   .home-flavours-grid {
@@ -235,10 +237,10 @@ body.header-transparent .lkk {
 
 .home-story__lead--immersive {
   margin-bottom: clamp(2rem, 5vh, 3.5rem);
-  font-size: clamp(2rem, 4.8vw, 4.25rem);
+  font-size: clamp(1.75rem, 3.6vw, 3.25rem);
   line-height: 1.35;
   color: #f3e8d4;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   text-shadow: 0 0.2rem 1.25rem rgba(0, 0, 0, 0.9);
 }
 
@@ -257,13 +259,48 @@ body.header-transparent .lkk {
   text-shadow: 0 0.15rem 1rem rgba(0, 0, 0, 0.88);
 }
 
+.home-story--english {
+  min-height: 340vh;
+}
+
+.home-story__content--english {
+  width: min(52rem, 100%);
+}
+
+.home-story__lead--english {
+  font-size: clamp(1.55rem, 3.1vw, 2.85rem);
+}
+
+.home-story__lead-line--wrap {
+  white-space: normal !important;
+  max-width: min(42rem, 100%);
+  text-wrap: balance;
+}
+
+.home-story--english .home-story__chunk {
+  font-size: clamp(1.05rem, 1.85vw, 1.55rem);
+  line-height: 1.85;
+}
+
 @media (max-width: 47.99875em) {
   .home-story--immersive {
     min-height: 240vh;
   }
 
+  .home-story--english {
+    min-height: 300vh;
+  }
+
+  .home-story__lead--english {
+    font-size: clamp(1.2rem, 4.8vw, 1.85rem);
+  }
+
   .home-story--immersive .home-story__chunk {
     font-size: clamp(1.05rem, 4.5vw, 1.35rem);
+  }
+
+  .home-story--english .home-story__chunk {
+    font-size: clamp(0.95rem, 3.8vw, 1.15rem);
   }
 }
 
