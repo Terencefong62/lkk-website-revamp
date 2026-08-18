@@ -16,7 +16,7 @@ body.header-transparent .lkk {
 
 .home-story {
   position: relative;
-  min-height: 420vh;
+  min-height: 300vh;
   background: var(--classic-combinaisons-surface-page-primary, #fff5e0);
 }
 
@@ -27,6 +27,7 @@ body.header-transparent .lkk {
   display: flex;
   align-items: center;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .home-story__scene {
@@ -62,34 +63,14 @@ body.header-transparent .lkk {
   inset: 0;
   margin: 0;
   opacity: 0;
-  transform: scale(0.88) translateY(1.5rem);
-  filter: blur(10px);
-  transition:
-    opacity 0.9s cubic-bezier(0.445, 0.05, 0.55, 0.95),
-    transform 0.9s cubic-bezier(0.445, 0.05, 0.55, 0.95),
-    filter 0.9s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-
-.home-story__memories--left .home-story__memory {
-  transform: scale(0.88) translateX(-1.5rem) translateY(1.5rem);
-}
-
-.home-story__memories--right .home-story__memory {
-  transform: scale(0.88) translateX(1.5rem) translateY(1.5rem);
+  visibility: hidden;
+  transition: opacity 0.28s ease, visibility 0s linear 0.28s;
 }
 
 .home-story__memory.is-active {
   opacity: 1;
-  filter: blur(0);
-  transform: scale(1) translateY(0);
-}
-
-.home-story__memories--left .home-story__memory.is-active {
-  transform: scale(1) translateX(0) translateY(0);
-}
-
-.home-story__memories--right .home-story__memory.is-active {
-  transform: scale(1) translateX(0) translateY(0);
+  visibility: visible;
+  transition: opacity 0.28s ease, visibility 0s;
 }
 
 .home-story__memory img {
@@ -98,7 +79,7 @@ body.header-transparent .lkk {
   object-fit: cover;
   object-position: center;
   border-radius: 0.35rem;
-  filter: drop-shadow(0 1.25rem 2.5rem rgba(83, 72, 56, 0.22));
+  box-shadow: 0 1.25rem 2.5rem rgba(83, 72, 56, 0.18);
 }
 
 .home-story__content {
@@ -130,14 +111,12 @@ body.header-transparent .lkk {
   font-size: var(--body-font-size-lg, 1.125rem);
   line-height: 1.9;
   color: color-mix(in srgb, var(--jahia-components-g28-4x2-card-presentation-content-body, #534838) 24%, transparent);
-  transition: color 0.45s ease, transform 0.45s ease, opacity 0.45s ease;
-  transform: translateY(0.35rem);
-  opacity: 0.72;
+  transition: opacity 0.25s ease, color 0.25s ease;
+  opacity: 0.45;
 }
 
 .home-story__chunk.is-active {
   color: var(--jahia-components-g28-4x2-card-presentation-content-body, #534838);
-  transform: translateY(0);
   opacity: 1;
 }
 
@@ -169,7 +148,7 @@ body.header-transparent .lkk {
 
 @media (max-width: 47.99875em) {
   .home-story {
-    min-height: 340vh;
+    min-height: 240vh;
   }
 
   .home-story__memories {
@@ -200,12 +179,8 @@ body.header-transparent .lkk {
 }
 
 .home-story--immersive {
-  min-height: 460vh;
+  min-height: 280vh;
   background: #3b0000;
-}
-
-.home-story--immersive .home-story__sticky {
-  position: sticky;
 }
 
 .home-story--immersive .home-story__backdrop {
@@ -222,16 +197,15 @@ body.header-transparent .lkk {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.68) saturate(0.9);
-  transform: scale(1.02);
 }
 
 .home-story__backdrop-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(18, 0, 0, 0.58) 0%, rgba(18, 0, 0, 0.18) 34%, rgba(18, 0, 0, 0.22) 62%, rgba(18, 0, 0, 0.62) 100%),
-    radial-gradient(ellipse 55% 45% at 50% 48%, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0) 72%);
+    linear-gradient(180deg, rgba(18, 0, 0, 0.62) 0%, rgba(18, 0, 0, 0.22) 34%, rgba(18, 0, 0, 0.26) 62%, rgba(18, 0, 0, 0.66) 100%),
+    radial-gradient(ellipse 55% 45% at 50% 48%, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0) 72%);
+  pointer-events: none;
 }
 
 .home-story__scene--immersive {
@@ -248,24 +222,27 @@ body.header-transparent .lkk {
   font-size: clamp(2.25rem, 5.4vw, 4.25rem);
   line-height: 1.35;
   color: #fffceb;
-  text-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.85), 0 0.25rem 1.75rem rgba(0, 0, 0, 0.65);
+  text-shadow: 0 0.15rem 0.75rem rgba(0, 0, 0, 0.75);
 }
 
 .home-story--immersive .home-story__chunk {
   font-size: clamp(1.2rem, 2.35vw, 1.95rem);
   line-height: 1.95;
   color: rgba(255, 252, 235, 0.26);
-  text-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.35);
+  text-shadow: 0 0.1rem 0.75rem rgba(0, 0, 0, 0.55);
+  transition: opacity 0.25s ease, color 0.25s ease;
+  opacity: 0.42;
 }
 
 .home-story--immersive .home-story__chunk.is-active {
   color: #fffceb;
-  text-shadow: 0 0.1rem 0.45rem rgba(0, 0, 0, 0.8), 0 0.2rem 1.25rem rgba(0, 0, 0, 0.55);
+  opacity: 1;
+  text-shadow: 0 0.12rem 0.6rem rgba(0, 0, 0, 0.72);
 }
 
 @media (max-width: 47.99875em) {
   .home-story--immersive {
-    min-height: 360vh;
+    min-height: 240vh;
   }
 
   .home-story__lead--immersive {
@@ -274,5 +251,12 @@ body.header-transparent .lkk {
 
   .home-story--immersive .home-story__chunk {
     font-size: clamp(1.05rem, 4.5vw, 1.35rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-story__memory,
+  .home-story__chunk {
+    transition: none;
   }
 }
