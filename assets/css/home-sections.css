@@ -150,7 +150,7 @@
 
 .home-business__title {
   margin: 0;
-  color: var(--classic-combinaisons-content-main-secondary, #570378);
+  color: var(--classic-combinaisons-content-main-primary, #c7000b);
   line-height: 1.15;
 }
 
@@ -192,7 +192,7 @@
 
 .home-business-segment__title {
   margin: 0 0 var(--gap-sm, 1rem);
-  color: var(--classic-combinaisons-content-main-primary, #c7000b);
+  color: var(--classic-combinaisons-content-main-secondary, #570378);
   line-height: 1.2;
 }
 
@@ -205,6 +205,11 @@
 
 .home-business-segment__copy p:last-child {
   margin-bottom: 0;
+}
+
+.home-business-segment__cta {
+  display: inline-flex;
+  margin-top: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .home-flavours {
