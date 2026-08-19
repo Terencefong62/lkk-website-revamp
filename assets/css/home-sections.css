@@ -141,7 +141,7 @@
 }
 
 .home-flavours {
-  background: #fff;
+  background: var(--classic-combinaisons-surface-page-primary, #fff5e0);
   padding: clamp(3.5rem, 8vw, 6rem) 0;
 }
 
