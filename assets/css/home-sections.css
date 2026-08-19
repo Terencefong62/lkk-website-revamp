@@ -581,7 +581,7 @@
 }
 
 .home-purpose__pillars-wrap {
-  margin-top: clamp(3rem, 7vw, 5rem);
+  margin-top: 0;
   padding: clamp(3rem, 7vw, 5rem) 0 clamp(3.5rem, 8vw, 5.5rem);
   background: linear-gradient(
     180deg,
