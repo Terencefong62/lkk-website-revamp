@@ -791,3 +791,30 @@
     min-height: clamp(18rem, 28vw, 24rem);
   }
 }
+
+.home-page .container {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.home-page .home-story__scene,
+.home-page .home-story__scene--immersive {
+  padding-inline: 0;
+}
+
+@media (max-width: 47.99875em) {
+  .home-page #our-story-heritage .home-story__scene {
+    padding-inline: 0;
+  }
+
+  .home-page #our-story-heritage .home-story__memories--left,
+  .home-page #our-story-heritage .home-story__content {
+    padding-inline: 0;
+  }
+
+  .home-page .home-flavours__track {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+}
