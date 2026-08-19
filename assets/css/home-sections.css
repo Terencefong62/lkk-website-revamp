@@ -727,12 +727,8 @@
 }
 
 .home-culture .home-culture__content-inner {
-  max-width: 28rem;
-  text-align: left;
-}
-
-.home-culture--reverse .home-culture__content-inner {
   max-width: 100%;
+  text-align: left;
 }
 
 @media (min-width: 48em) {
