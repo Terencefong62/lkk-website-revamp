@@ -494,7 +494,7 @@
 }
 
 #our-story-heritage .home-story__content--immersive {
-  width: min(56rem, 100%);
+  width: 100%;
   margin-inline: auto;
   text-align: center;
 }
@@ -503,10 +503,6 @@
   width: 100%;
   align-items: stretch;
   text-align: center;
-}
-
-#our-story-heritage .home-story__lead--immersive {
-  font-size: clamp(1.35rem, 2.5vw, 2rem);
 }
 
 #our-story-heritage .home-story__lead-line {
@@ -544,10 +540,6 @@
 
   #our-story-heritage.home-story--immersive {
     min-height: 280vh;
-  }
-
-  #our-story-heritage .home-story__lead--immersive {
-    font-size: clamp(1.05rem, 4.2vw, 1.45rem);
   }
 }
 
