@@ -590,14 +590,7 @@
   pointer-events: none;
 }
 
-.home-purpose__panel--mission::before {
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, #fff5e0 35%, transparent) 0%,
-    color-mix(in srgb, #fff5e0 10%, transparent) 100%
-  );
-}
-
+.home-purpose__panel--mission::before,
 .home-purpose__panel--vision::before {
   background: linear-gradient(
     180deg,
@@ -613,10 +606,15 @@
   text-align: center;
 }
 
+.home-purpose__panel-label,
+.home-purpose__panel-statement {
+  color: #fff;
+  font-weight: 700;
+}
+
 .home-purpose__panel-label {
   margin: 0 0 clamp(0.75rem, 2vw, 1rem);
   font-size: clamp(0.875rem, 1.35vw, 1rem);
-  font-weight: 500;
   letter-spacing: 0.08em;
 }
 
@@ -626,24 +624,12 @@
   text-transform: none;
 }
 
-.home-purpose__panel--mission .home-purpose__panel-label,
-.home-purpose__panel--mission .home-purpose__panel-statement {
-  color: #1a1a1a;
+.home-purpose__panel-statement--single-line {
+  white-space: nowrap;
 }
 
-.home-purpose__panel--vision .home-purpose__panel-label,
-.home-purpose__panel--vision .home-purpose__panel-statement {
-  color: #fff5e0;
-}
-
-.home-purpose__split-divider {
-  position: relative;
-  z-index: 2;
-  flex-shrink: 0;
-  height: clamp(1.25rem, 4vw, 2rem);
-  margin-block: clamp(-0.65rem, -2vw, -0.35rem);
-  background: var(--classic-combinaisons-content-main-primary, #c7000b);
-  transform: skewY(-4deg);
+.home-purpose__panel-statement-line {
+  display: block;
 }
 
 @media (min-width: 48em) {
@@ -656,28 +642,6 @@
   .home-purpose__panel {
     flex: 1 1 50%;
     min-height: clamp(22rem, 34vw, 30rem);
-  }
-
-  .home-purpose__panel--mission {
-    clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
-    padding-right: clamp(2.5rem, 6vw, 5rem);
-  }
-
-  .home-purpose__panel--vision {
-    clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%);
-    margin-left: -9%;
-    padding-left: clamp(2.5rem, 6vw, 5rem);
-  }
-
-  .home-purpose__split-divider {
-    position: absolute;
-    top: -4%;
-    bottom: -4%;
-    left: 50%;
-    width: clamp(0.85rem, 1.35vw, 1.25rem);
-    height: auto;
-    margin: 0;
-    transform: translateX(-50%) rotate(7deg);
   }
 }
 
