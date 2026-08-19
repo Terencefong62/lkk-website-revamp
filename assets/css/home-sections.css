@@ -229,8 +229,8 @@
 }
 
 .home-story--immersive .home-story__chunk {
-  font-size: clamp(1.2rem, 2.35vw, 1.95rem);
-  line-height: 1.95;
+  font-size: var(--body-font-size-lg, 1.125rem);
+  line-height: 1.9;
   color: rgba(228, 206, 161, 0.46);
   text-shadow: 0 0.08rem 0.65rem rgba(0, 0, 0, 0.45);
   transition: opacity 0.25s ease, color 0.25s ease;
@@ -277,10 +277,6 @@
 
   .home-story__lead--english {
     font-size: clamp(1.2rem, 4.8vw, 1.85rem);
-  }
-
-  .home-story--immersive .home-story__chunk {
-    font-size: clamp(1.05rem, 4.5vw, 1.35rem);
   }
 
   .home-story--english .home-story__chunk {
