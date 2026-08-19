@@ -3,12 +3,12 @@ body.header-transparent .lkk {
 }
 
 @media (min-width: 48em) {
-  body.header-transparent .G01-header {
+  body.header-transparent .G01-header.-sticky:not(.-down) {
     background: transparent;
     box-shadow: none;
   }
 
-  body.header-transparent.is-scrolled .G01-header {
+  body.header-transparent.is-scrolled .G01-header.-sticky:not(.-down) {
     background: var(--jahia-components-g01-header-top-nav-corporate-surface, #fff5e0);
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.15);
   }

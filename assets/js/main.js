@@ -30,8 +30,12 @@
   });
 
   let headerScrolled = null;
+  let lastScrollY = window.scrollY;
   let scrollTicking = false;
   let storyScrollActive = storySections.length === 0;
+
+  const TOP_THRESHOLD = 40;
+  const DIRECTION_THRESHOLD = 6;
 
   function setMenuOpen(isOpen) {
     header?.classList.toggle("-active", isOpen);
@@ -51,13 +55,47 @@
     searchToggleBtn?.setAttribute("aria-expanded", String(isOpen));
   }
 
+  function isHeaderInteractionOpen() {
+    if (!header) {
+      return false;
+    }
+
+    return (
+      header.classList.contains("-active")
+      || header.classList.contains("-search-mobile")
+      || Boolean(header.querySelector(".G01-header-submenu.-active"))
+      || Boolean(header.querySelector(".G01-header-search-wrapper.-active"))
+    );
+  }
+
   function updateHeaderOnScroll() {
-    const scrolled = window.scrollY > 40;
-    if (scrolled === headerScrolled) {
+    const scrollY = window.scrollY;
+    const scrolled = scrollY > TOP_THRESHOLD;
+
+    if (scrolled !== headerScrolled) {
+      headerScrolled = scrolled;
+      document.body.classList.toggle("is-scrolled", scrolled);
+    }
+
+    if (!header) {
       return;
     }
-    headerScrolled = scrolled;
-    document.body.classList.toggle("is-scrolled", scrolled);
+
+    header.classList.add("-sticky");
+
+    if (scrollY <= TOP_THRESHOLD || isHeaderInteractionOpen()) {
+      header.classList.remove("-down");
+    } else {
+      const delta = scrollY - lastScrollY;
+
+      if (delta > DIRECTION_THRESHOLD) {
+        header.classList.add("-down");
+      } else if (delta < -DIRECTION_THRESHOLD) {
+        header.classList.remove("-down");
+      }
+    }
+
+    lastScrollY = scrollY;
   }
 
   function applyInitialStoryStates() {
@@ -219,6 +257,7 @@
   window.addEventListener(
     "resize",
     () => {
+      lastScrollY = window.scrollY;
       cacheStoryLayouts();
       scheduleScrollUpdate();
     },
