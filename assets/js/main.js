@@ -6,8 +6,6 @@
   const searchOpenBtn = document.querySelector('[ref="searchOpenBtn"]');
   const searchCloseBtn = document.querySelector('[ref="searchCloseBtn"]');
   const searchToggleBtn = document.querySelector('[ref="searchToggleBtn"]');
-  const heroVideo = document.getElementById("video-1");
-  const videoToggle = document.querySelector(".G10-carousel-ctas .btn.-play");
 
   const storySections = Array.from(document.querySelectorAll(".home-story")).map((section) => {
     const chunks = Array.from(section.querySelectorAll(".home-story__chunk"));
@@ -276,20 +274,6 @@
       submenu?.classList.remove("-active");
       trigger?.setAttribute("aria-expanded", "false");
     });
-  });
-
-  videoToggle?.addEventListener("click", () => {
-    if (!heroVideo) {
-      return;
-    }
-
-    if (heroVideo.paused) {
-      heroVideo.play();
-      videoToggle.classList.remove("-play");
-    } else {
-      heroVideo.pause();
-      videoToggle.classList.add("-play");
-    }
   });
 
   if (storySections.length) {
