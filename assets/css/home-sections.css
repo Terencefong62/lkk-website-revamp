@@ -493,17 +493,23 @@
   text-shadow: 0 0.2rem 1.25rem rgba(0, 0, 0, 0.9);
 }
 
+#our-story-heritage .home-story__content--immersive {
+  text-align: center;
+}
+
 #our-story-heritage .home-story__lead {
+  display: block;
   width: 100%;
   text-align: center;
 }
 
 #our-story-heritage .home-story__lead-line {
-  white-space: normal !important;
-  width: 100%;
+  display: block;
+  width: 100% !important;
   max-width: 100%;
-  text-align: center;
-  text-wrap: balance;
+  margin-inline: 0 !important;
+  white-space: normal !important;
+  text-align: center !important;
 }
 
 .home-story--immersive .home-story__chunk {
