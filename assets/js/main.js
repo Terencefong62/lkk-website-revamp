@@ -43,23 +43,7 @@
     return window.matchMedia(MOBILE_STORY_QUERY).matches;
   }
 
-  function isMobileOurStory(config) {
-    return config.section.id === "our-story-heritage" && isMobileViewport();
-  }
-
   function getStoryProgress(config, scrollY, viewportHeight) {
-    if (isMobileOurStory(config)) {
-      const rect = config.section.getBoundingClientRect();
-
-      if (rect.bottom <= 0 || rect.top >= viewportHeight) {
-        return null;
-      }
-
-      const scrolledInto = viewportHeight - rect.top;
-      const range = rect.height + viewportHeight;
-      return Math.min(1, Math.max(0, scrolledInto / range));
-    }
-
     if (config.scrollable <= 0) {
       return null;
     }
@@ -205,18 +189,14 @@
   function updateStorySection(config) {
     const scrollY = window.scrollY;
     const viewportHeight = window.innerHeight;
-    const mobileOurStory = isMobileOurStory(config);
+    const { scrollable, sectionTop } = config;
 
-    if (!mobileOurStory) {
-      const { scrollable, sectionTop } = config;
+    if (scrollable <= 0) {
+      return;
+    }
 
-      if (scrollable <= 0) {
-        return;
-      }
-
-      if (scrollY + viewportHeight < sectionTop || scrollY > sectionTop + scrollable + viewportHeight) {
-        return;
-      }
+    if (scrollY + viewportHeight < sectionTop || scrollY > sectionTop + scrollable + viewportHeight) {
+      return;
     }
 
     const progress = getStoryProgress(config, scrollY, viewportHeight);
