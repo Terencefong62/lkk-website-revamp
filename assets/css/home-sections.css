@@ -731,7 +731,7 @@
   font-size: clamp(1rem, 1.45vw, 1.125rem);
   line-height: 1.85;
   color: var(--classic-combinaisons-content-main-tertiary, #534838);
-  max-width: min(100%, 20rem);
+  max-width: 100%;
 }
 
 .home-culture__visual img {
