@@ -169,6 +169,11 @@
     font-size: clamp(1.35rem, 5.2vw, 2.2rem);
   }
 
+  #our-story-v2 .home-story__backdrop-oyster {
+    width: min(82vw, 24rem);
+    height: min(36vh, 18rem);
+  }
+
   .home-flavours-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -198,6 +203,18 @@
   object-fit: cover;
   object-position: center;
   opacity: 0.88;
+}
+
+#our-story-v2 .home-story__backdrop-oyster {
+  inset: auto;
+  top: 50%;
+  left: 50%;
+  width: min(68vw, 46rem);
+  height: min(48vh, 30rem);
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.92;
 }
 
 .home-story__backdrop-overlay {
