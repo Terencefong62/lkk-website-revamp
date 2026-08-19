@@ -867,6 +867,17 @@
   padding-inline: var(--home-page-gutter);
 }
 
+.home-page h2 {
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+@media (min-width: 48em) {
+  .home-page h2 {
+    font-size: 64px;
+  }
+}
+
 @media (max-width: 47.99875em) {
   .home-page .home-flavours__track {
     margin-inline: 0;
