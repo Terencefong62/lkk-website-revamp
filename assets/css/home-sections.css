@@ -231,7 +231,7 @@
 
 .home-flavours__title {
   margin: 0;
-  color: var(--classic-combinaisons-content-main-secondary, #570378);
+  color: var(--classic-combinaisons-content-main-primary, #c7000b);
   line-height: 1.15;
   white-space: nowrap;
 }
@@ -750,7 +750,7 @@
 .home-culture__title {
   margin: 0;
   line-height: 1.15;
-  color: var(--classic-combinaisons-content-main-secondary, #570378);
+  color: var(--classic-combinaisons-content-main-primary, #c7000b);
 }
 
 .home-culture__cta {
