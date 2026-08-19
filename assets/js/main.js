@@ -37,6 +37,35 @@
 
   const TOP_THRESHOLD = 40;
   const DIRECTION_THRESHOLD = 6;
+  const MOBILE_STORY_QUERY = "(max-width: 47.99875em)";
+
+  function isMobileViewport() {
+    return window.matchMedia(MOBILE_STORY_QUERY).matches;
+  }
+
+  function isMobileOurStory(config) {
+    return config.section.id === "our-story" && isMobileViewport();
+  }
+
+  function getStoryProgress(config, scrollY, viewportHeight) {
+    if (isMobileOurStory(config)) {
+      const rect = config.section.getBoundingClientRect();
+
+      if (rect.bottom <= 0 || rect.top >= viewportHeight) {
+        return null;
+      }
+
+      const start = viewportHeight * 0.72;
+      const end = viewportHeight * 0.18;
+      return Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
+    }
+
+    if (config.scrollable <= 0) {
+      return null;
+    }
+
+    return Math.min(1, Math.max(0, (scrollY - config.sectionTop) / config.scrollable));
+  }
 
   function setMenuOpen(isOpen) {
     header?.classList.toggle("-active", isOpen);
@@ -174,20 +203,28 @@
   }
 
   function updateStorySection(config) {
-    const { scrollable, sectionTop } = config;
-
-    if (scrollable <= 0) {
-      return;
-    }
-
     const scrollY = window.scrollY;
     const viewportHeight = window.innerHeight;
+    const mobileOurStory = isMobileOurStory(config);
 
-    if (scrollY + viewportHeight < sectionTop || scrollY > sectionTop + scrollable + viewportHeight) {
+    if (!mobileOurStory) {
+      const { scrollable, sectionTop } = config;
+
+      if (scrollable <= 0) {
+        return;
+      }
+
+      if (scrollY + viewportHeight < sectionTop || scrollY > sectionTop + scrollable + viewportHeight) {
+        return;
+      }
+    }
+
+    const progress = getStoryProgress(config, scrollY, viewportHeight);
+
+    if (progress === null) {
       return;
     }
 
-    const progress = Math.min(1, Math.max(0, (scrollY - sectionTop) / scrollable));
     const activeStep = Math.min(config.stepCount - 1, Math.floor(progress * config.stepCount));
     const chunkTotal = config.chunks.length;
     const activeCount = Math.min(chunkTotal, Math.ceil(progress * chunkTotal));

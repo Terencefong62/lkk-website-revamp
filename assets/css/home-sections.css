@@ -163,10 +163,12 @@
   }
 
   #our-story.home-story {
-    min-height: 130vh;
+    min-height: auto;
   }
 
   #our-story .home-story__sticky {
+    position: relative;
+    top: auto;
     align-items: flex-start;
     min-height: auto;
     height: auto;
