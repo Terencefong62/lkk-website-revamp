@@ -493,10 +493,16 @@
   text-shadow: 0 0.2rem 1.25rem rgba(0, 0, 0, 0.9);
 }
 
+#our-story-heritage .home-story__lead {
+  width: 100%;
+  text-align: center;
+}
+
 #our-story-heritage .home-story__lead-line {
   white-space: normal !important;
-  width: auto;
+  width: 100%;
   max-width: 100%;
+  text-align: center;
   text-wrap: balance;
 }
 
