@@ -37,11 +37,6 @@
 
   const TOP_THRESHOLD = 40;
   const DIRECTION_THRESHOLD = 6;
-  const MOBILE_STORY_QUERY = "(max-width: 47.99875em)";
-
-  function isMobileViewport() {
-    return window.matchMedia(MOBILE_STORY_QUERY).matches;
-  }
 
   function getStoryProgress(config, scrollY, viewportHeight) {
     if (config.scrollable <= 0) {
