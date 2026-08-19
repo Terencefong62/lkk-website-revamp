@@ -719,14 +719,8 @@
 
 .home-culture .home-culture__content-inner {
   max-width: 90%;
-  text-align: left;
-}
-
-@media (min-width: 48em) {
-  .home-culture--reverse .home-culture__content-inner {
-    margin-left: auto;
-    text-align: right;
-  }
+  margin-inline: auto;
+  text-align: center;
 }
 
 .home-culture__description {
