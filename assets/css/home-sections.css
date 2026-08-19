@@ -200,6 +200,11 @@
   opacity: 0.88;
 }
 
+#our-story-v2 .home-story__backdrop-image {
+  transform: scale(0.78);
+  transform-origin: center center;
+}
+
 .home-story__backdrop-overlay {
   position: absolute;
   inset: 0;
