@@ -131,6 +131,17 @@
   opacity: 1;
 }
 
+.home-story--heritage .home-story__lead-line {
+  white-space: normal !important;
+  width: auto;
+  max-width: min(36rem, 100%);
+  text-wrap: balance;
+}
+
+.home-story__content--heritage .home-story__lead {
+  margin-bottom: 0;
+}
+
 .home-business-block + .home-business-block {
   margin-top: var(--gap-xl, 4rem);
 }
@@ -367,11 +378,11 @@
     min-height: 240vh;
   }
 
-  #our-story.home-story {
+  #our-story-heritage.home-story {
     min-height: auto;
   }
 
-  #our-story .home-story__sticky {
+  #our-story-heritage .home-story__sticky {
     position: relative;
     top: auto;
     align-items: flex-start;
@@ -380,7 +391,7 @@
     overflow: visible;
   }
 
-  #our-story .home-story__scene {
+  #our-story-heritage .home-story__scene {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
@@ -390,14 +401,14 @@
     padding: 1rem 0.75rem clamp(2.5rem, 10vw, 3.5rem);
   }
 
-  #our-story .home-story__memories {
+  #our-story-heritage .home-story__memories {
     position: relative;
     top: auto;
     transform: none;
     opacity: 1;
   }
 
-  #our-story .home-story__memories--left {
+  #our-story-heritage .home-story__memories--left {
     grid-column: 1;
     grid-row: 1;
     left: auto;
@@ -410,11 +421,11 @@
     aspect-ratio: 4 / 3;
   }
 
-  #our-story .home-story__memories--right {
+  #our-story-heritage .home-story__memories--right {
     display: none;
   }
 
-  #our-story .home-story__content {
+  #our-story-heritage .home-story__content {
     grid-column: 1;
     grid-row: 2;
     width: 100%;
@@ -424,30 +435,30 @@
     padding-bottom: 0.75rem;
   }
 
-  #our-story .home-story__lead {
+  #our-story-heritage .home-story__lead {
     font-size: clamp(1.35rem, 5.8vw, 1.85rem);
     margin-bottom: 0.75rem;
   }
 
-  #our-story .home-story__lead-line {
+  #our-story-heritage .home-story__lead-line {
     white-space: normal !important;
     width: auto;
     max-width: 100%;
     text-wrap: balance;
   }
 
-  #our-story .home-story__text {
+  #our-story-heritage .home-story__text {
     gap: 0.75rem;
     margin-bottom: 0;
   }
 
-  #our-story .home-story__chunk {
+  #our-story-heritage .home-story__chunk {
     font-size: 1rem;
     line-height: 1.75;
     margin-bottom: 0;
   }
 
-  #our-story .home-story__chunk:last-child {
+  #our-story-heritage .home-story__chunk:last-child {
     margin-bottom: 0;
   }
 
@@ -596,6 +607,10 @@
   font-weight: 400;
   line-height: 1.85;
   color: var(--classic-combinaisons-content-main-tertiary, #534838);
+}
+
+.home-purpose__preface-secondary:first-child {
+  margin-top: 0;
 }
 
 .home-purpose__pillars-wrap {

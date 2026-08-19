@@ -44,7 +44,7 @@
   }
 
   function isMobileOurStory(config) {
-    return config.section.id === "our-story" && isMobileViewport();
+    return config.section.id === "our-story-heritage" && isMobileViewport();
   }
 
   function getStoryProgress(config, scrollY, viewportHeight) {
