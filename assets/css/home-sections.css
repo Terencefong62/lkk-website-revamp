@@ -708,3 +708,93 @@
     );
   }
 }
+
+.home-culture {
+  background: var(--classic-combinaisons-surface-page-primary, #fff5e0);
+}
+
+.home-culture__layout {
+  display: grid;
+  min-height: clamp(22rem, 52vw, 34rem);
+}
+
+@media (min-width: 64em) {
+  .home-culture__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  }
+}
+
+.home-culture__content {
+  display: flex;
+  align-items: center;
+  padding: clamp(2.75rem, 7vw, 5rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+.home-culture__content-inner {
+  width: min(100%, 28rem);
+  margin-inline: auto;
+}
+
+@media (min-width: 64em) {
+  .home-culture__content-inner {
+    margin-inline: 0;
+    margin-left: clamp(0rem, 4vw, 3rem);
+  }
+}
+
+.home-culture__label {
+  display: block;
+  margin-bottom: 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--classic-combinaisons-content-main-primary, #c7000b);
+}
+
+.home-culture__title {
+  margin: 0;
+  line-height: 1.15;
+  color: var(--classic-combinaisons-content-main-secondary, #570378);
+}
+
+.home-culture__description {
+  margin: clamp(1.25rem, 2.5vw, 1.75rem) 0 clamp(1.75rem, 3vw, 2.25rem);
+  font-size: clamp(1rem, 1.45vw, 1.125rem);
+  line-height: 1.85;
+  color: var(--classic-combinaisons-content-main-tertiary, #534838);
+}
+
+.home-culture__cta {
+  display: inline-flex;
+}
+
+.home-culture__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: color-mix(in srgb, var(--classic-combinaisons-surface-container-insert-primary, #f1e3c0) 35%, #fff 65%);
+}
+
+@media (min-width: 64em) {
+  .home-culture__visual {
+    padding: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+.home-culture__visual img {
+  width: min(100%, 40rem);
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 63.99875em) {
+  .home-culture__content {
+    padding-bottom: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .home-culture__visual {
+    border-top: 1px solid color-mix(in srgb, var(--classic-combinaisons-content-main-tertiary, #534838) 12%, transparent);
+  }
+}
