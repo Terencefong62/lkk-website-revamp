@@ -121,6 +121,15 @@
   }
 
   function applyRandomMemoryPosition(memory) {
+    const isMobile = window.matchMedia("(max-width: 47.99875em)").matches;
+
+    if (isMobile) {
+      const y = (Math.random() * 6 - 3).toFixed(1);
+      memory.style.setProperty("--memory-x", "0%");
+      memory.style.setProperty("--memory-y", `${y}%`);
+      return;
+    }
+
     const side = memory.closest(".home-story__memories--right") ? "right" : "left";
     const xMin = side === "left" ? -4 : -14;
     const xMax = side === "left" ? 14 : 4;
@@ -303,6 +312,7 @@
     () => {
       lastScrollY = window.scrollY;
       cacheStoryLayouts();
+      initRandomMemorySections();
       scheduleScrollUpdate();
     },
     { passive: true }
