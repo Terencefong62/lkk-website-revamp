@@ -49,3 +49,7 @@ body.header-transparent .lkk {
     overflow: hidden;
   }
 }
+
+.lkk-premium-strong .btn.-primary {
+  background-image: url("../../modules/lkk-templates/images/btn-gold.jpg") !important;
+}
