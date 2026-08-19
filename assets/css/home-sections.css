@@ -792,20 +792,42 @@
   }
 }
 
+.home-page {
+  --home-page-gutter: clamp(1.25rem, 4vw, 2rem);
+}
+
+@media (min-width: 48em) {
+  .home-page {
+    --home-page-gutter: clamp(1.5rem, 3.5vw, 2.5rem);
+  }
+}
+
+@media (min-width: 64em) {
+  .home-page {
+    --home-page-gutter: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+@media (min-width: 90em) {
+  .home-page {
+    --home-page-gutter: clamp(2.5rem, 3.5vw, 3.5rem);
+  }
+}
+
 .home-page .container {
   max-width: none;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: var(--home-page-gutter);
+  padding-right: var(--home-page-gutter);
 }
 
 .home-page .home-story__scene,
 .home-page .home-story__scene--immersive {
-  padding-inline: 0;
+  padding-inline: var(--home-page-gutter);
 }
 
 @media (max-width: 47.99875em) {
   .home-page #our-story-heritage .home-story__scene {
-    padding-inline: 0;
+    padding-inline: var(--home-page-gutter);
   }
 
   .home-page #our-story-heritage .home-story__memories--left,
@@ -815,6 +837,6 @@
 
   .home-page .home-flavours__track {
     margin-inline: 0;
-    padding-inline: 0;
+    padding-inline: var(--home-page-gutter);
   }
 }
