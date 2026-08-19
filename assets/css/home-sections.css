@@ -497,21 +497,6 @@
   text-align: center;
 }
 
-#our-story-heritage .home-story__lead {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-
-#our-story-heritage .home-story__lead-line {
-  display: block;
-  width: 100% !important;
-  max-width: 100%;
-  margin-inline: 0 !important;
-  white-space: normal !important;
-  text-align: center !important;
-}
-
 .home-story--immersive .home-story__chunk {
   font-size: var(--body-font-size-lg, 1.125rem);
   line-height: 1.9;
