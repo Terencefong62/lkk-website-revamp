@@ -628,8 +628,27 @@
   white-space: nowrap;
 }
 
+/* The single-line statement needs the full panel width, and at 64px its ten
+   characters overrun a half-width panel below ~1660px, so cap it by viewport. */
+.home-purpose__panel--mission .home-purpose__panel-content {
+  width: 100%;
+}
+
+/* Both panels share one size so they stay balanced; the cap is set by the
+   longest line (the ten-character mission statement). */
+.home-page .home-purpose__panel-statement {
+  font-size: min(30px, 8.4vw);
+}
+
+@media (min-width: 48em) {
+  .home-page .home-purpose__panel-statement {
+    font-size: min(64px, 3.85vw);
+  }
+}
+
 .home-purpose__panel-statement-line {
   display: block;
+  white-space: nowrap;
 }
 
 @media (min-width: 48em) {
