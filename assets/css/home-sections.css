@@ -723,6 +723,12 @@
   max-width: 100%;
 }
 
+@media (min-width: 48em) {
+  .home-culture--reverse .home-culture__content-inner {
+    text-align: right;
+  }
+}
+
 .home-culture__description {
   margin: clamp(1.25rem, 2.5vw, 1.75rem) 0 clamp(1.75rem, 3vw, 2.25rem);
   font-size: clamp(1rem, 1.45vw, 1.125rem);
