@@ -711,6 +711,13 @@
 
 .home-culture .home-culture__content-inner {
   max-width: 28rem;
+  text-align: left;
+}
+
+.home-culture__visual img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .home-culture__label {
@@ -747,22 +754,4 @@
   padding: 1rem;
   border-radius: 0.5rem;
   background: color-mix(in srgb, var(--classic-combinaisons-surface-container-insert-primary, #f1e3c0) 35%, #fff 65%);
-}
-
-.home-culture__visual img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.home-culture__visual--photo {
-  padding: 0;
-  overflow: hidden;
-}
-
-.home-culture__visual--photo img {
-  aspect-ratio: 4 / 3;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
