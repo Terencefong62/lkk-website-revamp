@@ -719,6 +719,21 @@
   text-align: left;
 }
 
+@media (min-width: 48em) {
+  .home-culture--reverse .home-culture__content-inner {
+    max-width: 20rem;
+    margin-left: auto;
+  }
+}
+
+.home-culture__description {
+  margin: clamp(1.25rem, 2.5vw, 1.75rem) 0 clamp(1.75rem, 3vw, 2.25rem);
+  font-size: clamp(1rem, 1.45vw, 1.125rem);
+  line-height: 1.85;
+  color: var(--classic-combinaisons-content-main-tertiary, #534838);
+  max-width: min(100%, 20rem);
+}
+
 .home-culture__visual img {
   width: 100%;
   height: auto;
@@ -739,13 +754,6 @@
   margin: 0;
   line-height: 1.15;
   color: var(--classic-combinaisons-content-main-secondary, #570378);
-}
-
-.home-culture__description {
-  margin: clamp(1.25rem, 2.5vw, 1.75rem) 0 clamp(1.75rem, 3vw, 2.25rem);
-  font-size: clamp(1rem, 1.45vw, 1.125rem);
-  line-height: 1.85;
-  color: var(--classic-combinaisons-content-main-tertiary, #534838);
 }
 
 .home-culture__cta {
