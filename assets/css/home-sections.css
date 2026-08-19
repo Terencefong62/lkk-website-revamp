@@ -375,3 +375,105 @@
     transition: none;
   }
 }
+
+.home-purpose {
+  background: var(--classic-combinaisons-surface-page-primary, #fff5e0);
+  padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.home-purpose__preface {
+  max-width: 42rem;
+  margin: 0 auto clamp(2.75rem, 6vw, 4rem);
+  text-align: center;
+  color: var(--classic-combinaisons-content-main-tertiary, #534838);
+}
+
+.home-purpose__preface p {
+  margin: 0;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.85;
+}
+
+.home-purpose__preface p + p {
+  margin-top: 1.25rem;
+}
+
+.home-purpose__cards {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+@media (min-width: 48em) {
+  .home-purpose__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+}
+
+.home-purpose__card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: var(--classic-combinaisons-surface-container-insert-primary, #f1e3c0);
+  box-shadow: 0 0.75rem 2rem rgba(83, 72, 56, 0.08);
+}
+
+.home-purpose__card-media {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+}
+
+.home-purpose__card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-purpose__card--vision .home-purpose__card-media img {
+  object-position: 70% center;
+}
+
+.home-purpose__card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 3vw, 2rem) clamp(1.5rem, 3.5vw, 2rem);
+}
+
+.home-purpose__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.home-purpose__card--vision .home-purpose__label {
+  color: var(--classic-combinaisons-content-main-primary, #c7000b);
+}
+
+.home-purpose__card--mission .home-purpose__label {
+  color: var(--classic-combinaisons-content-main-accent-secondary, #74318e);
+}
+
+.home-purpose__headline {
+  margin: 0;
+  color: var(--classic-combinaisons-content-main-tertiary, #534838);
+  line-height: 1.25;
+}
+
+.home-purpose__card--vision {
+  border-top: 3px solid var(--classic-combinaisons-surface-container-insert-secondary, #e02923);
+}
+
+.home-purpose__card--mission {
+  border-top: 3px solid var(--classic-combinaisons-content-main-accent-secondary, #74318e);
+}
+
+@media (max-width: 47.99875em) {
+  .home-purpose__preface {
+    text-align: left;
+  }
+}
