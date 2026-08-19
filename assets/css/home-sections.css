@@ -179,7 +179,7 @@
 
 @media (min-width: 64em) {
   .home-flavours__layout {
-    grid-template-columns: minmax(15rem, 21rem) minmax(0, 1fr);
+    grid-template-columns: minmax(22rem, 34rem) minmax(0, 1fr);
     align-items: start;
     gap: clamp(2.5rem, 6vw, 4.5rem);
   }
@@ -195,6 +195,7 @@
   margin: 0;
   color: var(--classic-combinaisons-content-main-secondary, #570378);
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .home-flavours__description {
