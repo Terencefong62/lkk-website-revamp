@@ -2,9 +2,9 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting the default branch and the homepage branch
   push:
-    branches: ["main"]
+    branches: ["main", "Corporate-Site-Homepage", "cursor/lkk-corporate-homepage-e2f6"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -33,6 +33,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          # Pages is still on the legacy branch builder, which has stopped
+          # firing on pushes; this switches it to deploy from this workflow.
+          enablement: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
