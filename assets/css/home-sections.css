@@ -497,19 +497,8 @@
   text-align: center;
 }
 
-#our-story-heritage .home-story__lead {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-
-#our-story-heritage .home-story__lead-line {
-  display: block;
-  width: 100% !important;
-  max-width: 100%;
-  margin-inline: 0 !important;
-  white-space: normal !important;
-  text-align: center !important;
+#our-story-heritage .home-story__lead-line strong {
+  font-weight: 900;
 }
 
 .home-story--immersive .home-story__chunk {
