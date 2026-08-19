@@ -768,9 +768,30 @@
 }
 
 @media (min-width: 48em) {
+  #milestones .row.align-items-center {
+    align-items: stretch;
+  }
+
+  #milestones .col-6\@md {
+    display: flex;
+    flex-direction: column;
+  }
+
   .home-culture--reverse .home-culture__visual,
   .home-culture--reverse .home-culture__content-inner {
     min-height: clamp(18rem, 28vw, 24rem);
+  }
+
+  #milestones .home-culture__visual,
+  #milestones .home-culture__content-inner {
+    flex: 1;
+    height: 100%;
+  }
+
+  #milestones .home-culture__content-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
