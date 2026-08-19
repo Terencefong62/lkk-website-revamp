@@ -191,9 +191,13 @@
     grid-column: 1;
     grid-row: 1;
     left: auto;
-    justify-self: center;
-    width: min(78vw, 20rem);
-    height: min(52vw, 14rem);
+    justify-self: stretch;
+    width: 100%;
+    max-width: none;
+    padding-inline: 0.25rem;
+    box-sizing: border-box;
+    height: auto;
+    aspect-ratio: 4 / 3;
   }
 
   #our-story .home-story__memories--right {
