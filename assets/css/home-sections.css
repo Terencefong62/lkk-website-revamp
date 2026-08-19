@@ -297,6 +297,11 @@
   filter: drop-shadow(0 1rem 1.75rem rgba(0, 0, 0, 0.28));
 }
 
+.home-flavours__card--chili .home-flavours__card-visual img {
+  max-width: 58%;
+  max-height: clamp(8.5rem, 22vw, 10.5rem);
+}
+
 .home-flavours__controls {
   display: grid;
   grid-template-columns: auto 1fr auto;
