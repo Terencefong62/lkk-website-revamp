@@ -135,6 +135,22 @@
   margin-top: var(--gap-xl, 4rem);
 }
 
+.home-business {
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.home-business .G28-grid-content {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.home-business-block p {
+  margin-bottom: clamp(1.35rem, 2.5vw, 1.75rem);
+}
+
+.home-business-block p:last-child {
+  margin-bottom: 0;
+}
+
 .home-business-block__title {
   margin: 0 0 var(--gap-sm, 1rem);
   color: var(--jahia-components-g28-4x2-card-presentation-content-title-highlight, #c7000b);
