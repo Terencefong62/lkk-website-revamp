@@ -719,11 +719,8 @@
   text-align: left;
 }
 
-@media (min-width: 48em) {
-  .home-culture--reverse .home-culture__content-inner {
-    max-width: 20rem;
-    margin-left: auto;
-  }
+.home-culture--reverse .home-culture__content-inner {
+  max-width: 100%;
 }
 
 .home-culture__description {
@@ -764,7 +761,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   padding: 1rem;
   border-radius: 0.5rem;
   background: color-mix(in srgb, var(--classic-combinaisons-surface-container-insert-primary, #f1e3c0) 35%, #fff 65%);
+}
+
+@media (min-width: 48em) {
+  .home-culture--reverse .home-culture__visual,
+  .home-culture--reverse .home-culture__content-inner {
+    min-height: clamp(18rem, 28vw, 24rem);
+  }
 }
