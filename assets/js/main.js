@@ -55,9 +55,9 @@
         return null;
       }
 
-      const start = viewportHeight * 0.72;
-      const end = viewportHeight * 0.18;
-      return Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
+      const scrolledInto = viewportHeight - rect.top;
+      const range = rect.height + viewportHeight;
+      return Math.min(1, Math.max(0, scrolledInto / range));
     }
 
     if (config.scrollable <= 0) {
@@ -354,6 +354,61 @@
     },
     { passive: true }
   );
+
+  function initFlavoursShowcase() {
+    const track = document.querySelector("[data-flavours-track]");
+    const progress = document.querySelector("[data-flavours-progress]");
+    const prevButton = document.querySelector("[data-flavours-prev]");
+    const nextButton = document.querySelector("[data-flavours-next]");
+
+    if (!track) {
+      return;
+    }
+
+    function getScrollStep() {
+      const card = track.querySelector(".home-flavours__card");
+      if (!card) {
+        return 280;
+      }
+
+      const styles = window.getComputedStyle(track);
+      const gap = Number.parseFloat(styles.columnGap || styles.gap || "0") || 0;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    function updateFlavoursControls() {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      const ratio = maxScroll > 0 ? track.scrollLeft / maxScroll : 0;
+
+      if (progress) {
+        const minFill = maxScroll > 0 ? 100 / track.children.length : 100;
+        progress.style.width = `${Math.max(minFill, ratio * 100)}%`;
+      }
+
+      if (prevButton) {
+        prevButton.disabled = track.scrollLeft <= 4;
+      }
+
+      if (nextButton) {
+        nextButton.disabled = track.scrollLeft >= maxScroll - 4;
+      }
+    }
+
+    function scrollFlavours(direction) {
+      track.scrollBy({
+        left: direction * getScrollStep(),
+        behavior: "smooth",
+      });
+    }
+
+    prevButton?.addEventListener("click", () => scrollFlavours(-1));
+    nextButton?.addEventListener("click", () => scrollFlavours(1));
+    track.addEventListener("scroll", updateFlavoursControls, { passive: true });
+    window.addEventListener("resize", updateFlavoursControls);
+    updateFlavoursControls();
+  }
+
+  initFlavoursShowcase();
 
   window.addEventListener("load", () => {
     cacheStoryLayouts();
