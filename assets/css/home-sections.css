@@ -812,3 +812,15 @@
     padding-inline: var(--home-page-gutter);
   }
 }
+
+/* Without an explicit width the swiper shrinks to the masthead image's
+   aspect ratio instead of spanning the viewport. */
+.home-page .G10-carousel-swiper,
+.home-page .G10-carousel-slide,
+.home-page .G10-carousel-bg {
+  width: 100%;
+}
+
+.home-page .G10-carousel-bg img {
+  display: block;
+}
