@@ -22,6 +22,7 @@
       chunks,
       memories,
       stepCount,
+      hasRandomMemories: memories.length > 0 && !section.classList.contains("home-story--immersive"),
       sectionTop: 0,
       scrollable: 0,
       lastStep: -1,
@@ -119,6 +120,50 @@
     });
   }
 
+  function applyRandomMemoryPosition(memory) {
+    const side = memory.closest(".home-story__memories--right") ? "right" : "left";
+    const xMin = side === "left" ? -4 : -14;
+    const xMax = side === "left" ? 14 : 4;
+    const x = (Math.random() * (xMax - xMin) + xMin).toFixed(1);
+    const y = (Math.random() * 22 - 11).toFixed(1);
+
+    memory.style.setProperty("--memory-x", `${x}%`);
+    memory.style.setProperty("--memory-y", `${y}%`);
+  }
+
+  function setActiveMemories(config, activeStep) {
+    if (!config.hasRandomMemories) {
+      config.memories.forEach((memory) => {
+        memory.classList.toggle("is-active", Number(memory.dataset.step) === activeStep);
+      });
+      return;
+    }
+
+    config.memories.forEach((memory) => {
+      const isActive = Number(memory.dataset.step) === activeStep;
+
+      if (isActive) {
+        applyRandomMemoryPosition(memory);
+      }
+
+      memory.classList.toggle("is-active", isActive);
+    });
+  }
+
+  function initRandomMemorySections() {
+    storySections.forEach((config) => {
+      if (!config.hasRandomMemories) {
+        return;
+      }
+
+      config.memories.forEach((memory) => {
+        if (memory.classList.contains("is-active")) {
+          applyRandomMemoryPosition(memory);
+        }
+      });
+    });
+  }
+
   function updateStorySection(config) {
     const { scrollable, sectionTop } = config;
 
@@ -139,9 +184,7 @@
     const activeCount = Math.min(chunkTotal, Math.ceil(progress * chunkTotal));
 
     if (activeStep !== config.lastStep) {
-      config.memories.forEach((memory) => {
-        memory.classList.toggle("is-active", Number(memory.dataset.step) === activeStep);
-      });
+      setActiveMemories(config, activeStep);
       config.lastStep = activeStep;
     }
 
@@ -230,6 +273,7 @@
 
   if (storySections.length) {
     applyInitialStoryStates();
+    initRandomMemorySections();
     cacheStoryLayouts();
 
     const storyVisibility = new Map();
