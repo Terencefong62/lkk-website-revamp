@@ -567,7 +567,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(18rem, 58vw, 24rem);
+  min-height: clamp(24rem, 72vw, 34rem);
   padding: clamp(2.75rem, 7vw, 4.5rem) clamp(1.5rem, 5vw, 3rem);
   background-position: center;
   background-repeat: no-repeat;
@@ -636,12 +636,12 @@
   .home-purpose__split {
     flex-direction: row;
     align-items: stretch;
-    min-height: clamp(22rem, 34vw, 30rem);
+    min-height: clamp(28rem, 48vw, 42rem);
   }
 
   .home-purpose__panel {
     flex: 1 1 50%;
-    min-height: clamp(22rem, 34vw, 30rem);
+    min-height: clamp(28rem, 48vw, 42rem);
   }
 }
 
