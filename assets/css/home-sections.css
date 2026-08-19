@@ -622,20 +622,10 @@
 
 .home-purpose__preface-secondary {
   margin: clamp(1.5rem, 3vw, 2rem) 0 0;
-  font-size: clamp(1.05rem, 1.55vw, 1.2rem);
+  font-size: clamp(1rem, 1.45vw, 1.125rem);
   font-weight: 400;
-  line-height: 1.9;
-  color: color-mix(in srgb, var(--classic-combinaisons-content-main-tertiary, #534838) 88%, transparent);
-}
-
-.home-purpose__preface-accent {
-  display: block;
-  margin-top: 0.85rem;
-  font-style: normal;
-  font-weight: 600;
-  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
-  line-height: 1.65;
-  color: var(--classic-combinaisons-content-main-primary, #c7000b);
+  line-height: 1.85;
+  color: var(--classic-combinaisons-content-main-tertiary, #534838);
 }
 
 .home-purpose__pillars-wrap {
