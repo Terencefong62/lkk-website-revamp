@@ -754,3 +754,15 @@
   height: auto;
   object-fit: contain;
 }
+
+.home-culture__visual--photo {
+  padding: 0;
+  overflow: hidden;
+}
+
+.home-culture__visual--photo img {
+  aspect-ratio: 4 / 3;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
