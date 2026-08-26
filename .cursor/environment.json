@@ -1,0 +1,17 @@
+{
+  "name": "LKK Website Revamp",
+  "install": "test -f index.html && test -f index-en.html && echo 'Static site files present'",
+  "terminals": [
+    {
+      "name": "static-server",
+      "command": "python3 -m http.server 8000 --bind 0.0.0.0",
+      "description": "Serves the static homepage files. Open http://localhost:8000/ for the Chinese homepage (index.html) and http://localhost:8000/index-en.html for the English homepage."
+    }
+  ],
+  "ports": [
+    {
+      "name": "web",
+      "port": 8000
+    }
+  ]
+}
