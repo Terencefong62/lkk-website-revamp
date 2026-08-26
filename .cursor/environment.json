@@ -1,6 +1,6 @@
 {
   "name": "LKK Website Revamp",
-  "install": "test -f index.html && test -f index-en.html && echo 'Static site files present'",
+  "install": "echo 'No build step required; static HTML is served directly by the static-server terminal.'",
   "terminals": [
     {
       "name": "static-server",
