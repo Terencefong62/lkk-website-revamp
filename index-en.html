@@ -3,37 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lee Kum Kee Corporate | A Century of Trusted Flavors</title>
-  <meta name="description" content="English homepage concept for Lee Kum Kee Corporate, based on brand story, mission, and global growth highlights.">
+  <title>Lee Kum Kee Corporate | Homepage Copy Draft</title>
+  <meta name="description" content="English homepage draft aligned to Homepage Copy modules and recommended visual UX structure.">
   <style>
     :root {
       --brand-red: #9d2235;
-      --brand-red-dark: #7e1b2b;
+      --brand-red-dark: #7b1b2a;
       --brand-gold: #c9a25d;
-      --ink-900: #1a1a1a;
-      --ink-700: #434a54;
-      --ink-500: #646f7d;
-      --bg-100: #faf7f2;
-      --bg-200: #f3ede3;
+      --ink-900: #1c232b;
+      --ink-700: #3f4a56;
+      --ink-500: #627083;
+      --bg-100: #f8f5ef;
       --surface: #ffffff;
-      --line: #eadfce;
-      --success: #0a7a52;
+      --line: #e7dece;
+      --chip: #f6efe2;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
       color: var(--ink-900);
-      line-height: 1.65;
       background: var(--bg-100);
+      line-height: 1.65;
     }
 
     .container {
@@ -46,42 +39,26 @@
       align-items: center;
       justify-content: center;
       border-radius: 999px;
-      padding: 0.72rem 1.15rem;
-      font-weight: 700;
+      padding: 0.7rem 1.2rem;
       text-decoration: none;
+      font-size: 0.94rem;
+      font-weight: 700;
       transition: 0.2s ease;
       border: 1px solid transparent;
-      font-size: 0.94rem;
     }
-
-    .btn-primary {
-      background: var(--brand-red);
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: var(--brand-red-dark);
-    }
-
-    .btn-secondary {
-      color: var(--brand-red);
-      border-color: rgba(157, 34, 53, 0.3);
-      background: #fff;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--brand-red);
-    }
+    .btn-primary { background: var(--brand-red); color: #fff; }
+    .btn-primary:hover { background: var(--brand-red-dark); }
+    .btn-secondary { background: #fff; color: var(--brand-red); border-color: rgba(157, 34, 53, 0.35); }
+    .btn-secondary:hover { border-color: var(--brand-red); }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 30;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(10px);
+      z-index: 20;
       border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
     }
-
     .header-inner {
       display: flex;
       align-items: center;
@@ -89,280 +66,278 @@
       gap: 1rem;
       padding: 0.75rem 0;
     }
-
     .logo {
       font-weight: 900;
       letter-spacing: 0.03em;
       color: var(--brand-red);
+      font-size: 0.95rem;
       white-space: nowrap;
     }
-
     nav {
       display: flex;
-      align-items: center;
+      gap: 0.85rem;
       flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 0.75rem;
+      align-items: center;
     }
-
     nav a {
       text-decoration: none;
       color: var(--ink-700);
-      font-size: 0.93rem;
       font-weight: 600;
+      font-size: 0.9rem;
     }
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      color: #fff;
-      background:
-        linear-gradient(115deg, rgba(27, 18, 13, 0.72), rgba(38, 12, 21, 0.62)),
-        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 100px;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      padding: clamp(4rem, 9vw, 7rem) 0 clamp(3.2rem, 7vw, 5rem);
-      max-width: 680px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0 0 0.8rem;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #f8e4b8;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 20px;
-      height: 2px;
-      background: #f8e4b8;
-    }
-
-    h1 {
-      margin: 0;
-      line-height: 1.15;
-      font-size: clamp(2rem, 5.2vw, 3.65rem);
-    }
-
-    .hero p {
-      margin: 1rem 0 0;
-      color: rgba(255, 255, 255, 0.92);
-      font-size: clamp(1rem, 2.15vw, 1.12rem);
-      max-width: 62ch;
-    }
-
-    .hero-cta {
-      margin-top: 1.55rem;
-      display: flex;
-      gap: 0.72rem;
-      flex-wrap: wrap;
-    }
-
-    .trust-bar {
-      background: #fff;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .trust-items {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      padding: 1rem 0;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: var(--ink-700);
-      font-size: 0.93rem;
-      font-weight: 600;
-    }
-
-    .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--success);
-      flex: 0 0 9px;
-    }
-
-    section {
-      padding: clamp(3rem, 7vw, 5rem) 0;
-    }
-
-    .section-head {
-      margin-bottom: 1.5rem;
-    }
-
+    section { padding: clamp(2.8rem, 5.8vw, 4.6rem) 0; }
     .section-label {
       margin: 0;
       color: var(--brand-red);
       font-size: 0.82rem;
-      font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      font-weight: 800;
     }
-
     h2 {
-      margin: 0.35rem 0 0;
-      line-height: 1.24;
-      font-size: clamp(1.4rem, 3vw, 2.15rem);
+      margin: 0.45rem 0 0;
+      line-height: 1.25;
+      font-size: clamp(1.45rem, 3.1vw, 2.1rem);
     }
-
     .lead {
-      margin: 0.8rem 0 0;
+      margin: 0.85rem 0 0;
       color: var(--ink-500);
-      max-width: 72ch;
+      max-width: 74ch;
     }
-
-    .about-grid {
-      display: grid;
-      gap: 1.2rem;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: stretch;
-    }
-
     .card {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 14px;
-      padding: 1.2rem;
+      padding: 1.25rem;
     }
 
-    .mission-points {
-      list-style: none;
-      padding: 0;
-      margin: 0.8rem 0 0;
+    .hero {
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgba(20, 20, 20, 0.68), rgba(56, 18, 30, 0.62)),
+        url("https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1700&q=80") center/cover no-repeat;
     }
-
-    .mission-points li {
-      display: flex;
-      gap: 0.65rem;
-      align-items: flex-start;
-      margin-top: 0.75rem;
-      color: var(--ink-700);
-      font-size: 0.95rem;
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      padding: clamp(4rem, 9vw, 6.5rem) 0 clamp(3.2rem, 6.5vw, 4.8rem);
     }
-
-    .mission-points li::before {
-      content: "✓";
-      color: var(--brand-red);
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: #f6e2b7;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
       font-weight: 800;
-      margin-top: 0.02rem;
+    }
+    h1 {
+      margin: 0;
+      line-height: 1.15;
+      font-size: clamp(2rem, 5.2vw, 3.55rem);
+      max-width: 18ch;
+    }
+    .hero p {
+      margin: 1rem 0 0;
+      font-size: clamp(1rem, 2.1vw, 1.12rem);
+      color: rgba(255, 255, 255, 0.94);
+      max-width: 66ch;
+    }
+    .hero-cta {
+      margin-top: 1.4rem;
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
     }
 
-    .stats {
-      background: linear-gradient(180deg, var(--surface), #fdf8ef);
+    .glance {
+      background: #fff;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
-
-    .stats-grid {
+    .glance-layout {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+    .facts-grid {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: grid;
+      gap: 0.65rem;
+      grid-template-columns: 1fr 1fr;
+    }
+    .facts-grid li {
+      background: var(--chip);
+      border-radius: 10px;
+      padding: 0.7rem 0.8rem;
+      font-size: 0.92rem;
+      color: var(--ink-700);
+      font-weight: 600;
+    }
+    .map-placeholder {
+      border: 1px dashed #cab693;
+      background: linear-gradient(180deg, #fffaf0, #f5ecdc);
+      border-radius: 12px;
+      padding: 1rem;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--ink-500);
+      text-align: center;
+      gap: 0.55rem;
+    }
+    .map-placeholder strong {
+      color: var(--ink-700);
+      font-size: 1.02rem;
+    }
+
+    .story-timeline {
+      margin-top: 1.15rem;
+      display: grid;
+      gap: 0.8rem;
+    }
+    .timeline-item {
+      border-left: 4px solid var(--brand-gold);
+      padding: 0.3rem 0 0.3rem 0.85rem;
+      background: #fff;
+      border-radius: 0 10px 10px 0;
+    }
+    .timeline-item h3 {
+      margin: 0;
+      font-size: 0.98rem;
+      color: var(--ink-700);
+    }
+    .timeline-item p {
+      margin: 0.3rem 0 0;
+      color: var(--ink-500);
+      font-size: 0.9rem;
+    }
+
+    .business-panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.1rem;
+    }
+    .business-panels h3 { margin: 0; font-size: 1.15rem; }
+    .business-panels p { margin: 0.5rem 0 0; color: var(--ink-500); font-size: 0.94rem; }
+    .module-cta { margin-top: 1rem; }
+
+    .forward-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
       gap: 1rem;
     }
-
-    .stat {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 1.2rem;
+    .proof-cards {
+      display: grid;
+      gap: 1rem;
     }
-
-    .stat-value {
+    .proof-cards h4 {
       margin: 0;
-      line-height: 1.1;
-      color: var(--brand-red);
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
-      font-weight: 900;
+      font-size: 1rem;
+      color: var(--ink-700);
+    }
+    .proof-cards p {
+      margin: 0.45rem 0 0;
+      color: var(--ink-500);
+      font-size: 0.9rem;
     }
 
-    .stat-label {
-      margin: 0.45rem 0 0;
-      font-size: 0.95rem;
-      color: var(--ink-700);
+    .commitments-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.1rem;
+    }
+    .commitments-grid h3 { margin: 0; font-size: 1.08rem; }
+    .commitments-grid ul {
+      margin: 0.55rem 0 0;
+      padding-left: 1.05rem;
+      color: var(--ink-500);
+      font-size: 0.92rem;
     }
 
     .news-grid {
       display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 1rem;
     }
-
-    .news-card h3 {
+    .news-meta {
       margin: 0;
+      color: var(--ink-500);
+      font-size: 0.82rem;
+    }
+    .news-grid h3 {
+      margin: 0.5rem 0 0;
       font-size: 1.03rem;
       line-height: 1.4;
     }
-
-    .news-meta {
-      margin: 0.35rem 0 0;
+    .news-grid p {
+      margin: 0.55rem 0 0;
       color: var(--ink-500);
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
 
-    .news-card p {
-      margin: 0.65rem 0 0;
-      color: var(--ink-700);
-      font-size: 0.93rem;
+    .careers {
+      padding-top: 0;
     }
-
-    .final-cta {
-      background:
-        linear-gradient(125deg, rgba(157, 34, 53, 0.96), rgba(201, 162, 93, 0.92));
-      color: #fff;
+    .careers-wrap {
+      background: linear-gradient(128deg, rgba(157, 34, 53, 0.96), rgba(201, 162, 93, 0.92));
       border-radius: 16px;
-      padding: clamp(1.3rem, 4.2vw, 2rem);
+      color: #fff;
+      padding: clamp(1.2rem, 3.8vw, 2rem);
       display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 1rem;
-      grid-template-columns: 1fr auto;
       align-items: center;
     }
-
-    .final-cta h3 {
-      margin: 0;
-      font-size: clamp(1.15rem, 3vw, 1.65rem);
+    .careers-wrap h2 {
+      margin-top: 0.25rem;
+      font-size: clamp(1.35rem, 3vw, 2rem);
     }
-
-    .final-cta p {
-      margin: 0.35rem 0 0;
-      opacity: 0.95;
+    .careers-wrap p {
+      margin: 0.75rem 0 0;
       font-size: 0.95rem;
+      opacity: 0.95;
+    }
+    .quote-box {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 12px;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
 
     footer {
-      margin-top: 2.5rem;
-      padding: 1.6rem 0 2.5rem;
+      margin-top: 2rem;
       border-top: 1px solid var(--line);
-      color: var(--ink-500);
-      font-size: 0.86rem;
       background: #fff;
+      color: var(--ink-500);
+      font-size: 0.85rem;
+      padding: 1.4rem 0 2.3rem;
     }
 
-    @media (max-width: 900px) {
-      .about-grid,
-      .final-cta {
+    @media (max-width: 980px) {
+      .glance-layout,
+      .forward-grid,
+      .news-grid,
+      .business-panels,
+      .commitments-grid,
+      .careers-wrap {
         grid-template-columns: 1fr;
       }
+      .facts-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -370,139 +345,235 @@
   <header>
     <div class="container header-inner">
       <div class="logo">LEE KUM KEE CORPORATE</div>
-      <nav aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#mission">Mission</a>
-        <a href="#highlights">Highlights</a>
+      <nav aria-label="Primary navigation">
+        <a href="#hero">Home</a>
+        <a href="#glance">Global</a>
+        <a href="#story">Story</a>
+        <a href="#business">Business</a>
         <a href="#news">News</a>
-        <a class="btn btn-primary" href="#connect">Connect</a>
+        <a class="btn btn-primary" href="#careers">Careers</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="hero">
       <div class="container hero-content">
-        <p class="eyebrow">Since 1888</p>
-        <h1>The Global Gateway to Asian Culinary Culture</h1>
+        <p class="eyebrow">Homepage Module 1 · Hero</p>
+        <h1>Trusted since 1888. Moving forward with the world.</h1>
         <p>
-          From a single oyster sauce recipe to a presence in over 100 countries and regions,
-          Lee Kum Kee continues to bring people closer through trusted flavors and shared food experiences.
+          Lee Kum Kee has grown from the invention of oyster sauce into a global sauces and condiments company.
+          Rooted in Chinese culinary culture and guided by quality, integrity and constant entrepreneurship, we continue
+          to create value for consumers, customers and communities around the world.
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#about">Discover Our Story</a>
-          <a class="btn btn-secondary" href="#news">View Latest Updates</a>
+          <a class="btn btn-primary" href="#story">Discover Lee Kum Kee</a>
         </div>
       </div>
     </section>
 
-    <div class="trust-bar" aria-label="Trust indicators">
-      <div class="container trust-items">
-        <div class="trust-item"><span class="dot"></span>Established in 1888</div>
-        <div class="trust-item"><span class="dot"></span>Available in 100+ markets</div>
-        <div class="trust-item"><span class="dot"></span>300+ sauces and seasonings</div>
-        <div class="trust-item"><span class="dot"></span>Trusted by chefs and families</div>
-      </div>
-    </div>
-
-    <section id="about">
+    <section class="glance" id="glance">
       <div class="container">
-        <div class="section-head">
-          <p class="section-label">About Us</p>
-          <h2>A Century of Craft, Quality, and Entrepreneurship</h2>
-        </div>
-        <div class="about-grid">
+        <p class="section-label">Homepage Module 2 · Global at a Glance</p>
+        <h2>Lee Kum Kee at a Glance</h2>
+        <div class="glance-layout">
           <article class="card">
-            <p class="lead" style="margin-top: 0;">
-              Since its founding in 1888, Lee Kum Kee has been part of cherished moments around
-              family tables across generations. Built on Hong Kong roots and guided by enduring values,
-              we carry forward traditional craftsmanship while constantly innovating for modern kitchens.
-            </p>
-            <p class="lead">
-              We believe every great flavor can connect people. That belief drives our commitment to
-              consistency, food quality, and cultural exchange through Chinese culinary excellence.
-            </p>
-          </article>
-          <aside class="card" id="mission">
-            <p class="section-label" style="margin: 0;">Our Vision</p>
-            <h2 style="font-size: 1.35rem; margin-top: 0.25rem;">Where there are people, there is Lee Kum Kee</h2>
-            <p class="section-label" style="margin-top: 1rem;">Our Mission</p>
-            <h2 style="font-size: 1.35rem; margin-top: 0.25rem;">Promote Chinese culinary culture worldwide</h2>
-            <ul class="mission-points">
-              <li>Honor heritage while evolving for new consumers and new tastes.</li>
-              <li>Scale globally without compromising quality standards.</li>
-              <li>Bring professional-grade flavor to everyday home cooking.</li>
+            <ul class="facts-grid" aria-label="Global proof points">
+              <li>Founded in 1888</li>
+              <li>300+ sauces and condiments</li>
+              <li>100+ countries and regions</li>
+              <li>7 production bases</li>
+              <li style="grid-column: 1 / -1;">Around 6,000 employees worldwide</li>
             </ul>
+            <div class="module-cta">
+              <a class="btn btn-secondary" href="#business">Explore Our Global Presence</a>
+            </div>
+          </article>
+          <aside class="map-placeholder" aria-label="Global map placeholder">
+            <strong>Interactive Global Map Placeholder</strong>
+            <span>Recommended UX: compact proof strip + map hotspot interactions</span>
           </aside>
         </div>
       </div>
     </section>
 
-    <section id="highlights" class="stats">
+    <section id="story">
       <div class="container">
-        <div class="section-head">
-          <p class="section-label">Corporate Highlights</p>
-          <h2>Proven Legacy, Global Reach, Ongoing Innovation</h2>
+        <p class="section-label">Homepage Module 3 · Our Story</p>
+        <h2>It began with an unexpected discovery.</h2>
+        <p class="lead">
+          In 1888, Lee Kum Sheung invented oyster sauce after a pot of oyster soup simmered longer than intended.
+          From that single invention, Lee Kum Kee has grown across generations by responding to the evolving tastes and cooking
+          needs of consumers and chefs around the world. Today, more than 300 sauces and condiments bring Lee Kum Kee to home
+          and professional kitchens across over 100 countries and regions—continuing a story of craftsmanship, constant entrepreneurship
+          and culinary progress.
+        </p>
+        <div class="story-timeline">
+          <article class="timeline-item">
+            <h3>1888 · The invention of oyster sauce</h3>
+            <p>An unexpected discovery became a category-defining culinary innovation.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Across generations · Portfolio growth</h3>
+            <p>Lee Kum Kee expanded to 300+ sauces and condiments through constant entrepreneurship.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Today · Global kitchens</h3>
+            <p>Home and professional kitchens in 100+ countries and regions use Lee Kum Kee every day.</p>
+          </article>
         </div>
-        <div class="stats-grid">
-          <article class="stat">
-            <p class="stat-value">1888</p>
-            <p class="stat-label">Founded with a commitment to authentic taste and craftsmanship.</p>
+        <div class="module-cta">
+          <a class="btn btn-secondary" href="#business">Discover Our Story</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="business">
+      <div class="container">
+        <p class="section-label">Homepage Module 4 · Our Business</p>
+        <h2>Retail and Food Service.</h2>
+        <p class="lead">
+          Through Retail and Food Service, Lee Kum Kee brings its sauce expertise to consumer and professional markets.
+          Retail provides home cooks with trusted sauces and culinary inspiration, while Food Service supports chefs and food businesses
+          through products, culinary expertise and tailored solutions.
+        </p>
+        <div class="business-panels">
+          <article class="card">
+            <h3>Retail</h3>
+            <p>Trusted sauces and culinary inspiration designed for home cooking and everyday meal moments.</p>
           </article>
-          <article class="stat">
-            <p class="stat-value">100+</p>
-            <p class="stat-label">Countries and regions served with trusted sauce solutions.</p>
+          <article class="card">
+            <h3>Food Service</h3>
+            <p>Products, culinary expertise and tailored solutions for chefs, restaurants and food businesses.</p>
           </article>
-          <article class="stat">
-            <p class="stat-value">300+</p>
-            <p class="stat-label">Sauces and seasonings meeting diverse culinary needs.</p>
+        </div>
+        <div class="module-cta">
+          <a class="btn btn-secondary" href="#forward">Explore Our Business</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="forward">
+      <div class="container">
+        <p class="section-label">Homepage Module 5 · Always Moving Forward</p>
+        <h2>Built on heritage. Always moving forward.</h2>
+        <div class="forward-grid">
+          <article class="card">
+            <p class="lead" style="margin-top: 0;">
+              Built on generations of sauce and culinary expertise, Lee Kum Kee continues to progress through R&amp;D,
+              product and application innovation, and collaboration. Our partnership with UNESCO’s Forever Flavors Project supports
+              the safeguarding and transmission of culinary heritage, while our role as The World’s 50 Best Restaurants’ Official Sauce
+              &amp; Condiment Partner connects us with leading chefs and the global culinary community.
+            </p>
+            <div class="module-cta">
+              <a class="btn btn-secondary" href="#commitments">Explore Our Capabilities</a>
+            </div>
           </article>
+          <aside class="proof-cards">
+            <article class="card">
+              <h4>UNESCO Forever Flavors Project</h4>
+              <p>Discover Forever Flavors</p>
+            </article>
+            <article class="card">
+              <h4>Official Sauce &amp; Condiment Partner</h4>
+              <p>See Lee Kum Kee × 50 Best</p>
+            </article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="commitments">
+      <div class="container">
+        <p class="section-label">Homepage Module 6 · Our Commitments</p>
+        <h2>Quality without compromise. Growth with responsibility.</h2>
+        <p class="lead">
+          Our commitments are rooted in quality without compromise and growth with responsibility. Our 100-1=0 zero-tolerance quality
+          philosophy guides every step from farm to fork. Guided by Si Li Ji Ren—considering others’ interests—we also work to protect
+          product integrity, reduce environmental impact, care for our people and contribute to communities as we pursue more sustainable growth.
+        </p>
+        <div class="commitments-grid">
+          <article class="card">
+            <h3>100-1=0 Quality Commitment</h3>
+            <ul>
+              <li>Zero-tolerance quality philosophy</li>
+              <li>Farm-to-fork product integrity controls</li>
+              <li>Quality consistency across global operations</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Sustainability &amp; Responsible Growth</h3>
+            <ul>
+              <li>Reduce environmental impact</li>
+              <li>Care for employees and communities</li>
+              <li>Build long-term sustainable growth pathways</li>
+            </ul>
+          </article>
+        </div>
+        <div class="module-cta">
+          <a class="btn btn-secondary" href="#news">Explore Our Commitments</a>
         </div>
       </div>
     </section>
 
     <section id="news">
       <div class="container">
-        <div class="section-head">
-          <p class="section-label">Media & Updates</p>
-          <h2>What’s New at Lee Kum Kee</h2>
-          <p class="lead">Sample content cards below can be connected to your CMS or newsroom feed.</p>
-        </div>
+        <p class="section-label">Homepage Module 7 · Latest News</p>
+        <h2>See Lee Kum Kee in action today.</h2>
+        <p class="lead">
+          Discover the latest developments across our business—from global partnerships and culinary initiatives to product innovation,
+          sustainability progress and stories from our markets around the world.
+        </p>
         <div class="news-grid">
-          <article class="card news-card">
-            <p class="news-meta">Company News · Placeholder</p>
-            <h3>Lee Kum Kee Expands Culinary Innovation Initiatives Across Key Regions</h3>
-            <p>A future-ready program to support chefs, partners, and home cooks with quality-first flavor development.</p>
+          <article class="card">
+            <p class="news-meta">Partnership · 2026-08-18 · Global</p>
+            <h3>Collaborating with global culinary partners to advance food culture initiatives</h3>
+            <p>Current stories should be curated for narrative relevance, not only chronology.</p>
           </article>
-          <article class="card news-card">
-            <p class="news-meta">Brand Story · Placeholder</p>
-            <h3>From Heritage to Modern Tables: The Journey of a Global Chinese Flavor Brand</h3>
-            <p>Explore how tradition, entrepreneurship, and global culture shape our growth strategy.</p>
+          <article class="card">
+            <p class="news-meta">Innovation · 2026-08-12 · APAC</p>
+            <h3>Product and application innovation highlights from regional chef collaborations</h3>
+            <p>Card content can be dynamically populated from the Newsroom CMS feed.</p>
           </article>
-          <article class="card news-card">
-            <p class="news-meta">Sustainability · Placeholder</p>
-            <h3>Responsible Operations and Long-Term Quality Commitment</h3>
-            <p>Learn how operational excellence and product stewardship support our long-term mission.</p>
+          <article class="card">
+            <p class="news-meta">Sustainability · 2026-08-05 · EMEA</p>
+            <h3>Progress updates on responsible operations and long-term growth commitments</h3>
+            <p>Include category, date and market metadata for each story card.</p>
           </article>
+        </div>
+        <div class="module-cta">
+          <a class="btn btn-secondary" href="#careers">Visit the Newsroom</a>
         </div>
       </div>
     </section>
 
-    <section id="connect">
+    <section class="careers" id="careers">
       <div class="container">
-        <div class="final-cta">
-          <div>
-            <h3>Bring Authentic Flavor Stories to More Tables Worldwide</h3>
-            <p>Contact our corporate team for partnership, media inquiries, and global business collaboration.</p>
-          </div>
-          <a class="btn btn-secondary" style="background:#fff;" href="mailto:contact@example.com">Contact Us</a>
+        <div class="careers-wrap">
+          <article>
+            <p class="section-label" style="color: #fff;">Homepage Module 8 · Careers</p>
+            <h2>Be part of what comes next.</h2>
+            <p>
+              At Lee Kum Kee, people grow through meaningful work, shared values and opportunities across a global business.
+              Discover how you can build your career while helping shape the next chapter of a company trusted for generations.
+            </p>
+            <div class="module-cta">
+              <a class="btn btn-secondary" href="mailto:careers@example.com" style="background:#fff;">Explore Careers</a>
+            </div>
+          </article>
+          <aside class="quote-box">
+            <strong>Employee Story Placeholder</strong>
+            <p style="margin: 0.55rem 0 0;">
+              "I am given opportunities to grow, contribute across markets, and help shape the future of a trusted global brand."
+            </p>
+          </aside>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">© Lee Kum Kee Corporate · English Homepage Concept</div>
+    <div class="container">© Lee Kum Kee Corporate · English homepage draft based on Homepage Copy</div>
   </footer>
 </body>
 </html>
