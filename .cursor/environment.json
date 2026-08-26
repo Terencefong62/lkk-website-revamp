@@ -1,11 +1,12 @@
 {
   "name": "LKK Website Revamp",
-  "install": "echo 'No build step required; static HTML is served directly by the static-server terminal.'",
+  "install": "echo 'No build step required; static HTML is served over HTTP.'",
+  "start": "cd /workspace && if ! curl -sf -o /dev/null http://127.0.0.1:8000/; then setsid python3 -m http.server 8000 --bind 0.0.0.0 > /tmp/static-server.log 2>&1 < /dev/null & fi",
   "terminals": [
     {
       "name": "static-server",
-      "command": "python3 -m http.server 8000 --bind 0.0.0.0",
-      "description": "Serves the static homepage files. Open http://localhost:8000/ for the Chinese homepage (index.html) and http://localhost:8000/index-en.html for the English homepage."
+      "command": "cd /workspace && if curl -sf -o /dev/null http://127.0.0.1:8000/; then echo 'static-server already running (launched by start hook); tailing log' && touch /tmp/static-server.log && exec tail -f /tmp/static-server.log; else exec python3 -m http.server 8000 --bind 0.0.0.0; fi",
+      "description": "Serves the static homepage files on port 8000. Chinese homepage: http://localhost:8000/ (index.html). English homepage: http://localhost:8000/index-en.html."
     }
   ],
   "ports": [
