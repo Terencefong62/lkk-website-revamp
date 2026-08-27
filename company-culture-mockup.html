@@ -31,7 +31,7 @@
       }
 
       .container {
-        width: min(1160px, calc(100% - 48px));
+        width: min(1400px, calc(100% - 72px));
         margin: 0 auto;
       }
 
@@ -217,104 +217,148 @@
       }
 
       section {
-        padding: 72px 0;
+        padding: 96px 0;
       }
 
       .section-head {
-        max-width: 740px;
-        margin-bottom: 28px;
+        max-width: 900px;
+        margin-bottom: 38px;
       }
 
       .section-head h2 {
-        font-size: clamp(26px, 3.5vw, 40px);
-        margin-bottom: 12px;
+        margin: 0 0 16px;
+        font-size: clamp(34px, 4vw, 58px);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
       }
 
       .section-head p {
         margin: 0;
-        color: var(--muted);
-        font-size: 18px;
+        color: #2a3657;
+        font-size: clamp(19px, 1.7vw, 25px);
+        line-height: 1.45;
       }
 
-      .intro-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 28px;
-        align-items: stretch;
-      }
-
-      .panel {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 28px;
-        box-shadow: 0 14px 30px rgba(22, 35, 59, 0.05);
-      }
-
-      .video-wrap {
+      .culture-intro {
         position: relative;
-        overflow: hidden;
-        border-radius: 12px;
-        background: #000;
+        background:
+          linear-gradient(120deg, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.58)),
+          url("https://preview-web.lkk.com/files/live/sites/corporate/files/About%20US/1988_tai-po-headquarters.jpg")
+            center center / cover no-repeat;
+        color: #fff;
       }
 
-      video {
+      .culture-intro-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .culture-copy h2 {
+        margin: 0 0 20px;
+        font-size: clamp(36px, 4.2vw, 62px);
+        line-height: 1.05;
+      }
+
+      .culture-copy p {
+        margin: 0;
+        font-size: clamp(19px, 1.6vw, 24px);
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.94);
+      }
+
+      .video-frame {
+        overflow: hidden;
+        border-radius: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 26px 56px rgba(0, 0, 0, 0.33);
+      }
+
+      .video-frame video {
         display: block;
         width: 100%;
-        height: auto;
         aspect-ratio: 16 / 9;
       }
 
-      .grid {
+      .values {
+        background: #f8f5ee;
+      }
+
+      .values-layout {
         display: grid;
+        gap: 18px;
+      }
+
+      .value-row {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        min-height: 210px;
+        padding: 32px 36px;
+        display: grid;
+        grid-template-columns: 1fr 1.35fr;
+        align-items: center;
+        gap: 24px;
+        color: #fff;
+        background:
+          linear-gradient(120deg, rgba(17, 24, 39, 0.84), rgba(17, 24, 39, 0.55)),
+          url("https://preview-web.lkk.com/files/live/sites/corporate/files/About%20US/behindthebrand_s.jpg")
+            center center / cover no-repeat;
+      }
+
+      .value-row:nth-child(even) {
+        background:
+          linear-gradient(120deg, rgba(22, 39, 73, 0.84), rgba(22, 39, 73, 0.5)),
+          url("https://preview-web.lkk.com/files/live/sites/corporate/files/About%20US/banner-image.jpg")
+            center center / cover no-repeat;
+      }
+
+      .value-row h3 {
+        margin: 0;
+        font-size: clamp(28px, 2.8vw, 43px);
+        line-height: 1.08;
+      }
+
+      .value-points {
+        margin: 0;
+        padding-left: 22px;
+        display: grid;
+        gap: 8px;
+        font-size: clamp(17px, 1.35vw, 22px);
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      .immersive-band {
+        background: linear-gradient(170deg, #fff 0%, #f4f7ff 100%);
+      }
+
+      .band-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 16px;
       }
 
-      .values-grid {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+      .band-item {
+        min-height: 190px;
+        padding: 24px 28px;
+        border-radius: 16px;
+        background:
+          linear-gradient(130deg, rgba(9, 27, 57, 0.86), rgba(24, 58, 108, 0.66)),
+          url("https://preview-web.lkk.com/files/live/sites/corporate/files/About%20US/Company%20Vision%20and%20Mission/our_vision_950x792.jpg")
+            center center / cover no-repeat;
+        color: #fff;
       }
 
-      .leadership-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+      .band-item h3 {
+        margin: 0 0 10px;
+        font-size: clamp(22px, 1.9vw, 30px);
       }
 
-      .change-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .item {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 18px;
-      }
-
-      .item h3 {
-        margin: 0 0 8px;
-        font-size: 18px;
-      }
-
-      .item p {
+      .band-item p {
         margin: 0;
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .tag {
-        display: inline-flex;
-        margin-bottom: 10px;
-        padding: 4px 10px;
-        border-radius: 999px;
-        background: var(--primary-soft);
-        color: var(--primary);
-        font-weight: 600;
-        font-size: 12px;
-      }
-
-      .placeholder-note {
-        margin-top: 10px;
-        color: var(--muted);
-        font-size: 14px;
+        font-size: clamp(16px, 1.1vw, 18px);
+        color: rgba(255, 255, 255, 0.93);
       }
 
       @media (max-width: 1080px) {
@@ -326,8 +370,8 @@
           font-size: 14px;
         }
 
-        .values-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
+        .value-row {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -353,9 +397,8 @@
           gap: 12px 18px;
         }
 
-        .intro-grid,
-        .leadership-grid,
-        .change-grid {
+        .culture-intro-grid,
+        .band-grid {
           grid-template-columns: 1fr;
         }
       }
@@ -366,11 +409,7 @@
         }
 
         section {
-          padding: 54px 0;
-        }
-
-        .values-grid {
-          grid-template-columns: 1fr;
+          padding: 72px 0;
         }
       }
     </style>
@@ -416,149 +455,140 @@
     </section>
 
     <main>
-      <section>
+      <section class="culture-intro">
         <div class="container">
-          <div class="section-head">
-            <h2>Distinctive Corporate Culture</h2>
-            <p>
-              Our culture is the bedrock of our long-term development.
-              Lee Kum Kee's growth and actions reflect the guiding principles of
-              “Values &amp; Leadership”, which for generations have empowered our
-              continued global journey and guided us toward becoming a beloved
-              and trusted brand around the world.
-            </p>
-          </div>
-
-          <div class="intro-grid">
-            <article class="panel">
-              <span class="tag">Introduction</span>
-              <h3>Culture that Drives Global Trust</h3>
+          <div class="culture-intro-grid">
+            <div class="culture-copy">
+              <h2>Distinctive Corporate Culture</h2>
               <p>
-                This section combines the introduction copy with a supporting
-                culture video to communicate the spirit, consistency, and
-                long-term direction of the organization.
+                Our culture is the bedrock of our long-term development.
+                Lee Kum Kee's growth and actions reflect the guiding principles of
+                “Values &amp; Leadership”, which for generations have empowered our
+                continued global journey and guided us toward becoming a beloved
+                and trusted brand around the world.
               </p>
-            </article>
-
-            <article class="panel">
-              <span class="tag">Culture Video</span>
-              <div class="video-wrap">
-                <video controls preload="metadata">
-                  <source
-                    src="https://preview-web.lkk.com/files/live/sites/corporate/files/About%20US/v-l-tc.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </article>
+            </div>
+            <div class="video-frame">
+              <video controls preload="metadata">
+                <source
+                  src="https://preview-web.lkk.com/files/live/sites/corporate/files/About%20US/v-l-tc.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
       </section>
 
-      <section>
+      <section class="values">
         <div class="container">
           <div class="section-head">
             <h2>Values</h2>
-            <p>Five value-focused sub-sections.</p>
+            <p>Five core values with key points.</p>
           </div>
-          <div class="grid values-grid">
-            <article class="item">
-              <span class="tag">Value 01</span>
-              <h3>Purpose First</h3>
-              <p>Sub-section placeholder copy for value theme.</p>
+          <div class="values-layout">
+            <article class="value-row">
+              <h3>Si Li Ji Ren</h3>
+              <ul class="value-points">
+                <li>Think beyond self-interest for shared success</li>
+                <li>Act with care for people, team, and community</li>
+                <li>Deliver long-term value through collective progress</li>
+              </ul>
             </article>
-            <article class="item">
-              <span class="tag">Value 02</span>
-              <h3>People-Centered</h3>
-              <p>Sub-section placeholder copy for value theme.</p>
+            <article class="value-row">
+              <h3>Pragmatism</h3>
+              <ul class="value-points">
+                <li>Focus on outcomes grounded in real needs</li>
+                <li>Decide with facts, speed, and accountability</li>
+                <li>Turn strategy into disciplined execution</li>
+              </ul>
             </article>
-            <article class="item">
-              <span class="tag">Value 03</span>
-              <h3>Integrity in Action</h3>
-              <p>Sub-section placeholder copy for value theme.</p>
+            <article class="value-row">
+              <h3>Integrity</h3>
+              <ul class="value-points">
+                <li>Do what is right even when it is difficult</li>
+                <li>Build trust through consistency and transparency</li>
+                <li>Honor commitments to consumers and partners</li>
+              </ul>
             </article>
-            <article class="item">
-              <span class="tag">Value 04</span>
-              <h3>Collaboration</h3>
-              <p>Sub-section placeholder copy for value theme.</p>
+            <article class="value-row">
+              <h3>Constant Entrepreneurship</h3>
+              <ul class="value-points">
+                <li>6677</li>
+                <li>Breakthrough &amp; Innovate</li>
+                <li>Never Set Limits</li>
+              </ul>
             </article>
-            <article class="item">
-              <span class="tag">Value 05</span>
-              <h3>Customer Commitment</h3>
-              <p>Sub-section placeholder copy for value theme.</p>
+            <article class="value-row">
+              <h3>100-1=0</h3>
+              <ul class="value-points">
+                <li>No weak links in quality and safety</li>
+                <li>Every detail matters to overall excellence</li>
+                <li>One failure can negate all prior success</li>
+              </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <section>
+      <section class="immersive-band">
         <div class="container">
           <div class="section-head">
             <h2>Autopilot Leadership</h2>
-            <p>Six sub-sections for leadership dimensions.</p>
+            <p>Six leadership dimensions guiding daily execution.</p>
           </div>
-          <div class="grid leadership-grid">
-            <article class="item">
-              <span class="tag">Leadership 01</span>
+          <div class="band-grid">
+            <article class="band-item">
               <h3>Vision Alignment</h3>
-              <p>Sub-section placeholder copy for leadership theme.</p>
+              <p>Align teams around clear goals and long-term direction.</p>
             </article>
-            <article class="item">
-              <span class="tag">Leadership 02</span>
+            <article class="band-item">
               <h3>Ownership</h3>
-              <p>Sub-section placeholder copy for leadership theme.</p>
+              <p>Take responsibility for outcomes and follow-through.</p>
             </article>
-            <article class="item">
-              <span class="tag">Leadership 03</span>
+            <article class="band-item">
               <h3>Decision Quality</h3>
-              <p>Sub-section placeholder copy for leadership theme.</p>
+              <p>Make thoughtful, data-informed decisions under pressure.</p>
             </article>
-            <article class="item">
-              <span class="tag">Leadership 04</span>
+            <article class="band-item">
               <h3>Coaching Others</h3>
-              <p>Sub-section placeholder copy for leadership theme.</p>
+              <p>Develop talent through feedback, support, and challenge.</p>
             </article>
-            <article class="item">
-              <span class="tag">Leadership 05</span>
+            <article class="band-item">
               <h3>Resilience</h3>
-              <p>Sub-section placeholder copy for leadership theme.</p>
+              <p>Stay steady and adaptive through change and uncertainty.</p>
             </article>
-            <article class="item">
-              <span class="tag">Leadership 06</span>
+            <article class="band-item">
               <h3>Execution Discipline</h3>
-              <p>Sub-section placeholder copy for leadership theme.</p>
+              <p>Deliver commitments with rigor, rhythm, and quality.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section>
+      <section class="immersive-band">
         <div class="container">
           <div class="section-head">
             <h2>Leading Change</h2>
-            <p>Four sub-sections focused on transformation and impact.</p>
+            <p>Four change pillars focused on transformation and impact.</p>
           </div>
-          <div class="grid change-grid">
-            <article class="item">
-              <span class="tag">Change 01</span>
+          <div class="band-grid">
+            <article class="band-item">
               <h3>Adaptability</h3>
-              <p>Sub-section placeholder copy for change theme.</p>
+              <p>Respond quickly to market shifts and new opportunities.</p>
             </article>
-            <article class="item">
-              <span class="tag">Change 02</span>
+            <article class="band-item">
               <h3>Innovation Mindset</h3>
-              <p>Sub-section placeholder copy for change theme.</p>
+              <p>Challenge assumptions and experiment with better ways.</p>
             </article>
-            <article class="item">
-              <span class="tag">Change 03</span>
+            <article class="band-item">
               <h3>Cross-Functional Momentum</h3>
-              <p>Sub-section placeholder copy for change theme.</p>
+              <p>Unite functions to accelerate delivery and learning.</p>
             </article>
-            <article class="item">
-              <span class="tag">Change 04</span>
+            <article class="band-item">
               <h3>Sustainable Outcomes</h3>
-              <p>Sub-section placeholder copy for change theme.</p>
+              <p>Embed improvements that scale and endure over time.</p>
             </article>
           </div>
         </div>
