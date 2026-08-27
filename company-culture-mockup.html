@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Culture Mockup</title>
+    <style>
+      :root {
+        --bg: #f6f8fb;
+        --card: #ffffff;
+        --text: #14223d;
+        --muted: #5f6b7a;
+        --primary: #0f65d8;
+        --primary-soft: #e8f1ff;
+        --line: #dde4ef;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.55;
+      }
+
+      .container {
+        width: min(1160px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 520px;
+        display: grid;
+        align-items: center;
+        overflow: hidden;
+        color: #fff;
+        background:
+          linear-gradient(
+            100deg,
+            rgba(15, 25, 45, 0.85) 0%,
+            rgba(15, 25, 45, 0.6) 38%,
+            rgba(15, 25, 45, 0.15) 75%
+          ),
+          url("./company-culture-hero-banner.png") center/cover no-repeat;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        pointer-events: none;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 560px;
+        padding: 72px 0;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 14px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      h1 {
+        font-size: clamp(32px, 5vw, 54px);
+        margin-bottom: 14px;
+      }
+
+      .hero p {
+        margin: 0;
+        font-size: clamp(16px, 2vw, 19px);
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .section-head {
+        max-width: 740px;
+        margin-bottom: 28px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(26px, 3.5vw, 40px);
+        margin-bottom: 12px;
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 18px;
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 14px 30px rgba(22, 35, 59, 0.05);
+      }
+
+      .video-wrap {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+      }
+
+      video {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .leadership-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .change-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .item {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px;
+      }
+
+      .item h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .item p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .tag {
+        display: inline-flex;
+        margin-bottom: 10px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: var(--primary-soft);
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 12px;
+      }
+
+      .placeholder-note {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 1080px) {
+        .values-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 900px) {
+        .intro-grid,
+        .leadership-grid,
+        .change-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .container {
+          width: min(1160px, calc(100% - 28px));
+        }
+
+        section {
+          padding: 54px 0;
+        }
+
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Here Banner</span>
+          <h1>Our Culture Shapes How We Grow Together</h1>
+          <p>
+            A mockup structure for Lee Kum Kee's Company Culture page, built
+            around Values &amp; Leadership.
+          </p>
+          <p class="placeholder-note">
+            Hero image placeholder: <code>company-culture-hero-banner.png</code>
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <h2>Distinctive Corporate Culture</h2>
+            <p>
+              Our culture is the bedrock of our long-term development.
+              Lee Kum Kee's growth and actions reflect the guiding principles of
+              “Values &amp; Leadership”, which for generations have empowered our
+              continued global journey and guided us toward becoming a beloved
+              and trusted brand around the world.
+            </p>
+          </div>
+
+          <div class="intro-grid">
+            <article class="panel">
+              <span class="tag">Introduction</span>
+              <h3>Culture that Drives Global Trust</h3>
+              <p>
+                This section combines the introduction copy with a supporting
+                culture video to communicate the spirit, consistency, and
+                long-term direction of the organization.
+              </p>
+            </article>
+
+            <article class="panel">
+              <span class="tag">Culture Video</span>
+              <div class="video-wrap">
+                <video controls preload="metadata">
+                  <source
+                    src="https://preview-web.lkk.com/files/live/sites/corporate/files/About%20US/v-l-tc.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <h2>Values</h2>
+            <p>Five value-focused sub-sections.</p>
+          </div>
+          <div class="grid values-grid">
+            <article class="item">
+              <span class="tag">Value 01</span>
+              <h3>Purpose First</h3>
+              <p>Sub-section placeholder copy for value theme.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Value 02</span>
+              <h3>People-Centered</h3>
+              <p>Sub-section placeholder copy for value theme.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Value 03</span>
+              <h3>Integrity in Action</h3>
+              <p>Sub-section placeholder copy for value theme.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Value 04</span>
+              <h3>Collaboration</h3>
+              <p>Sub-section placeholder copy for value theme.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Value 05</span>
+              <h3>Customer Commitment</h3>
+              <p>Sub-section placeholder copy for value theme.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <h2>Autopilot Leadership</h2>
+            <p>Six sub-sections for leadership dimensions.</p>
+          </div>
+          <div class="grid leadership-grid">
+            <article class="item">
+              <span class="tag">Leadership 01</span>
+              <h3>Vision Alignment</h3>
+              <p>Sub-section placeholder copy for leadership theme.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Leadership 02</span>
+              <h3>Ownership</h3>
+              <p>Sub-section placeholder copy for leadership theme.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Leadership 03</span>
+              <h3>Decision Quality</h3>
+              <p>Sub-section placeholder copy for leadership theme.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Leadership 04</span>
+              <h3>Coaching Others</h3>
+              <p>Sub-section placeholder copy for leadership theme.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Leadership 05</span>
+              <h3>Resilience</h3>
+              <p>Sub-section placeholder copy for leadership theme.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Leadership 06</span>
+              <h3>Execution Discipline</h3>
+              <p>Sub-section placeholder copy for leadership theme.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <h2>Leading Change</h2>
+            <p>Four sub-sections focused on transformation and impact.</p>
+          </div>
+          <div class="grid change-grid">
+            <article class="item">
+              <span class="tag">Change 01</span>
+              <h3>Adaptability</h3>
+              <p>Sub-section placeholder copy for change theme.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Change 02</span>
+              <h3>Innovation Mindset</h3>
+              <p>Sub-section placeholder copy for change theme.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Change 03</span>
+              <h3>Cross-Functional Momentum</h3>
+              <p>Sub-section placeholder copy for change theme.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Change 04</span>
+              <h3>Sustainable Outcomes</h3>
+              <p>Sub-section placeholder copy for change theme.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
