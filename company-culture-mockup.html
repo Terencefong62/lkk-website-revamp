@@ -321,12 +321,31 @@
       }
 
       .value-points {
+        list-style: none;
         margin: 0;
-        padding-left: 22px;
+        padding: 0;
         display: grid;
-        gap: 8px;
-        font-size: clamp(17px, 1.35vw, 22px);
-        color: rgba(255, 255, 255, 0.95);
+        gap: 10px;
+      }
+
+      .value-points li {
+        display: grid;
+        gap: 2px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      .point-label {
+        font-size: clamp(18px, 1.35vw, 24px);
+        font-weight: 700;
+        line-height: 1.18;
+        color: rgba(255, 255, 255, 0.98);
+      }
+
+      .point-note {
+        font-size: clamp(14px, 1.02vw, 16px);
+        color: rgba(255, 255, 255, 0.86);
       }
 
       .immersive-band {
@@ -504,41 +523,86 @@
             <article class="value-row">
               <h3>Si Li Ji Ren</h3>
               <ul class="value-points">
-                <li>Think beyond self-interest for shared success</li>
-                <li>Act with care for people, team, and community</li>
-                <li>Deliver long-term value through collective progress</li>
+                <li>
+                  <span class="point-label">Helicopter View</span>
+                  <span class="point-note">See the full picture before acting.</span>
+                </li>
+                <li>
+                  <span class="point-label">Think from Others' Perspectives</span>
+                  <span class="point-note">Decide with empathy for stakeholders.</span>
+                </li>
+                <li>
+                  <span class="point-label">Care about Others' Feelings</span>
+                  <span class="point-note">Build trust through respect and care.</span>
+                </li>
               </ul>
             </article>
             <article class="value-row">
               <h3>Pragmatism</h3>
               <ul class="value-points">
-                <li>Focus on outcomes grounded in real needs</li>
-                <li>Decide with facts, speed, and accountability</li>
-                <li>Turn strategy into disciplined execution</li>
+                <li>
+                  <span class="point-label">Face Reality</span>
+                  <span class="point-note">Work from facts, not assumptions.</span>
+                </li>
+                <li>
+                  <span class="point-label">Prioritize Impact</span>
+                  <span class="point-note">Focus on what moves results most.</span>
+                </li>
+                <li>
+                  <span class="point-label">Execute with Discipline</span>
+                  <span class="point-note">Convert plans into measurable outcomes.</span>
+                </li>
               </ul>
             </article>
             <article class="value-row">
               <h3>Integrity</h3>
               <ul class="value-points">
-                <li>Do what is right even when it is difficult</li>
-                <li>Build trust through consistency and transparency</li>
-                <li>Honor commitments to consumers and partners</li>
+                <li>
+                  <span class="point-label">Do the Right Thing</span>
+                  <span class="point-note">Hold ethical standards in every action.</span>
+                </li>
+                <li>
+                  <span class="point-label">Be Transparent</span>
+                  <span class="point-note">Communicate honestly and consistently.</span>
+                </li>
+                <li>
+                  <span class="point-label">Honor Commitments</span>
+                  <span class="point-note">Deliver what we promise to all partners.</span>
+                </li>
               </ul>
             </article>
             <article class="value-row">
               <h3>Constant Entrepreneurship</h3>
               <ul class="value-points">
-                <li>6677</li>
-                <li>Breakthrough &amp; Innovate</li>
-                <li>Never Set Limits</li>
+                <li>
+                  <span class="point-label">6677</span>
+                  <span class="point-note">Keep entrepreneurial drive always on.</span>
+                </li>
+                <li>
+                  <span class="point-label">Breakthrough &amp; Innovate</span>
+                  <span class="point-note">Challenge boundaries with new ideas.</span>
+                </li>
+                <li>
+                  <span class="point-label">Never Set Limits</span>
+                  <span class="point-note">Pursue growth beyond current constraints.</span>
+                </li>
               </ul>
             </article>
             <article class="value-row">
               <h3>100-1=0</h3>
               <ul class="value-points">
-                <li>No weak links in quality and safety</li>
-                <li>Every detail matters to overall excellence</li>
-                <li>One failure can negate all prior success</li>
+                <li>
+                  <span class="point-label">No Weak Link</span>
+                  <span class="point-note">Maintain quality and safety end-to-end.</span>
+                </li>
+                <li>
+                  <span class="point-label">Every Detail Matters</span>
+                  <span class="point-note">Small misses can undermine big wins.</span>
+                </li>
+                <li>
+                  <span class="point-label">Own the Last 1%</span>
+                  <span class="point-note">Finish with zero-compromise standards.</span>
+                </li>
               </ul>
             </article>
           </div>
