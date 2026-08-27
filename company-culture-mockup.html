@@ -206,6 +206,34 @@
         align-items: center;
       }
 
+      .culture-photo-strip {
+        margin-top: 26px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .culture-photo {
+        min-height: 170px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .culture-photo.one {
+        background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80");
+      }
+
+      .culture-photo.two {
+        background-image: url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80");
+      }
+
+      .culture-photo.three {
+        background-image: url("https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=900&q=80");
+      }
+
       .culture-copy h2 {
         margin: 0 0 20px;
         font-size: clamp(36px, 4.2vw, 62px);
@@ -273,6 +301,27 @@
         background:
           linear-gradient(145deg, rgba(24, 42, 84, 0.9), rgba(11, 28, 59, 0.74)),
           url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80")
+            center center / cover no-repeat;
+      }
+
+      .value-card:nth-child(2) {
+        background:
+          linear-gradient(145deg, rgba(40, 18, 69, 0.88), rgba(42, 18, 72, 0.74)),
+          url("https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80")
+            center center / cover no-repeat;
+      }
+
+      .value-card:nth-child(3) {
+        background:
+          linear-gradient(145deg, rgba(13, 64, 73, 0.9), rgba(12, 56, 66, 0.74)),
+          url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80")
+            center center / cover no-repeat;
+      }
+
+      .value-card:nth-child(4) {
+        background:
+          linear-gradient(145deg, rgba(95, 36, 12, 0.9), rgba(74, 26, 10, 0.74)),
+          url("https://images.unsplash.com/photo-1581092919535-7146ff1a590b?auto=format&fit=crop&w=1200&q=80")
             center center / cover no-repeat;
       }
 
@@ -357,6 +406,17 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
         font-size: 13px;
         line-height: 1.25;
+      }
+
+      .autopilot-shot {
+        margin-top: 14px;
+        border-radius: 12px;
+        min-height: 180px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        background:
+          linear-gradient(145deg, rgba(8, 24, 53, 0.3), rgba(8, 24, 53, 0.4)),
+          url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80")
+            center center / cover no-repeat;
       }
 
       .autopilot-accordion {
@@ -448,6 +508,27 @@
         gap: 14px;
       }
 
+      .change-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .change-thumb {
+        border-radius: 12px;
+        min-height: 115px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .change-thumb.one {
+        background-image: url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80");
+      }
+
+      .change-thumb.two {
+        background-image: url("https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=900&q=80");
+      }
+
       .change-card {
         border-radius: 16px;
         padding: 20px 22px;
@@ -524,6 +605,10 @@
           grid-template-columns: 1fr;
         }
 
+        .culture-photo-strip {
+          grid-template-columns: 1fr;
+        }
+
         .value-feature {
           min-height: 460px;
         }
@@ -595,6 +680,11 @@
                 Your browser does not support the video tag.
               </video>
             </div>
+          </div>
+          <div class="culture-photo-strip" aria-hidden="true">
+            <div class="culture-photo one"></div>
+            <div class="culture-photo two"></div>
+            <div class="culture-photo three"></div>
           </div>
         </div>
       </section>
@@ -753,6 +843,7 @@
                 <li>Effective Empowerment</li>
                 <li>Coaching and Developing Talent</li>
               </ul>
+              <div class="autopilot-shot" aria-hidden="true"></div>
             </aside>
             <div class="autopilot-accordion">
               <details class="autopilot-item" open>
@@ -884,6 +975,10 @@
           <div class="change-layout">
             <div class="change-visual"></div>
             <div class="change-stack">
+              <div class="change-gallery" aria-hidden="true">
+                <div class="change-thumb one"></div>
+                <div class="change-thumb two"></div>
+              </div>
               <article class="change-card">
                 <h3>Vision-driven</h3>
                 <ul>
