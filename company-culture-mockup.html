@@ -206,34 +206,6 @@
         align-items: center;
       }
 
-      .culture-photo-strip {
-        margin-top: 26px;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .culture-photo {
-        min-height: 170px;
-        border-radius: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
-        background-size: cover;
-        background-position: center;
-      }
-
-      .culture-photo.one {
-        background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80");
-      }
-
-      .culture-photo.two {
-        background-image: url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80");
-      }
-
-      .culture-photo.three {
-        background-image: url("https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=900&q=80");
-      }
-
       .culture-copy h2 {
         margin: 0 0 20px;
         font-size: clamp(36px, 4.2vw, 62px);
@@ -264,70 +236,65 @@
         background: var(--bg);
       }
 
-      .values-layout {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 20px;
+      .tab-input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
       }
 
-      .value-feature {
+      .tab-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 26px;
+      }
+
+      .tab-nav label {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 22px;
+        border-radius: 999px;
+        border: 1.5px solid var(--lkk-red);
+        color: var(--lkk-red);
+        font-weight: 700;
+        font-size: 15px;
+        background: #fff;
+        transition: transform 0.2s ease, background-color 0.2s ease,
+          color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .tab-nav label:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(199, 0, 11, 0.18);
+      }
+
+      .tab-nav .tab-index {
+        font-size: 11px;
+        opacity: 0.7;
+      }
+
+      .tab-panel {
+        display: none;
+      }
+
+      .value-panel {
         position: relative;
         overflow: hidden;
-        border-radius: 24px;
-        min-height: 620px;
-        padding: 40px;
+        border-radius: 26px;
+        min-height: 480px;
+        padding: 44px;
         color: #fff;
-        background:
-          linear-gradient(150deg, rgba(15, 21, 35, 0.78), rgba(15, 21, 35, 0.42)),
-          url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80")
-            center center / cover no-repeat;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 24px 50px rgba(20, 20, 30, 0.18);
       }
 
-      .value-feature h3 {
-        margin: 0 0 20px;
-        font-size: clamp(34px, 3.2vw, 54px);
+      .value-panel h3 {
+        margin: 0 0 26px;
+        font-size: clamp(32px, 3vw, 50px);
         line-height: 1.05;
-      }
-
-      .value-card-grid {
-        display: grid;
-        gap: 14px;
-      }
-
-      .value-card {
-        border-radius: 16px;
-        padding: 22px;
-        color: #fff;
-        background:
-          linear-gradient(145deg, rgba(24, 42, 84, 0.9), rgba(11, 28, 59, 0.74)),
-          url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80")
-            center center / cover no-repeat;
-      }
-
-      .value-card:nth-child(2) {
-        background:
-          linear-gradient(145deg, rgba(40, 18, 69, 0.88), rgba(42, 18, 72, 0.74)),
-          url("https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80")
-            center center / cover no-repeat;
-      }
-
-      .value-card:nth-child(3) {
-        background:
-          linear-gradient(145deg, rgba(13, 64, 73, 0.9), rgba(12, 56, 66, 0.74)),
-          url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80")
-            center center / cover no-repeat;
-      }
-
-      .value-card:nth-child(4) {
-        background:
-          linear-gradient(145deg, rgba(95, 36, 12, 0.9), rgba(74, 26, 10, 0.74)),
-          url("https://images.unsplash.com/photo-1581092919535-7146ff1a590b?auto=format&fit=crop&w=1200&q=80")
-            center center / cover no-repeat;
-      }
-
-      .value-card h4 {
-        margin: 0 0 10px;
-        font-size: clamp(24px, 1.9vw, 33px);
       }
 
       .value-points {
@@ -335,25 +302,88 @@
         margin: 0;
         padding: 0;
         display: grid;
-        gap: 8px;
+        gap: 14px;
+        max-width: 720px;
       }
 
       .value-points li {
-        border-left: 3px solid rgba(255, 255, 255, 0.7);
-        padding-left: 12px;
+        border-left: 3px solid rgba(255, 255, 255, 0.75);
+        padding-left: 14px;
       }
 
       .point-label {
-        font-size: clamp(16px, 1.08vw, 18px);
+        font-size: clamp(16px, 1.15vw, 20px);
         font-weight: 700;
-        color: rgba(255, 255, 255, 0.97);
+        color: rgba(255, 255, 255, 0.98);
       }
 
       .point-desc {
         margin-top: 4px;
-        font-size: clamp(13px, 0.95vw, 15px);
-        line-height: 1.45;
+        font-size: clamp(13px, 0.98vw, 15px);
+        line-height: 1.5;
         color: rgba(255, 255, 255, 0.88);
+      }
+
+      #vtab-1:checked ~ .value-tab-nav label[for="vtab-1"],
+      #vtab-2:checked ~ .value-tab-nav label[for="vtab-2"],
+      #vtab-3:checked ~ .value-tab-nav label[for="vtab-3"],
+      #vtab-4:checked ~ .value-tab-nav label[for="vtab-4"],
+      #vtab-5:checked ~ .value-tab-nav label[for="vtab-5"] {
+        background: var(--lkk-red);
+        color: #fff;
+      }
+
+      #vtab-1:checked ~ .value-tab-panels #vpanel-1,
+      #vtab-2:checked ~ .value-tab-panels #vpanel-2,
+      #vtab-3:checked ~ .value-tab-panels #vpanel-3,
+      #vtab-4:checked ~ .value-tab-panels #vpanel-4,
+      #vtab-5:checked ~ .value-tab-panels #vpanel-5 {
+        display: block;
+      }
+
+      .value-panel.bg-1 {
+        background-image: linear-gradient(
+            150deg,
+            rgba(15, 21, 35, 0.8),
+            rgba(15, 21, 35, 0.45)
+          ),
+          url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80");
+      }
+
+      .value-panel.bg-2 {
+        background-image: linear-gradient(
+            150deg,
+            rgba(24, 42, 84, 0.86),
+            rgba(11, 28, 59, 0.5)
+          ),
+          url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80");
+      }
+
+      .value-panel.bg-3 {
+        background-image: linear-gradient(
+            150deg,
+            rgba(40, 18, 69, 0.86),
+            rgba(42, 18, 72, 0.5)
+          ),
+          url("https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1600&q=80");
+      }
+
+      .value-panel.bg-4 {
+        background-image: linear-gradient(
+            150deg,
+            rgba(13, 64, 73, 0.86),
+            rgba(12, 56, 66, 0.5)
+          ),
+          url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80");
+      }
+
+      .value-panel.bg-5 {
+        background-image: linear-gradient(
+            150deg,
+            rgba(95, 36, 12, 0.86),
+            rgba(74, 26, 10, 0.5)
+          ),
+          url("https://images.unsplash.com/photo-1581092919535-7146ff1a590b?auto=format&fit=crop&w=1600&q=80");
       }
 
       .autopilot {
@@ -422,6 +452,7 @@
       .autopilot-accordion {
         display: grid;
         gap: 10px;
+        counter-reset: pilot;
       }
 
       .autopilot-item {
@@ -429,6 +460,14 @@
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.2);
         background: rgba(255, 255, 255, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .autopilot-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+        border-color: rgba(255, 255, 255, 0.4);
       }
 
       .autopilot-item summary {
@@ -439,8 +478,30 @@
         font-weight: 700;
         display: flex;
         align-items: center;
+        gap: 14px;
         justify-content: space-between;
         transition: background-color 0.2s ease;
+      }
+
+      .autopilot-item summary .summary-text {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .autopilot-item summary .summary-text::before {
+        counter-increment: pilot;
+        content: counter(pilot, decimal-leading-zero);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: var(--lkk-red);
+        color: #fff;
+        font-size: 13px;
       }
 
       .autopilot-item summary::-webkit-details-marker {
@@ -489,69 +550,111 @@
 
       .change-layout {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 26px;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 30px;
         align-items: stretch;
       }
 
       .change-visual {
-        border-radius: 22px;
-        min-height: 650px;
-        background:
-          linear-gradient(180deg, rgba(8, 19, 43, 0.44), rgba(8, 19, 43, 0.72)),
-          url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1500&q=80")
-            center center / cover no-repeat;
-      }
-
-      .change-stack {
-        display: grid;
-        gap: 14px;
-      }
-
-      .change-gallery {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-
-      .change-thumb {
-        border-radius: 12px;
-        min-height: 115px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 24px;
+        min-height: 480px;
         background-size: cover;
         background-position: center;
+        box-shadow: 0 24px 50px rgba(20, 20, 30, 0.18);
       }
 
-      .change-thumb.one {
-        background-image: url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80");
+      .change-visual::after {
+        content: attr(data-caption);
+        position: absolute;
+        left: 24px;
+        bottom: 24px;
+        right: 24px;
+        color: #fff;
+        font-size: 22px;
+        font-weight: 700;
+        text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
       }
 
-      .change-thumb.two {
-        background-image: url("https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=900&q=80");
+      .change-visual::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(8, 16, 32, 0.75) 0%,
+          rgba(8, 16, 32, 0) 55%
+        );
+      }
+
+      .change-visual.bg-1 {
+        background-image: url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1500&q=80");
+      }
+
+      .change-visual.bg-2 {
+        background-image: url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1500&q=80");
+      }
+
+      .change-visual.bg-3 {
+        background-image: url("https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=1500&q=80");
+      }
+
+      .change-visual.bg-4 {
+        background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1500&q=80");
+      }
+
+      #ctab-1:checked ~ .change-tab-nav label[for="ctab-1"],
+      #ctab-2:checked ~ .change-tab-nav label[for="ctab-2"],
+      #ctab-3:checked ~ .change-tab-nav label[for="ctab-3"],
+      #ctab-4:checked ~ .change-tab-nav label[for="ctab-4"] {
+        background: var(--lkk-red);
+        color: #fff;
+      }
+
+      #ctab-1:checked ~ .change-layout .change-visual.bg-1,
+      #ctab-2:checked ~ .change-layout .change-visual.bg-2,
+      #ctab-3:checked ~ .change-layout .change-visual.bg-3,
+      #ctab-4:checked ~ .change-layout .change-visual.bg-4 {
+        display: block;
+      }
+
+      .change-visual {
+        display: none;
+      }
+
+      #ctab-1:checked ~ .change-layout #cpanel-1,
+      #ctab-2:checked ~ .change-layout #cpanel-2,
+      #ctab-3:checked ~ .change-layout #cpanel-3,
+      #ctab-4:checked ~ .change-layout #cpanel-4 {
+        display: block;
       }
 
       .change-card {
-        border-radius: 16px;
-        padding: 20px 22px;
-        border: 1px solid #dbe4f5;
-        background: linear-gradient(170deg, #f7faff 0%, #ffffff 100%);
+        display: none;
+        border-radius: 20px;
+        padding: 34px 36px;
+        border: 1px solid #f1cfa8;
+        background: linear-gradient(170deg, #fffaf1 0%, #ffffff 100%);
       }
 
       .change-card h3 {
-        margin: 0 0 7px;
-        font-size: 25px;
+        margin: 0 0 16px;
+        font-size: clamp(26px, 2.4vw, 34px);
+        color: var(--lkk-red);
       }
 
       .change-card ul {
         margin: 0;
-        padding-left: 20px;
+        padding-left: 22px;
         display: grid;
-        gap: 8px;
+        gap: 12px;
       }
 
       .change-card li {
         margin: 0;
-        font-size: 15px;
-        line-height: 1.45;
+        font-size: 16px;
+        line-height: 1.5;
         color: var(--text);
       }
 
@@ -562,10 +665,6 @@
 
         .nav-links a {
           font-size: 14px;
-        }
-
-        .values-layout {
-          grid-template-columns: 1fr;
         }
 
         .autopilot-layout {
@@ -605,12 +704,13 @@
           grid-template-columns: 1fr;
         }
 
-        .culture-photo-strip {
-          grid-template-columns: 1fr;
+        .value-panel {
+          padding: 28px;
+          min-height: auto;
         }
 
-        .value-feature {
-          min-height: 460px;
+        .change-visual {
+          min-height: 280px;
         }
       }
 
@@ -681,11 +781,6 @@
               </video>
             </div>
           </div>
-          <div class="culture-photo-strip" aria-hidden="true">
-            <div class="culture-photo one"></div>
-            <div class="culture-photo two"></div>
-            <div class="culture-photo three"></div>
-          </div>
         </div>
       </section>
 
@@ -693,39 +788,51 @@
         <div class="container">
           <div class="section-head">
             <h2>Values</h2>
-            <p>Five core values with key points.</p>
+            <p>Select a value below to explore its key points.</p>
           </div>
-          <div class="values-layout">
-            <article class="value-feature">
-              <h3>Si Li Ji Ren</h3>
-              <ul class="value-points">
-                <li>
-                  <span class="point-label">Helicopter View</span>
-                  <p class="point-desc">
-                    We&gt;I", place the common goal above individual interests,
-                    view the overall situation and future prospects from
-                    multiple dimensions and elevated perspectives
-                  </p>
-                </li>
-                <li>
-                  <span class="point-label">Think from Others' Perspectives</span>
-                  <p class="point-desc">
-                    Consistently use perspective-taking to understand the needs,
-                    thoughts, and concerns of others
-                  </p>
-                </li>
-                <li>
-                  <span class="point-label">Care about Others' Feelings</span>
-                  <p class="point-desc">
-                    Consistently engage with others in a respectful manner,
-                    being mindful of their feelings in the moment
-                  </p>
-                </li>
-              </ul>
-            </article>
-            <div class="value-card-grid">
-              <article class="value-card">
-                <h4>Pragmatism</h4>
+          <div class="value-tabs">
+            <input type="radio" name="value-tab" id="vtab-1" class="tab-input" checked />
+            <input type="radio" name="value-tab" id="vtab-2" class="tab-input" />
+            <input type="radio" name="value-tab" id="vtab-3" class="tab-input" />
+            <input type="radio" name="value-tab" id="vtab-4" class="tab-input" />
+            <input type="radio" name="value-tab" id="vtab-5" class="tab-input" />
+            <div class="tab-nav value-tab-nav">
+              <label for="vtab-1"><span class="tab-index">01</span>Si Li Ji Ren</label>
+              <label for="vtab-2"><span class="tab-index">02</span>Pragmatism</label>
+              <label for="vtab-3"><span class="tab-index">03</span>Integrity</label>
+              <label for="vtab-4"><span class="tab-index">04</span>Constant Entrepreneurship</label>
+              <label for="vtab-5"><span class="tab-index">05</span>100-1=0</label>
+            </div>
+            <div class="value-tab-panels">
+              <div class="tab-panel value-panel bg-1" id="vpanel-1">
+                <h3>Si Li Ji Ren</h3>
+                <ul class="value-points">
+                  <li>
+                    <span class="point-label">Helicopter View</span>
+                    <p class="point-desc">
+                      We&gt;I", place the common goal above individual interests,
+                      view the overall situation and future prospects from
+                      multiple dimensions and elevated perspectives
+                    </p>
+                  </li>
+                  <li>
+                    <span class="point-label">Think from Others' Perspectives</span>
+                    <p class="point-desc">
+                      Consistently use perspective-taking to understand the needs,
+                      thoughts, and concerns of others
+                    </p>
+                  </li>
+                  <li>
+                    <span class="point-label">Care about Others' Feelings</span>
+                    <p class="point-desc">
+                      Consistently engage with others in a respectful manner,
+                      being mindful of their feelings in the moment
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-panel value-panel bg-2" id="vpanel-2">
+                <h3>Pragmatism</h3>
                 <ul class="value-points">
                   <li>
                     <span class="point-label">
@@ -747,9 +854,9 @@
                     </span>
                   </li>
                 </ul>
-              </article>
-              <article class="value-card">
-                <h4>Integrity</h4>
+              </div>
+              <div class="tab-panel value-panel bg-3" id="vpanel-3">
+                <h3>Integrity</h3>
                 <ul class="value-points">
                   <li>
                     <span class="point-label">
@@ -769,9 +876,9 @@
                     </span>
                   </li>
                 </ul>
-              </article>
-              <article class="value-card">
-                <h4>Constant Entrepreneurship</h4>
+              </div>
+              <div class="tab-panel value-panel bg-4" id="vpanel-4">
+                <h3>Constant Entrepreneurship</h3>
                 <ul class="value-points">
                   <li>
                     <span class="point-label">6677</span>
@@ -795,9 +902,9 @@
                     </p>
                   </li>
                 </ul>
-              </article>
-              <article class="value-card">
-                <h4>100-1=0</h4>
+              </div>
+              <div class="tab-panel value-panel bg-5" id="vpanel-5">
+                <h3>100-1=0</h3>
                 <ul class="value-points">
                   <li>
                     <span class="point-label">
@@ -817,7 +924,7 @@
                     </span>
                   </li>
                 </ul>
-              </article>
+              </div>
             </div>
           </div>
         </div>
@@ -847,7 +954,7 @@
             </aside>
             <div class="autopilot-accordion">
               <details class="autopilot-item" open>
-                <summary>Choosing The Right Talent</summary>
+                <summary><span class="summary-text">Choosing The Right Talent</span></summary>
                 <div class="autopilot-body">
                   <ul>
                     <li>
@@ -866,7 +973,7 @@
                 </div>
               </details>
               <details class="autopilot-item">
-                <summary>High Trust Environment</summary>
+                <summary><span class="summary-text">High Trust Environment</span></summary>
                 <div class="autopilot-body">
                   <ul>
                     <li>
@@ -884,7 +991,7 @@
                 </div>
               </details>
               <details class="autopilot-item">
-                <summary>Highly Effective Team</summary>
+                <summary><span class="summary-text">Highly Effective Team</span></summary>
                 <div class="autopilot-body">
                   <ul>
                     <li>
@@ -903,7 +1010,7 @@
                 </div>
               </details>
               <details class="autopilot-item">
-                <summary>Common Goal</summary>
+                <summary><span class="summary-text">Common Goal</span></summary>
                 <div class="autopilot-body">
                   <ul>
                     <li>
@@ -923,7 +1030,7 @@
                 </div>
               </details>
               <details class="autopilot-item">
-                <summary>Effective Empowerment</summary>
+                <summary><span class="summary-text">Effective Empowerment</span></summary>
                 <div class="autopilot-body">
                   <ul>
                     <li>
@@ -942,7 +1049,7 @@
                 </div>
               </details>
               <details class="autopilot-item">
-                <summary>Coaching and Developing Talent</summary>
+                <summary><span class="summary-text">Coaching and Developing Talent</span></summary>
                 <div class="autopilot-body">
                   <ul>
                     <li>
@@ -970,16 +1077,41 @@
         <div class="container">
           <div class="section-head">
             <h2>Leading Change</h2>
-            <p>Four change pillars focused on transformation and impact.</p>
+            <p>Select a pillar to see how we lead through change.</p>
           </div>
-          <div class="change-layout">
-            <div class="change-visual"></div>
-            <div class="change-stack">
-              <div class="change-gallery" aria-hidden="true">
-                <div class="change-thumb one"></div>
-                <div class="change-thumb two"></div>
-              </div>
-              <article class="change-card">
+          <div class="change-tabs">
+            <input type="radio" name="change-tab" id="ctab-1" class="tab-input" checked />
+            <input type="radio" name="change-tab" id="ctab-2" class="tab-input" />
+            <input type="radio" name="change-tab" id="ctab-3" class="tab-input" />
+            <input type="radio" name="change-tab" id="ctab-4" class="tab-input" />
+            <div class="tab-nav change-tab-nav">
+              <label for="ctab-1"><span class="tab-index">01</span>Vision-driven</label>
+              <label for="ctab-2"><span class="tab-index">02</span>User-centric</label>
+              <label for="ctab-3"><span class="tab-index">03</span>Agility &amp; Adaptability</label>
+              <label for="ctab-4"><span class="tab-index">04</span>Strive For Excellence</label>
+            </div>
+            <div class="change-layout">
+              <div
+                class="change-visual bg-1"
+                data-caption="Vision-driven"
+                aria-hidden="true"
+              ></div>
+              <div
+                class="change-visual bg-2"
+                data-caption="User-centric"
+                aria-hidden="true"
+              ></div>
+              <div
+                class="change-visual bg-3"
+                data-caption="Demonstrate Agility &amp; Adaptability"
+                aria-hidden="true"
+              ></div>
+              <div
+                class="change-visual bg-4"
+                data-caption="Strive For Excellence"
+                aria-hidden="true"
+              ></div>
+              <article class="change-card" id="cpanel-1">
                 <h3>Vision-driven</h3>
                 <ul>
                   <li>
@@ -996,7 +1128,7 @@
                   </li>
                 </ul>
               </article>
-              <article class="change-card">
+              <article class="change-card" id="cpanel-2">
                 <h3>User-centric</h3>
                 <ul>
                   <li>
@@ -1013,7 +1145,7 @@
                   </li>
                 </ul>
               </article>
-              <article class="change-card">
+              <article class="change-card" id="cpanel-3">
                 <h3>Demonstrate Agility &amp; Adaptability</h3>
                 <ul>
                   <li>
@@ -1031,7 +1163,7 @@
                   </li>
                 </ul>
               </article>
-              <article class="change-card">
+              <article class="change-card" id="cpanel-4">
                 <h3>Strive For Excellence</h3>
                 <ul>
                   <li>
