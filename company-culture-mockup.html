@@ -387,10 +387,7 @@
       }
 
       .autopilot {
-        background:
-          linear-gradient(180deg, #09142a, #0f1f3f),
-          url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1800&q=80")
-            center center / cover no-repeat;
+        background: linear-gradient(160deg, #0a1428 0%, #16294f 100%);
         color: #fff;
       }
 
@@ -402,146 +399,157 @@
         color: #fff;
       }
 
+      .autopilot-tab-nav label {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.35);
+        color: #fff;
+      }
+
+      .autopilot-tab-nav label:hover {
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+      }
+
+      .autopilot-tab-nav .tab-index {
+        opacity: 0.6;
+      }
+
       .autopilot-layout {
         display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 22px;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 30px;
+        align-items: stretch;
       }
 
-      .autopilot-overview {
-        border-radius: 16px;
-        padding: 22px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        align-self: start;
-      }
-
-      .autopilot-overview p {
-        margin: 0 0 16px;
-        color: rgba(255, 255, 255, 0.88);
-      }
-
-      .lead-pills {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 8px;
-      }
-
-      .lead-pills li {
-        padding: 9px 12px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        font-size: 13px;
-        line-height: 1.25;
-      }
-
-      .autopilot-shot {
-        margin-top: 14px;
-        border-radius: 12px;
-        min-height: 180px;
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        background:
-          linear-gradient(145deg, rgba(8, 24, 53, 0.3), rgba(8, 24, 53, 0.4)),
-          url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80")
-            center center / cover no-repeat;
-      }
-
-      .autopilot-accordion {
-        display: grid;
-        gap: 10px;
-        counter-reset: pilot;
-      }
-
-      .autopilot-item {
-        border-radius: 14px;
+      .autopilot-visual {
+        display: none;
+        position: relative;
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        background: rgba(255, 255, 255, 0.08);
-        transition: transform 0.2s ease, box-shadow 0.2s ease,
-          border-color 0.2s ease;
+        border-radius: 24px;
+        min-height: 480px;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
       }
 
-      .autopilot-item:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
-        border-color: rgba(255, 255, 255, 0.4);
+      .autopilot-visual::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(5, 10, 22, 0.82) 0%,
+          rgba(5, 10, 22, 0) 55%
+        );
       }
 
-      .autopilot-item summary {
-        cursor: pointer;
-        list-style: none;
-        padding: 14px 16px;
-        font-size: 20px;
+      .autopilot-visual::after {
+        content: attr(data-caption);
+        position: absolute;
+        left: 24px;
+        bottom: 24px;
+        right: 24px;
+        color: #fff;
+        font-size: 22px;
         font-weight: 700;
+        text-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+      }
+
+      .autopilot-visual.bg-1 {
+        background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1500&q=80");
+      }
+
+      .autopilot-visual.bg-2 {
+        background-image: url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1500&q=80");
+      }
+
+      .autopilot-visual.bg-3 {
+        background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1500&q=80");
+      }
+
+      .autopilot-visual.bg-4 {
+        background-image: url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1500&q=80");
+      }
+
+      .autopilot-visual.bg-5 {
+        background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1500&q=80");
+      }
+
+      .autopilot-visual.bg-6 {
+        background-image: url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1500&q=80");
+      }
+
+      #atab-1:checked ~ .autopilot-tab-nav label[for="atab-1"],
+      #atab-2:checked ~ .autopilot-tab-nav label[for="atab-2"],
+      #atab-3:checked ~ .autopilot-tab-nav label[for="atab-3"],
+      #atab-4:checked ~ .autopilot-tab-nav label[for="atab-4"],
+      #atab-5:checked ~ .autopilot-tab-nav label[for="atab-5"],
+      #atab-6:checked ~ .autopilot-tab-nav label[for="atab-6"] {
+        background: var(--lkk-red);
+        border-color: var(--lkk-red);
+        color: #fff;
+      }
+
+      #atab-1:checked ~ .autopilot-layout .autopilot-visual.bg-1,
+      #atab-2:checked ~ .autopilot-layout .autopilot-visual.bg-2,
+      #atab-3:checked ~ .autopilot-layout .autopilot-visual.bg-3,
+      #atab-4:checked ~ .autopilot-layout .autopilot-visual.bg-4,
+      #atab-5:checked ~ .autopilot-layout .autopilot-visual.bg-5,
+      #atab-6:checked ~ .autopilot-layout .autopilot-visual.bg-6 {
+        display: block;
+      }
+
+      #atab-1:checked ~ .autopilot-layout #apanel-1,
+      #atab-2:checked ~ .autopilot-layout #apanel-2,
+      #atab-3:checked ~ .autopilot-layout #apanel-3,
+      #atab-4:checked ~ .autopilot-layout #apanel-4,
+      #atab-5:checked ~ .autopilot-layout #apanel-5,
+      #atab-6:checked ~ .autopilot-layout #apanel-6 {
+        display: block;
+      }
+
+      .autopilot-card {
+        display: none;
+        border-radius: 20px;
+        padding: 34px 36px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .autopilot-card h3 {
+        margin: 0 0 8px;
+        font-size: clamp(26px, 2.4vw, 34px);
+        color: #fff;
         display: flex;
         align-items: center;
         gap: 14px;
-        justify-content: space-between;
-        transition: background-color 0.2s ease;
       }
 
-      .autopilot-item summary .summary-text {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-
-      .autopilot-item summary .summary-text::before {
-        counter-increment: pilot;
-        content: counter(pilot, decimal-leading-zero);
+      .autopilot-card .step-num {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 34px;
-        height: 34px;
+        width: 40px;
+        height: 40px;
         flex-shrink: 0;
         border-radius: 50%;
         background: var(--lkk-red);
         color: #fff;
-        font-size: 13px;
+        font-size: 15px;
+        font-weight: 700;
       }
 
-      .autopilot-item summary::-webkit-details-marker {
-        display: none;
-      }
-
-      .autopilot-item summary::after {
-        content: "+";
-        font-size: 24px;
-        line-height: 1;
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      .autopilot-item:hover summary {
-        background: rgba(255, 255, 255, 0.12);
-      }
-
-      .autopilot-item[open] summary {
-        background: rgba(255, 255, 255, 0.16);
-      }
-
-      .autopilot-item[open] summary::after {
-        content: "−";
-      }
-
-      .autopilot-body {
-        padding: 0 16px 14px;
-      }
-
-      .autopilot-body ul {
-        margin: 0;
-        padding-left: 20px;
+      .autopilot-card ul {
+        margin: 18px 0 0;
+        padding-left: 22px;
         display: grid;
-        gap: 8px;
+        gap: 12px;
       }
 
-      .autopilot-body li {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.45;
+      .autopilot-card li {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.92);
       }
 
       .leading-change {
@@ -700,7 +708,8 @@
         }
 
         .culture-intro-grid,
-        .change-layout {
+        .change-layout,
+        .autopilot-layout {
           grid-template-columns: 1fr;
         }
 
@@ -709,8 +718,13 @@
           min-height: auto;
         }
 
-        .change-visual {
+        .change-visual,
+        .autopilot-visual {
           min-height: 280px;
+        }
+
+        .autopilot-card {
+          padding: 26px;
         }
       }
 
@@ -934,140 +948,134 @@
         <div class="container">
           <div class="section-head">
             <h2>Autopilot Leadership</h2>
-            <p>Six leadership dimensions guiding daily execution.</p>
+            <p>Select a pillar to see how our leaders operate on autopilot.</p>
           </div>
-          <div class="autopilot-layout">
-            <aside class="autopilot-overview">
-              <p>
-                Click each leadership pillar to expand details. This reduces
-                reading fatigue while still showing full content.
-              </p>
-              <ul class="lead-pills">
-                <li>Choosing The Right Talent</li>
-                <li>High Trust Environment</li>
-                <li>Highly Effective Team</li>
-                <li>Common Goal</li>
-                <li>Effective Empowerment</li>
-                <li>Coaching and Developing Talent</li>
-              </ul>
-              <div class="autopilot-shot" aria-hidden="true"></div>
-            </aside>
-            <div class="autopilot-accordion">
-              <details class="autopilot-item" open>
-                <summary><span class="summary-text">Choosing The Right Talent</span></summary>
-                <div class="autopilot-body">
-                  <ul>
-                    <li>
-                      Attract outstanding talents who are both culture fit and
-                      competent
-                    </li>
-                    <li>
-                      Recognize and utilize people's strengths, placing each
-                      person in a position where they can excel
-                    </li>
-                    <li>
-                      Have the courage to employ people who are more capable
-                      than yourself, continuously increasing the talent density
-                    </li>
-                  </ul>
-                </div>
-              </details>
-              <details class="autopilot-item">
-                <summary><span class="summary-text">High Trust Environment</span></summary>
-                <div class="autopilot-body">
-                  <ul>
-                    <li>
-                      Trust others first, believing that everyone is trustworthy
-                    </li>
-                    <li>
-                      Respect everyone's opinions and consider their
-                      perspectives
-                    </li>
-                    <li>
-                      Practice active listening, express openly, speak the
-                      truth, and foster an atmosphere of mutual trust
-                    </li>
-                  </ul>
-                </div>
-              </details>
-              <details class="autopilot-item">
-                <summary><span class="summary-text">Highly Effective Team</span></summary>
-                <div class="autopilot-body">
-                  <ul>
-                    <li>
-                      While helping others, also actively seek help, fostering
-                      collaboration and resource sharing
-                    </li>
-                    <li>
-                      Be willing to take on extra responsibilities for the team
-                      and honor commitments to the team
-                    </li>
-                    <li>
-                      Address issues directly and ensure they are brought to the
-                      table and ensure the focus is on the issue, not the person
-                    </li>
-                  </ul>
-                </div>
-              </details>
-              <details class="autopilot-item">
-                <summary><span class="summary-text">Common Goal</span></summary>
-                <div class="autopilot-body">
-                  <ul>
-                    <li>
-                      Actively invite relevant individuals to participate in
-                      discussions and decision-making, leveraging collective
-                      wisdom and efforts
-                    </li>
-                    <li>
-                      Utilize effective models and tools to facilitate open,
-                      efficient, and productive discussions
-                    </li>
-                    <li>
-                      Establish clear and mutually understood common goals
-                      through open communication and consensus
-                    </li>
-                  </ul>
-                </div>
-              </details>
-              <details class="autopilot-item">
-                <summary><span class="summary-text">Effective Empowerment</span></summary>
-                <div class="autopilot-body">
-                  <ul>
-                    <li>
-                      Clarify the objectives of delegated tasks, define the
-                      scope of work, and specify the desired outcomes
-                    </li>
-                    <li>
-                      Ensure that employees have the resources and support they
-                      need to achieve their goals
-                    </li>
-                    <li>
-                      Clearly define employees' responsibilities and provide
-                      timely follow up and feedback
-                    </li>
-                  </ul>
-                </div>
-              </details>
-              <details class="autopilot-item">
-                <summary><span class="summary-text">Coaching and Developing Talent</span></summary>
-                <div class="autopilot-body">
-                  <ul>
-                    <li>
-                      Encourage everyone to learn from others, learn through
-                      doing, and learn through teaching, achieving mutual growth
-                      through teaching and learning
-                    </li>
-                    <li>
-                      Provide timely affirmation, recognition, and praise to
-                      empower employees and boost their confidence
-                    </li>
-                    <li>
-                      Coach and guide employees with care and patience to unlock
-                      everyone's potential
-                    </li>
-                  </ul>
-                </div>
-              </details>
+          <div class="autopilot-tabs">
+            <input type="radio" name="autopilot-tab" id="atab-1" class="tab-input" checked />
+            <input type="radio" name="autopilot-tab" id="atab-2" class="tab-input" />
+            <input type="radio" name="autopilot-tab" id="atab-3" class="tab-input" />
+            <input type="radio" name="autopilot-tab" id="atab-4" class="tab-input" />
+            <input type="radio" name="autopilot-tab" id="atab-5" class="tab-input" />
+            <input type="radio" name="autopilot-tab" id="atab-6" class="tab-input" />
+            <div class="tab-nav autopilot-tab-nav">
+              <label for="atab-1"><span class="tab-index">01</span>Choosing The Right Talent</label>
+              <label for="atab-2"><span class="tab-index">02</span>High Trust Environment</label>
+              <label for="atab-3"><span class="tab-index">03</span>Highly Effective Team</label>
+              <label for="atab-4"><span class="tab-index">04</span>Common Goal</label>
+              <label for="atab-5"><span class="tab-index">05</span>Effective Empowerment</label>
+              <label for="atab-6"><span class="tab-index">06</span>Coaching and Developing Talent</label>
+            </div>
+            <div class="autopilot-layout">
+              <div class="autopilot-visual bg-1" data-caption="Choosing The Right Talent" aria-hidden="true"></div>
+              <div class="autopilot-visual bg-2" data-caption="High Trust Environment" aria-hidden="true"></div>
+              <div class="autopilot-visual bg-3" data-caption="Highly Effective Team" aria-hidden="true"></div>
+              <div class="autopilot-visual bg-4" data-caption="Common Goal" aria-hidden="true"></div>
+              <div class="autopilot-visual bg-5" data-caption="Effective Empowerment" aria-hidden="true"></div>
+              <div class="autopilot-visual bg-6" data-caption="Coaching and Developing Talent" aria-hidden="true"></div>
+
+              <article class="autopilot-card" id="apanel-1">
+                <h3><span class="step-num">01</span>Choosing The Right Talent</h3>
+                <ul>
+                  <li>
+                    Attract outstanding talents who are both culture fit and
+                    competent
+                  </li>
+                  <li>
+                    Recognize and utilize people's strengths, placing each
+                    person in a position where they can excel
+                  </li>
+                  <li>
+                    Have the courage to employ people who are more capable
+                    than yourself, continuously increasing the talent density
+                  </li>
+                </ul>
+              </article>
+              <article class="autopilot-card" id="apanel-2">
+                <h3><span class="step-num">02</span>High Trust Environment</h3>
+                <ul>
+                  <li>
+                    Trust others first, believing that everyone is trustworthy
+                  </li>
+                  <li>
+                    Respect everyone's opinions and consider their
+                    perspectives
+                  </li>
+                  <li>
+                    Practice active listening, express openly, speak the
+                    truth, and foster an atmosphere of mutual trust
+                  </li>
+                </ul>
+              </article>
+              <article class="autopilot-card" id="apanel-3">
+                <h3><span class="step-num">03</span>Highly Effective Team</h3>
+                <ul>
+                  <li>
+                    While helping others, also actively seek help, fostering
+                    collaboration and resource sharing
+                  </li>
+                  <li>
+                    Be willing to take on extra responsibilities for the team
+                    and honor commitments to the team
+                  </li>
+                  <li>
+                    Address issues directly and ensure they are brought to the
+                    table and ensure the focus is on the issue, not the person
+                  </li>
+                </ul>
+              </article>
+              <article class="autopilot-card" id="apanel-4">
+                <h3><span class="step-num">04</span>Common Goal</h3>
+                <ul>
+                  <li>
+                    Actively invite relevant individuals to participate in
+                    discussions and decision-making, leveraging collective
+                    wisdom and efforts
+                  </li>
+                  <li>
+                    Utilize effective models and tools to facilitate open,
+                    efficient, and productive discussions
+                  </li>
+                  <li>
+                    Establish clear and mutually understood common goals
+                    through open communication and consensus
+                  </li>
+                </ul>
+              </article>
+              <article class="autopilot-card" id="apanel-5">
+                <h3><span class="step-num">05</span>Effective Empowerment</h3>
+                <ul>
+                  <li>
+                    Clarify the objectives of delegated tasks, define the
+                    scope of work, and specify the desired outcomes
+                  </li>
+                  <li>
+                    Ensure that employees have the resources and support they
+                    need to achieve their goals
+                  </li>
+                  <li>
+                    Clearly define employees' responsibilities and provide
+                    timely follow up and feedback
+                  </li>
+                </ul>
+              </article>
+              <article class="autopilot-card" id="apanel-6">
+                <h3><span class="step-num">06</span>Coaching and Developing Talent</h3>
+                <ul>
+                  <li>
+                    Encourage everyone to learn from others, learn through
+                    doing, and learn through teaching, achieving mutual growth
+                    through teaching and learning
+                  </li>
+                  <li>
+                    Provide timely affirmation, recognition, and praise to
+                    empower employees and boost their confidence
+                  </li>
+                  <li>
+                    Coach and guide employees with care and patience to unlock
+                    everyone's potential
+                  </li>
+                </ul>
+              </article>
             </div>
           </div>
         </div>
