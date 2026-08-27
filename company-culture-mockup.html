@@ -287,37 +287,47 @@
 
       .values-layout {
         display: grid;
-        gap: 18px;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 20px;
       }
 
-      .value-row {
+      .value-feature {
         position: relative;
         overflow: hidden;
-        border-radius: 20px;
-        min-height: 210px;
-        padding: 32px 36px;
-        display: grid;
-        grid-template-columns: 1fr 1.35fr;
-        align-items: center;
-        gap: 24px;
+        border-radius: 24px;
+        min-height: 620px;
+        padding: 40px;
         color: #fff;
         background:
-          linear-gradient(120deg, rgba(17, 24, 39, 0.84), rgba(17, 24, 39, 0.55)),
-          url("https://preview-web.lkk.com/files/live/sites/corporate/files/About%20US/behindthebrand_s.jpg")
+          linear-gradient(150deg, rgba(15, 21, 35, 0.78), rgba(15, 21, 35, 0.42)),
+          url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80")
             center center / cover no-repeat;
       }
 
-      .value-row:nth-child(even) {
+      .value-feature h3 {
+        margin: 0 0 20px;
+        font-size: clamp(34px, 3.2vw, 54px);
+        line-height: 1.05;
+      }
+
+      .value-card-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .value-card {
+        border-radius: 16px;
+        padding: 22px;
+        color: #fff;
         background:
-          linear-gradient(120deg, rgba(22, 39, 73, 0.84), rgba(22, 39, 73, 0.5)),
-          url("https://preview-web.lkk.com/files/live/sites/corporate/files/About%20US/banner-image.jpg")
+          linear-gradient(145deg, rgba(24, 42, 84, 0.9), rgba(11, 28, 59, 0.74)),
+          url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80")
             center center / cover no-repeat;
       }
 
-      .value-row h3 {
-        margin: 0;
-        font-size: clamp(28px, 2.8vw, 43px);
-        line-height: 1.08;
+      .value-card h4 {
+        margin: 0 0 10px;
+        font-size: clamp(24px, 1.9vw, 33px);
       }
 
       .value-points {
@@ -325,59 +335,117 @@
         margin: 0;
         padding: 0;
         display: grid;
-        gap: 10px;
+        gap: 8px;
       }
 
       .value-points li {
-        display: grid;
-        gap: 2px;
-        padding: 10px 14px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.14);
+        border-left: 3px solid rgba(255, 255, 255, 0.7);
+        padding-left: 12px;
       }
 
       .point-label {
-        font-size: clamp(18px, 1.35vw, 24px);
+        font-size: clamp(16px, 1.08vw, 18px);
         font-weight: 700;
-        line-height: 1.18;
-        color: rgba(255, 255, 255, 0.98);
+        color: rgba(255, 255, 255, 0.97);
       }
 
-      .point-note {
-        font-size: clamp(14px, 1.02vw, 16px);
-        color: rgba(255, 255, 255, 0.86);
-      }
-
-      .immersive-band {
-        background: linear-gradient(170deg, #fff 0%, #f4f7ff 100%);
-      }
-
-      .band-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-      }
-
-      .band-item {
-        min-height: 190px;
-        padding: 24px 28px;
-        border-radius: 16px;
+      .autopilot {
         background:
-          linear-gradient(130deg, rgba(9, 27, 57, 0.86), rgba(24, 58, 108, 0.66)),
-          url("https://preview-web.lkk.com/files/live/sites/corporate/files/About%20US/Company%20Vision%20and%20Mission/our_vision_950x792.jpg")
+          linear-gradient(180deg, #09142a, #0f1f3f),
+          url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1800&q=80")
             center center / cover no-repeat;
         color: #fff;
       }
 
-      .band-item h3 {
-        margin: 0 0 10px;
-        font-size: clamp(22px, 1.9vw, 30px);
+      .autopilot .section-head p {
+        color: rgba(255, 255, 255, 0.86);
       }
 
-      .band-item p {
+      .autopilot .section-head h2 {
+        color: #fff;
+      }
+
+      .autopilot-track {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .pilot-step {
+        border-radius: 14px;
+        padding: 20px 14px;
+        min-height: 220px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(2px);
+      }
+
+      .pilot-step .num {
+        display: inline-flex;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.16);
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+
+      .pilot-step h3 {
+        margin: 0 0 8px;
+        font-size: 21px;
+        line-height: 1.2;
+      }
+
+      .pilot-step p {
         margin: 0;
-        font-size: clamp(16px, 1.1vw, 18px);
-        color: rgba(255, 255, 255, 0.93);
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .leading-change {
+        background: #ffffff;
+      }
+
+      .change-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+        align-items: stretch;
+      }
+
+      .change-visual {
+        border-radius: 22px;
+        min-height: 650px;
+        background:
+          linear-gradient(180deg, rgba(8, 19, 43, 0.44), rgba(8, 19, 43, 0.72)),
+          url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1500&q=80")
+            center center / cover no-repeat;
+      }
+
+      .change-stack {
+        display: grid;
+        gap: 14px;
+      }
+
+      .change-card {
+        border-radius: 16px;
+        padding: 20px 22px;
+        border: 1px solid #dbe4f5;
+        background: linear-gradient(170deg, #f7faff 0%, #ffffff 100%);
+      }
+
+      .change-card h3 {
+        margin: 0 0 7px;
+        font-size: 27px;
+      }
+
+      .change-card p {
+        margin: 0;
+        font-size: 15px;
+        color: #4c5a74;
       }
 
       @media (max-width: 1080px) {
@@ -393,8 +461,12 @@
           font-size: 14px;
         }
 
-        .value-row {
+        .values-layout {
           grid-template-columns: 1fr;
+        }
+
+        .autopilot-track {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
       }
 
@@ -430,8 +502,16 @@
         }
 
         .culture-intro-grid,
-        .band-grid {
+        .change-layout {
           grid-template-columns: 1fr;
+        }
+
+        .autopilot-track {
+          grid-template-columns: 1fr;
+        }
+
+        .value-feature {
+          min-height: 460px;
         }
       }
 
@@ -520,123 +600,92 @@
             <p>Five core values with key points.</p>
           </div>
           <div class="values-layout">
-            <article class="value-row">
+            <article class="value-feature">
               <h3>Si Li Ji Ren</h3>
               <ul class="value-points">
                 <li>
                   <span class="point-label">Helicopter View</span>
-                  <span class="point-note">See the full picture before acting.</span>
                 </li>
                 <li>
                   <span class="point-label">Think from Others' Perspectives</span>
-                  <span class="point-note">Decide with empathy for stakeholders.</span>
                 </li>
                 <li>
                   <span class="point-label">Care about Others' Feelings</span>
-                  <span class="point-note">Build trust through respect and care.</span>
                 </li>
               </ul>
             </article>
-            <article class="value-row">
-              <h3>Pragmatism</h3>
-              <ul class="value-points">
-                <li>
-                  <span class="point-label">Face Reality</span>
-                  <span class="point-note">Work from facts, not assumptions.</span>
-                </li>
-                <li>
-                  <span class="point-label">Prioritize Impact</span>
-                  <span class="point-note">Focus on what moves results most.</span>
-                </li>
-                <li>
-                  <span class="point-label">Execute with Discipline</span>
-                  <span class="point-note">Convert plans into measurable outcomes.</span>
-                </li>
-              </ul>
-            </article>
-            <article class="value-row">
-              <h3>Integrity</h3>
-              <ul class="value-points">
-                <li>
-                  <span class="point-label">Do the Right Thing</span>
-                  <span class="point-note">Hold ethical standards in every action.</span>
-                </li>
-                <li>
-                  <span class="point-label">Be Transparent</span>
-                  <span class="point-note">Communicate honestly and consistently.</span>
-                </li>
-                <li>
-                  <span class="point-label">Honor Commitments</span>
-                  <span class="point-note">Deliver what we promise to all partners.</span>
-                </li>
-              </ul>
-            </article>
-            <article class="value-row">
-              <h3>Constant Entrepreneurship</h3>
-              <ul class="value-points">
-                <li>
-                  <span class="point-label">6677</span>
-                  <span class="point-note">Keep entrepreneurial drive always on.</span>
-                </li>
-                <li>
-                  <span class="point-label">Breakthrough &amp; Innovate</span>
-                  <span class="point-note">Challenge boundaries with new ideas.</span>
-                </li>
-                <li>
-                  <span class="point-label">Never Set Limits</span>
-                  <span class="point-note">Pursue growth beyond current constraints.</span>
-                </li>
-              </ul>
-            </article>
-            <article class="value-row">
-              <h3>100-1=0</h3>
-              <ul class="value-points">
-                <li>
-                  <span class="point-label">No Weak Link</span>
-                  <span class="point-note">Maintain quality and safety end-to-end.</span>
-                </li>
-                <li>
-                  <span class="point-label">Every Detail Matters</span>
-                  <span class="point-note">Small misses can undermine big wins.</span>
-                </li>
-                <li>
-                  <span class="point-label">Own the Last 1%</span>
-                  <span class="point-note">Finish with zero-compromise standards.</span>
-                </li>
-              </ul>
-            </article>
+            <div class="value-card-grid">
+              <article class="value-card">
+                <h4>Pragmatism</h4>
+                <ul class="value-points">
+                  <li><span class="point-label">Face Reality</span></li>
+                  <li><span class="point-label">Prioritize Impact</span></li>
+                  <li><span class="point-label">Execute with Discipline</span></li>
+                </ul>
+              </article>
+              <article class="value-card">
+                <h4>Integrity</h4>
+                <ul class="value-points">
+                  <li><span class="point-label">Do the Right Thing</span></li>
+                  <li><span class="point-label">Be Transparent</span></li>
+                  <li><span class="point-label">Honor Commitments</span></li>
+                </ul>
+              </article>
+              <article class="value-card">
+                <h4>Constant Entrepreneurship</h4>
+                <ul class="value-points">
+                  <li><span class="point-label">6677</span></li>
+                  <li><span class="point-label">Breakthrough &amp; Innovate</span></li>
+                  <li><span class="point-label">Never Set Limits</span></li>
+                </ul>
+              </article>
+              <article class="value-card">
+                <h4>100-1=0</h4>
+                <ul class="value-points">
+                  <li><span class="point-label">No Weak Link</span></li>
+                  <li><span class="point-label">Every Detail Matters</span></li>
+                  <li><span class="point-label">Own the Last 1%</span></li>
+                </ul>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="immersive-band">
+      <section class="autopilot">
         <div class="container">
           <div class="section-head">
             <h2>Autopilot Leadership</h2>
             <p>Six leadership dimensions guiding daily execution.</p>
           </div>
-          <div class="band-grid">
-            <article class="band-item">
+          <div class="autopilot-track">
+            <article class="pilot-step">
+              <span class="num">01</span>
               <h3>Vision Alignment</h3>
               <p>Align teams around clear goals and long-term direction.</p>
             </article>
-            <article class="band-item">
+            <article class="pilot-step">
+              <span class="num">02</span>
               <h3>Ownership</h3>
               <p>Take responsibility for outcomes and follow-through.</p>
             </article>
-            <article class="band-item">
+            <article class="pilot-step">
+              <span class="num">03</span>
               <h3>Decision Quality</h3>
               <p>Make thoughtful, data-informed decisions under pressure.</p>
             </article>
-            <article class="band-item">
+            <article class="pilot-step">
+              <span class="num">04</span>
               <h3>Coaching Others</h3>
               <p>Develop talent through feedback, support, and challenge.</p>
             </article>
-            <article class="band-item">
+            <article class="pilot-step">
+              <span class="num">05</span>
               <h3>Resilience</h3>
               <p>Stay steady and adaptive through change and uncertainty.</p>
             </article>
-            <article class="band-item">
+            <article class="pilot-step">
+              <span class="num">06</span>
               <h3>Execution Discipline</h3>
               <p>Deliver commitments with rigor, rhythm, and quality.</p>
             </article>
@@ -644,29 +693,32 @@
         </div>
       </section>
 
-      <section class="immersive-band">
+      <section class="leading-change">
         <div class="container">
           <div class="section-head">
             <h2>Leading Change</h2>
             <p>Four change pillars focused on transformation and impact.</p>
           </div>
-          <div class="band-grid">
-            <article class="band-item">
-              <h3>Adaptability</h3>
-              <p>Respond quickly to market shifts and new opportunities.</p>
-            </article>
-            <article class="band-item">
-              <h3>Innovation Mindset</h3>
-              <p>Challenge assumptions and experiment with better ways.</p>
-            </article>
-            <article class="band-item">
-              <h3>Cross-Functional Momentum</h3>
-              <p>Unite functions to accelerate delivery and learning.</p>
-            </article>
-            <article class="band-item">
-              <h3>Sustainable Outcomes</h3>
-              <p>Embed improvements that scale and endure over time.</p>
-            </article>
+          <div class="change-layout">
+            <div class="change-visual"></div>
+            <div class="change-stack">
+              <article class="change-card">
+                <h3>Adaptability</h3>
+                <p>Respond quickly to market shifts and new opportunities.</p>
+              </article>
+              <article class="change-card">
+                <h3>Innovation Mindset</h3>
+                <p>Challenge assumptions and experiment with better ways.</p>
+              </article>
+              <article class="change-card">
+                <h3>Cross-Functional Momentum</h3>
+                <p>Unite functions to accelerate delivery and learning.</p>
+              </article>
+              <article class="change-card">
+                <h3>Sustainable Outcomes</h3>
+                <p>Embed improvements that scale and endure over time.</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
