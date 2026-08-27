@@ -323,44 +323,104 @@
         color: #fff;
       }
 
-      .autopilot-track {
+      .autopilot-layout {
         display: grid;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        gap: 14px;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 22px;
       }
 
-      .pilot-step {
-        border-radius: 14px;
-        padding: 20px 14px;
-        min-height: 220px;
+      .autopilot-overview {
+        border-radius: 16px;
+        padding: 22px;
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(2px);
+        align-self: start;
       }
 
-      .pilot-step .num {
-        display: inline-flex;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.16);
-        align-items: center;
-        justify-content: center;
-        font-size: 13px;
-        font-weight: 700;
-        margin-bottom: 14px;
+      .autopilot-overview p {
+        margin: 0 0 16px;
+        color: rgba(255, 255, 255, 0.88);
       }
 
-      .pilot-step h3 {
-        margin: 0 0 8px;
-        font-size: 21px;
-        line-height: 1.2;
-      }
-
-      .pilot-step p {
+      .lead-pills {
+        list-style: none;
         margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 8px;
+      }
+
+      .lead-pills li {
+        padding: 9px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 13px;
+        line-height: 1.25;
+      }
+
+      .autopilot-accordion {
+        display: grid;
+        gap: 10px;
+      }
+
+      .autopilot-item {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .autopilot-item summary {
+        cursor: pointer;
+        list-style: none;
+        padding: 14px 16px;
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: background-color 0.2s ease;
+      }
+
+      .autopilot-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .autopilot-item summary::after {
+        content: "+";
+        font-size: 24px;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .autopilot-item:hover summary {
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .autopilot-item[open] summary {
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      .autopilot-item[open] summary::after {
+        content: "−";
+      }
+
+      .autopilot-body {
+        padding: 0 16px 14px;
+      }
+
+      .autopilot-body ul {
+        margin: 0;
+        padding-left: 20px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .autopilot-body li {
         font-size: 14px;
-        color: rgba(255, 255, 255, 0.86);
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.45;
       }
 
       .leading-change {
@@ -427,8 +487,8 @@
           grid-template-columns: 1fr;
         }
 
-        .autopilot-track {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
+        .autopilot-layout {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -461,10 +521,6 @@
 
         .culture-intro-grid,
         .change-layout {
-          grid-template-columns: 1fr;
-        }
-
-        .autopilot-track {
           grid-template-columns: 1fr;
         }
 
@@ -683,37 +739,138 @@
             <h2>Autopilot Leadership</h2>
             <p>Six leadership dimensions guiding daily execution.</p>
           </div>
-          <div class="autopilot-track">
-            <article class="pilot-step">
-              <span class="num">01</span>
-              <h3>Vision Alignment</h3>
-              <p>Align teams around clear goals and long-term direction.</p>
-            </article>
-            <article class="pilot-step">
-              <span class="num">02</span>
-              <h3>Ownership</h3>
-              <p>Take responsibility for outcomes and follow-through.</p>
-            </article>
-            <article class="pilot-step">
-              <span class="num">03</span>
-              <h3>Decision Quality</h3>
-              <p>Make thoughtful, data-informed decisions under pressure.</p>
-            </article>
-            <article class="pilot-step">
-              <span class="num">04</span>
-              <h3>Coaching Others</h3>
-              <p>Develop talent through feedback, support, and challenge.</p>
-            </article>
-            <article class="pilot-step">
-              <span class="num">05</span>
-              <h3>Resilience</h3>
-              <p>Stay steady and adaptive through change and uncertainty.</p>
-            </article>
-            <article class="pilot-step">
-              <span class="num">06</span>
-              <h3>Execution Discipline</h3>
-              <p>Deliver commitments with rigor, rhythm, and quality.</p>
-            </article>
+          <div class="autopilot-layout">
+            <aside class="autopilot-overview">
+              <p>
+                Click each leadership pillar to expand details. This reduces
+                reading fatigue while still showing full content.
+              </p>
+              <ul class="lead-pills">
+                <li>Choosing The Right Talent</li>
+                <li>High Trust Environment</li>
+                <li>Highly Effective Team</li>
+                <li>Common Goal</li>
+                <li>Effective Empowerment</li>
+                <li>Coaching and Developing Talent</li>
+              </ul>
+            </aside>
+            <div class="autopilot-accordion">
+              <details class="autopilot-item" open>
+                <summary>Choosing The Right Talent</summary>
+                <div class="autopilot-body">
+                  <ul>
+                    <li>
+                      Attract outstanding talents who are both culture fit and
+                      competent
+                    </li>
+                    <li>
+                      Recognize and utilize people's strengths, placing each
+                      person in a position where they can excel
+                    </li>
+                    <li>
+                      Have the courage to employ people who are more capable
+                      than yourself, continuously increasing the talent density
+                    </li>
+                  </ul>
+                </div>
+              </details>
+              <details class="autopilot-item">
+                <summary>High Trust Environment</summary>
+                <div class="autopilot-body">
+                  <ul>
+                    <li>
+                      Trust others first, believing that everyone is trustworthy
+                    </li>
+                    <li>
+                      Respect everyone's opinions and consider their
+                      perspectives
+                    </li>
+                    <li>
+                      Practice active listening, express openly, speak the
+                      truth, and foster an atmosphere of mutual trust
+                    </li>
+                  </ul>
+                </div>
+              </details>
+              <details class="autopilot-item">
+                <summary>Highly Effective Team</summary>
+                <div class="autopilot-body">
+                  <ul>
+                    <li>
+                      While helping others, also actively seek help, fostering
+                      collaboration and resource sharing
+                    </li>
+                    <li>
+                      Be willing to take on extra responsibilities for the team
+                      and honor commitments to the team
+                    </li>
+                    <li>
+                      Address issues directly and ensure they are brought to the
+                      table and ensure the focus is on the issue, not the person
+                    </li>
+                  </ul>
+                </div>
+              </details>
+              <details class="autopilot-item">
+                <summary>Common Goal</summary>
+                <div class="autopilot-body">
+                  <ul>
+                    <li>
+                      Actively invite relevant individuals to participate in
+                      discussions and decision-making, leveraging collective
+                      wisdom and efforts
+                    </li>
+                    <li>
+                      Utilize effective models and tools to facilitate open,
+                      efficient, and productive discussions
+                    </li>
+                    <li>
+                      Establish clear and mutually understood common goals
+                      through open communication and consensus
+                    </li>
+                  </ul>
+                </div>
+              </details>
+              <details class="autopilot-item">
+                <summary>Effective Empowerment</summary>
+                <div class="autopilot-body">
+                  <ul>
+                    <li>
+                      Clarify the objectives of delegated tasks, define the
+                      scope of work, and specify the desired outcomes
+                    </li>
+                    <li>
+                      Ensure that employees have the resources and support they
+                      need to achieve their goals
+                    </li>
+                    <li>
+                      Clearly define employees' responsibilities and provide
+                      timely follow up and feedback
+                    </li>
+                  </ul>
+                </div>
+              </details>
+              <details class="autopilot-item">
+                <summary>Coaching and Developing Talent</summary>
+                <div class="autopilot-body">
+                  <ul>
+                    <li>
+                      Encourage everyone to learn from others, learn through
+                      doing, and learn through teaching, achieving mutual growth
+                      through teaching and learning
+                    </li>
+                    <li>
+                      Provide timely affirmation, recognition, and praise to
+                      empower employees and boost their confidence
+                    </li>
+                    <li>
+                      Coach and guide employees with care and patience to unlock
+                      everyone's potential
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </div>
           </div>
         </div>
       </section>
