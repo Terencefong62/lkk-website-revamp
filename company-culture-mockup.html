@@ -6,15 +6,16 @@
     <title>Company Culture Mockup</title>
     <style>
       :root {
-        --bg: #f6f8fb;
+        --bg: #fff5e0;
         --card: #ffffff;
-        --text: #14223d;
-        --muted: #5f6b7a;
+        --text: #534838;
+        --muted: #6d5e49;
         --primary: #0f65d8;
         --primary-soft: #e8f1ff;
         --line: #dde4ef;
-        --lkk-red: #e7700b;
-        --lkk-cream: #fff5e8;
+        --lkk-red: #c7000b;
+        --lkk-cream: #fff5e0;
+        --lkk-hero-text: #fffceb;
       }
 
       * {
@@ -201,7 +202,7 @@
 
       .masthead h1 {
         margin: 0;
-        color: rgb(255, 252, 235);
+        color: var(--lkk-hero-text);
         font-size: clamp(54px, 5.45vw, 78px);
         line-height: 1.05;
         letter-spacing: 0;
@@ -230,11 +231,12 @@
         font-size: clamp(34px, 4vw, 58px);
         line-height: 1.08;
         letter-spacing: -0.02em;
+        color: var(--lkk-red);
       }
 
       .section-head p {
         margin: 0;
-        color: #2a3657;
+        color: var(--text);
         font-size: clamp(19px, 1.7vw, 25px);
         line-height: 1.45;
       }
@@ -282,7 +284,7 @@
       }
 
       .values {
-        background: #f8f5ee;
+        background: var(--bg);
       }
 
       .values-layout {
@@ -406,7 +408,7 @@
       }
 
       .leading-change {
-        background: #ffffff;
+        background: var(--bg);
       }
 
       .change-layout {
@@ -445,7 +447,7 @@
       .change-card p {
         margin: 0;
         font-size: 15px;
-        color: #4c5a74;
+        color: var(--text);
       }
 
       @media (max-width: 1080px) {
