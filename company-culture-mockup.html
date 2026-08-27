@@ -15,7 +15,6 @@
         --line: #dde4ef;
         --lkk-red: #c7000b;
         --lkk-cream: #fff5e0;
-        --lkk-hero-text: #fffceb;
       }
 
       * {
@@ -157,56 +156,8 @@
         transform-origin: center;
       }
 
-      .hero-top {
-        margin-top: 140px;
-      }
-
-      .masthead {
-        position: relative;
-        min-height: 640px;
-        display: grid;
-        place-items: center;
-        overflow: hidden;
-        color: #fff8ea;
-        background: #000;
-      }
-
-      .masthead::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(150deg, #1f2c47 0%, #0f1f3f 100%);
-      }
-
-      .masthead::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.14) 0%,
-          rgba(0, 0, 0, 0.22) 100%
-        );
-      }
-
-      .masthead-content {
-        position: relative;
-        z-index: 1;
-        max-width: 780px;
-        margin: 0 auto;
-        text-align: center;
-        padding: 0;
-      }
-
-      .masthead h1 {
-        margin: 0;
-        color: var(--lkk-hero-text);
-        font-size: clamp(54px, 5.45vw, 78px);
-        line-height: 1.05;
-        letter-spacing: 0;
-        text-transform: uppercase;
-        font-weight: 700;
-        text-shadow: rgba(55, 38, 30, 0.5) 2px 4px 24px;
+      main {
+        padding-top: 140px;
       }
 
       h1,
@@ -470,10 +421,6 @@
       }
 
       @media (max-width: 1080px) {
-        .masthead {
-          min-height: 560px;
-        }
-
         .nav-links {
           gap: 14px;
         }
@@ -496,12 +443,8 @@
           display: none;
         }
 
-        .hero-top {
-          margin-top: 90px;
-        }
-
-        .masthead {
-          min-height: 500px;
+        main {
+          padding-top: 90px;
         }
 
         .culture-intro {
@@ -578,14 +521,6 @@
         </div>
       </nav>
     </header>
-
-    <section class="hero-top masthead">
-      <div class="container">
-        <div class="masthead-content">
-          <h1>Our Vision, Mission and Values &amp; Leadership</h1>
-        </div>
-      </div>
-    </section>
 
     <main>
       <section class="culture-intro">
