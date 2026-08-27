@@ -3,587 +3,929 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LKK Corporate Homepage — Low-Fidelity Wireframe (EN)</title>
-  <meta name="description" content="Low-fidelity wireframe for Lee Kum Kee corporate homepage. Based on LKK_Corporate_Homepage_Module_Copy.xlsx.">
+  <title>Lee Kum Kee Corporate | Homepage Concept</title>
+  <meta name="description" content="Immersive corporate homepage concept aligned to LKK_Corporate_Homepage_Module_Copy.xlsx">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --wire-bg: #f2f2f2;
-      --wire-surface: #ffffff;
-      --wire-border: #bdbdbd;
-      --wire-border-strong: #757575;
-      --wire-text: #212121;
-      --wire-muted: #616161;
-      --wire-placeholder: #e0e0e0;
-      --wire-annotation: #1565c0;
-      --wire-annotation-bg: #e3f2fd;
-      --wire-module: #424242;
-      --wire-cta: #9e9e9e;
-      --max-width: 1200px;
+      --red: #a61f35;
+      --red-deep: #7a1426;
+      --gold: #d4a853;
+      --gold-light: #f0d9a8;
+      --cream: #faf4e8;
+      --cream-dark: #efe4cf;
+      --ink: #1a1410;
+      --ink-soft: #4a3f36;
+      --ink-muted: #7a6e62;
+      --white: #fffdf9;
+      --glass: rgba(255, 253, 249, 0.12);
+      --glass-border: rgba(255, 253, 249, 0.22);
+      --shadow: 0 24px 60px rgba(26, 20, 16, 0.14);
+      --radius: 20px;
+      --radius-sm: 12px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      color: var(--wire-text);
-      background: var(--wire-bg);
-      line-height: 1.5;
+      font-family: "Outfit", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.65;
+      overflow-x: hidden;
     }
 
-    .wf-skip {
-      position: absolute;
-      left: -9999px;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      z-index: 9999;
     }
 
-    /* Wireframe legend */
-    .wf-legend {
-      background: #263238;
-      color: #eceff1;
-      padding: 1rem 0;
-      font-size: 0.82rem;
-      border-bottom: 3px solid #455a64;
-    }
-
-    .wf-legend .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 2rem;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .wf-legend h1 {
-      margin: 0;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .wf-legend p {
-      margin: 0.2rem 0 0;
-      opacity: 0.85;
-      font-size: 0.78rem;
-    }
-
-    .wf-legend-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem 1.25rem;
-    }
-
-    .wf-legend-item {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.75rem;
-    }
-
-    .wf-swatch {
-      width: 14px;
-      height: 14px;
-      border: 1px solid rgba(255,255,255,0.4);
-      flex-shrink: 0;
-    }
+    img { display: block; max-width: 100%; }
 
     .container {
-      width: min(var(--max-width), calc(100% - 2rem));
+      width: min(1240px, calc(100% - 2.5rem));
       margin: 0 auto;
     }
 
-    /* Annotation callouts */
-    .annotation {
-      background: var(--wire-annotation-bg);
-      border: 1px dashed var(--wire-annotation);
-      border-radius: 4px;
-      padding: 0.55rem 0.7rem;
-      font-size: 0.75rem;
-      color: #0d47a1;
-      margin-top: 0.65rem;
+    .display {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
     }
 
-    .annotation strong {
-      display: block;
-      margin-bottom: 0.15rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-size: 0.68rem;
-    }
-
-    /* Module wrapper */
-    .module {
-      border-bottom: 2px solid var(--wire-border-strong);
-      background: var(--wire-surface);
-      position: relative;
-    }
-
-    .module-tag {
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: var(--wire-module);
-      color: #fff;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.65rem;
-      z-index: 2;
-    }
-
-    .module-inner {
-      padding: 2.5rem 0 2rem;
-    }
-
-    .journey-label {
-      display: inline-block;
-      margin: 0 0 0.5rem;
-      padding: 0.2rem 0.5rem;
-      background: #eeeeee;
-      border: 1px solid var(--wire-border);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--wire-muted);
-    }
-
-    h2 {
+    .eyebrow {
       margin: 0;
-      font-size: clamp(1.25rem, 2.8vw, 1.75rem);
+      font-size: 0.72rem;
       font-weight: 700;
-      line-height: 1.25;
-      max-width: 28ch;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
     }
 
-    .body-copy {
-      margin: 0.75rem 0 0;
-      color: var(--wire-muted);
-      font-size: 0.92rem;
-      max-width: 68ch;
+    .eyebrow-dark { color: var(--red); }
+
+    .lead {
+      margin: 1rem 0 0;
+      font-size: clamp(1rem, 1.8vw, 1.12rem);
+      color: var(--ink-soft);
+      max-width: 58ch;
+      font-weight: 400;
     }
 
-    /* Placeholders */
-    .ph {
-      background: repeating-linear-gradient(
-        -45deg,
-        var(--wire-placeholder),
-        var(--wire-placeholder) 8px,
-        #d5d5d5 8px,
-        #d5d5d5 16px
-      );
-      border: 1px dashed var(--wire-border-strong);
-      display: flex;
+    .btn {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--wire-muted);
-      font-size: 0.78rem;
+      gap: 0.55rem;
+      padding: 0.9rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.88rem;
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.35s var(--ease);
     }
 
-    .ph-image { min-height: 280px; }
-    .ph-image-tall { min-height: 360px; }
-    .ph-image-short { min-height: 140px; }
-    .ph-icon { width: 48px; height: 48px; border-radius: 4px; flex-shrink: 0; }
+    .btn:hover { transform: translateY(-2px); }
 
-    .cta {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.55rem 1rem;
-      border: 2px solid var(--wire-border-strong);
-      background: var(--wire-cta);
-      color: #fff;
-      font-size: 0.82rem;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: 2px;
+    .btn-primary {
+      background: linear-gradient(135deg, var(--red), var(--red-deep));
+      color: var(--white);
+      box-shadow: 0 12px 30px rgba(166, 31, 53, 0.35);
     }
 
-    .cta-secondary {
+    .btn-primary:hover {
+      box-shadow: 0 18px 40px rgba(166, 31, 53, 0.45);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 253, 249, 0.14);
+      color: var(--white);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-ghost:hover { background: rgba(255, 253, 249, 0.22); }
+
+    .btn-outline {
       background: transparent;
-      color: var(--wire-text);
+      color: var(--red);
+      border: 1.5px solid rgba(166, 31, 53, 0.35);
     }
 
-    .cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
+    .btn-outline:hover {
+      background: var(--red);
+      color: var(--white);
+      border-color: var(--red);
     }
 
-    /* Global chrome */
-    .site-chrome {
-      background: var(--wire-surface);
-      border-bottom: 1px solid var(--wire-border);
+    .btn svg { width: 16px; height: 16px; }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: background 0.4s var(--ease), border-color 0.4s var(--ease), padding 0.4s var(--ease);
     }
 
-    .utility-bar {
-      border-bottom: 1px solid var(--wire-border);
-      padding: 0.4rem 0;
-      font-size: 0.72rem;
-      color: var(--wire-muted);
-      text-align: right;
+    .site-header.scrolled {
+      background: rgba(26, 20, 16, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 253, 249, 0.08);
     }
 
-    .main-header {
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 1.1rem 0;
       gap: 1rem;
-      padding: 0.85rem 0;
     }
 
-    .logo-ph {
-      width: 120px;
-      height: 36px;
-      border: 1px dashed var(--wire-border-strong);
-      background: var(--wire-placeholder);
-      display: grid;
-      place-items: center;
-      font-size: 0.68rem;
-      color: var(--wire-muted);
+    .logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
       font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.06em;
     }
 
-    .nav-ph {
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: rgba(255, 253, 249, 0.82);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.25s;
+    }
+
+    .nav a:hover { color: var(--gold-light); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(26, 20, 16, 0.25) 0%, rgba(26, 20, 16, 0.55) 45%, rgba(26, 20, 16, 0.88) 100%),
+        linear-gradient(120deg, rgba(166, 31, 53, 0.35), transparent 55%),
+        url("https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
+      transform: scale(1.04);
+      animation: heroZoom 18s var(--ease) infinite alternate;
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1.04); }
+      to { transform: scale(1.1); }
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 55vw;
+      height: 55vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 168, 83, 0.22), transparent 68%);
+      top: 10%;
+      right: -10%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 8rem 0 5rem;
+      width: 100%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: end;
+    }
+
+    .hero h1 {
+      margin: 0.75rem 0 0;
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      max-width: 12ch;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: rgba(255, 253, 249, 0.88);
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      margin-top: 2rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      font-size: 0.75rem;
-      color: var(--wire-muted);
+      gap: 0.85rem;
     }
 
-    .nav-ph span {
-      padding: 0.3rem 0.5rem;
-      border: 1px solid var(--wire-border);
-      background: #fafafa;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-light);
     }
 
-  /* Module-specific layouts */
-    .hero-layout {
+  /* Glance */
+    .glance {
+      position: relative;
+      margin-top: -4rem;
+      z-index: 5;
+      padding-bottom: 5rem;
+    }
+
+    .glance-panel {
+      background: var(--white);
+      border-radius: calc(var(--radius) + 8px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(239, 228, 207, 0.9);
+    }
+
+    .glance-top {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 0;
+      grid-template-columns: 1fr 1.2fr;
+      min-height: 420px;
     }
 
-    .hero-text {
-      padding: 2rem 0 1.5rem;
+    .glance-stats {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(160deg, #fffdf9, #f8efe0);
     }
 
-    .glance-layout {
+    .glance-stats h2 {
+      margin: 0.5rem 0 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+
+    .stats-grid {
       display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 1.25rem;
-      margin-top: 1.25rem;
-      align-items: stretch;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-top: 1.75rem;
     }
 
-    .facts-strip {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.55rem;
-      margin-top: 0.75rem;
+    .stat {
+      padding: 1.1rem 1rem;
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
     }
 
-    .fact-box {
-      border: 1px solid var(--wire-border);
-      background: #fafafa;
-      padding: 0.7rem 0.8rem;
+    .stat:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(26, 20, 16, 0.08);
+    }
+
+    .stat-value {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .stat-label {
+      margin: 0.35rem 0 0;
       font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--wire-text);
+      color: var(--ink-muted);
+      line-height: 1.4;
     }
 
-    .fact-box.wide {
-      grid-column: 1 / -1;
+    .glance-map {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(26, 20, 16, 0.15), rgba(166, 31, 53, 0.25)),
+        url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
     }
+
+    .map-overlay {
+      width: 100%;
+      padding: 1.25rem 1.4rem;
+      border-radius: var(--radius-sm);
+      background: rgba(26, 20, 16, 0.72);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 253, 249, 0.12);
+      color: var(--white);
+    }
+
+    .map-overlay p {
+      margin: 0.35rem 0 0;
+      font-size: 0.88rem;
+      color: rgba(255, 253, 249, 0.78);
+    }
+
+  /* Sections */
+    section { padding: clamp(4.5rem, 9vw, 7rem) 0; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 3rem;
+    }
+
+    .section-head h2 {
+      margin: 0.5rem 0 0;
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    }
+
+    .section-head.compact { margin-bottom: 2rem; }
+
+  /* Story */
+    .story {
+      background: var(--ink);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(212, 168, 83, 0.12), transparent 45%);
+      pointer-events: none;
+    }
+
+    .story .eyebrow { color: var(--gold); }
+    .story .lead { color: rgba(255, 253, 249, 0.72); }
 
     .timeline {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-      margin-top: 1.25rem;
+      gap: 1.25rem;
+      position: relative;
     }
 
-    .timeline-step {
-      border: 1px solid var(--wire-border);
-      padding: 0.85rem;
-      background: #fafafa;
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 2.8rem;
+      left: 8%;
+      right: 8%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.5), transparent);
     }
 
-    .timeline-step .step-label {
-      font-size: 0.68rem;
+    .timeline-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255, 253, 249, 0.04);
+      border: 1px solid rgba(255, 253, 249, 0.08);
+      transition: transform 0.45s var(--ease), border-color 0.45s var(--ease);
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 168, 83, 0.35);
+    }
+
+    .timeline-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      filter: saturate(1.1);
+    }
+
+    .timeline-body {
+      padding: 1.35rem 1.25rem 1.5rem;
+    }
+
+    .timeline-year {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-size: 0.72rem;
       font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--wire-muted);
-      margin: 0 0 0.35rem;
+      color: var(--gold);
     }
 
-    .timeline-step h3 {
+    .timeline-body h3 {
       margin: 0;
-      font-size: 0.88rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.45rem;
+      font-weight: 600;
     }
 
-    .timeline-step p {
-      margin: 0.35rem 0 0;
-      font-size: 0.78rem;
-      color: var(--wire-muted);
+    .timeline-body p {
+      margin: 0.5rem 0 0;
+      font-size: 0.9rem;
+      color: rgba(255, 253, 249, 0.68);
+      line-height: 1.6;
     }
 
+  /* Business */
     .business-panels {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1.25rem;
+      gap: 1.25rem;
     }
 
-    .panel {
-      border: 1px solid var(--wire-border);
+    .biz-panel {
+      position: relative;
+      min-height: 480px;
+      border-radius: calc(var(--radius) + 4px);
       overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      text-decoration: none;
+      color: var(--white);
+      box-shadow: var(--shadow);
     }
 
-    .panel-body {
-      padding: 0.85rem;
+    .biz-panel img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s var(--ease);
     }
 
-    .panel-body h3 {
+    .biz-panel:hover img { transform: scale(1.06); }
+
+    .biz-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 25%, rgba(26, 20, 16, 0.92) 100%);
+    }
+
+    .biz-content {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+      width: 100%;
+    }
+
+    .biz-content h3 {
       margin: 0;
-      font-size: 1rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.2rem;
+      font-weight: 600;
     }
 
-    .panel-body p {
-      margin: 0.45rem 0 0;
-      font-size: 0.82rem;
-      color: var(--wire-muted);
+    .biz-content p {
+      margin: 0.6rem 0 0;
+      max-width: 36ch;
+      font-size: 0.95rem;
+      color: rgba(255, 253, 249, 0.82);
+    }
+
+    .biz-tag {
+      display: inline-block;
+      margin-bottom: 0.6rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+  /* Forward */
+    .forward {
+      background: linear-gradient(180deg, var(--cream), #f3e8d4);
+      position: relative;
     }
 
     .forward-layout {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 1rem;
-      margin-top: 1.25rem;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1.5rem;
+      align-items: stretch;
     }
 
-    .proof-cards {
+    .forward-main {
+      padding: 2.5rem;
+      border-radius: calc(var(--radius) + 4px);
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      box-shadow: var(--shadow);
+    }
+
+    .forward-main h2 {
+      margin: 0.5rem 0 0;
+      font-size: clamp(2rem, 3.8vw, 2.8rem);
+    }
+
+    .proof-stack {
       display: grid;
-      gap: 0.75rem;
+      gap: 1rem;
     }
 
     .proof-card {
-      border: 1px solid var(--wire-border);
+      position: relative;
+      border-radius: var(--radius);
       overflow: hidden;
+      min-height: 200px;
+      display: flex;
+      align-items: flex-end;
+      text-decoration: none;
+      color: var(--white);
+      border: 1px solid rgba(255, 253, 249, 0.1);
+      box-shadow: var(--shadow);
     }
 
-    .proof-card-body {
-      padding: 0.75rem;
+    .proof-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease);
     }
 
-    .proof-card-body h4 {
+    .proof-card:hover img { transform: scale(1.05); }
+
+    .proof-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent, rgba(26, 20, 16, 0.85));
+    }
+
+    .proof-body {
+      position: relative;
+      z-index: 1;
+      padding: 1.4rem;
+    }
+
+    .proof-body h4 {
       margin: 0;
-      font-size: 0.88rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+      font-weight: 600;
     }
 
-    .proof-card-body .cta {
+    .proof-body span {
+      display: inline-block;
       margin-top: 0.55rem;
-      font-size: 0.75rem;
-      padding: 0.4rem 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-light);
     }
 
-    .commitments-layout {
+  /* Commitments */
+    .commitments {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .commitments .eyebrow { color: var(--gold); }
+    .commitments .lead { color: rgba(255, 253, 249, 0.72); }
+
+    .commit-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1.25rem;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
     }
 
-    .commitment-card {
-      border: 1px solid var(--wire-border);
-      padding: 1rem;
-      background: #fafafa;
+    .commit-card {
+      padding: 2rem;
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255, 253, 249, 0.06), rgba(255, 253, 249, 0.02));
+      border: 1px solid rgba(255, 253, 249, 0.1);
+      transition: border-color 0.35s, transform 0.35s var(--ease);
     }
 
-    .commitment-card h3 {
+    .commit-card:hover {
+      border-color: rgba(212, 168, 83, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .commit-card h3 {
       margin: 0;
-      font-size: 0.95rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.65rem;
+      font-weight: 600;
     }
 
-    .commitment-card ul {
-      margin: 0.5rem 0 0;
-      padding-left: 1.1rem;
-      font-size: 0.8rem;
-      color: var(--wire-muted);
+    .commit-card ul {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
     }
 
+    .commit-card li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.55rem;
+      font-size: 0.92rem;
+      color: rgba(255, 253, 249, 0.72);
+    }
+
+    .commit-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+  /* News */
     .news-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1.25rem;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 1.25rem;
     }
 
     .news-card {
-      border: 1px solid var(--wire-border);
+      border-radius: var(--radius);
       overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      box-shadow: 0 8px 30px rgba(26, 20, 16, 0.06);
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
 
-    .news-card-body {
-      padding: 0.8rem;
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(26, 20, 16, 0.12);
     }
+
+    .news-card.featured img { height: 280px; }
+    .news-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .news-body { padding: 1.25rem 1.3rem 1.4rem; }
 
     .news-meta {
       margin: 0;
-      font-size: 0.7rem;
-      color: var(--wire-muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      color: var(--red);
     }
 
-    .news-card-body h3 {
-      margin: 0.45rem 0 0;
-      font-size: 0.88rem;
-      line-height: 1.35;
+    .news-body h3 {
+      margin: 0.55rem 0 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.3;
     }
 
-    .careers-layout {
+    .news-card.featured .news-body h3 { font-size: 1.7rem; }
+
+  /* Careers */
+    .careers-band {
+      position: relative;
+      border-radius: calc(var(--radius) + 8px);
+      overflow: hidden;
+      min-height: 420px;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 1rem;
-      margin-top: 1.25rem;
-      border: 2px solid var(--wire-border-strong);
-      padding: 1.25rem;
-      background: #fafafa;
+      align-items: stretch;
+      box-shadow: var(--shadow);
     }
 
-    .employee-quote {
-      border: 1px dashed var(--wire-border-strong);
-      padding: 1rem;
-      background: var(--wire-surface);
-      font-size: 0.82rem;
-      color: var(--wire-muted);
+    .careers-visual {
+      position: relative;
+      min-height: 420px;
     }
 
-    .employee-quote strong {
+    .careers-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 420px;
+    }
+
+    .careers-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(26, 20, 16, 0.55));
+    }
+
+    .careers-content {
+      padding: 3rem;
+      background: linear-gradient(135deg, var(--red-deep), var(--red));
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .careers-content .eyebrow { color: var(--gold-light); }
+
+    .careers-content h2 {
+      margin: 0.5rem 0 0;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+    }
+
+    .careers-content p {
+      margin: 1rem 0 0;
+      color: rgba(255, 253, 249, 0.88);
+      max-width: 42ch;
+    }
+
+    .quote-card {
+      margin-top: 1.5rem;
+      padding: 1.1rem 1.2rem;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 253, 249, 0.1);
+      border: 1px solid rgba(255, 253, 249, 0.18);
+      font-size: 0.92rem;
+      font-style: italic;
+      color: rgba(255, 253, 249, 0.9);
+    }
+
+    .quote-card cite {
       display: block;
-      color: var(--wire-text);
+      margin-top: 0.6rem;
+      font-style: normal;
       font-size: 0.78rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.4rem;
+      color: var(--gold-light);
     }
 
   /* Footer */
-    .site-footer {
-      background: #37474f;
-      color: #cfd8dc;
-      padding: 1.5rem 0 2rem;
-      font-size: 0.78rem;
+    footer {
+      background: #120e0b;
+      color: rgba(255, 253, 249, 0.65);
+      padding: 3rem 0 2rem;
+      font-size: 0.85rem;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin-bottom: 1.25rem;
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
     }
 
-    .footer-col {
-      border: 1px dashed #607d8b;
-      min-height: 80px;
-      padding: 0.5rem;
-      font-size: 0.7rem;
-      color: #90a4ae;
+    .footer-brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
     }
 
-    .footer-col strong {
+    .footer-col h4 {
+      margin: 0 0 0.75rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .footer-col a {
       display: block;
-      color: #eceff1;
-      margin-bottom: 0.35rem;
-      font-size: 0.72rem;
+      color: rgba(255, 253, 249, 0.62);
+      text-decoration: none;
+      margin-bottom: 0.45rem;
+      transition: color 0.25s;
     }
 
-    @media (max-width: 900px) {
-      .glance-layout,
+    .footer-col a:hover { color: var(--white); }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .glance-top,
+      .section-head,
       .timeline,
       .business-panels,
       .forward-layout,
-      .commitments-layout,
+      .commit-grid,
       .news-grid,
-      .careers-layout,
+      .careers-band,
       .footer-grid {
         grid-template-columns: 1fr;
       }
 
-      .facts-strip {
-        grid-template-columns: 1fr;
-      }
+      .timeline::before { display: none; }
+      .glance { margin-top: 0; }
+      .hero { min-height: 90vh; }
+      .nav { display: none; }
     }
   </style>
 </head>
 <body>
-  <a class="wf-skip" href="#main">Skip to wireframe content</a>
-
-  <aside class="wf-legend" aria-label="Wireframe legend">
-    <div class="container">
-      <div>
-        <h1>LKK Corporate Homepage — Low-Fidelity Wireframe</h1>
-        <p>Based on <em>LKK_Corporate_Homepage_Module_Copy.xlsx</em> · English copy shown · Journey: Know us → Believe in us → Join / Partner with us</p>
-      </div>
-      <div class="wf-legend-items" aria-hidden="true">
-        <div class="wf-legend-item"><span class="wf-swatch" style="background:#e0e0e0"></span> Image / media placeholder</div>
-        <div class="wf-legend-item"><span class="wf-swatch" style="background:#9e9e9e"></span> Primary CTA</div>
-        <div class="wf-legend-item"><span class="wf-swatch" style="background:#e3f2fd;border-color:#1565c0"></span> Designer note</div>
-        <div class="wf-legend-item"><span class="wf-swatch" style="background:#424242"></span> Module label</div>
-      </div>
-    </div>
-  </aside>
-
-  <!-- GLOBAL HEADER -->
-  <div class="site-chrome">
-    <div class="utility-bar">
-      <div class="container">Language: EN | 简 | 繁 &nbsp;·&nbsp; Region selector &nbsp;·&nbsp; Search</div>
-    </div>
-    <header class="container main-header">
-      <div class="logo-ph" aria-label="Logo placeholder">LOGO</div>
-      <nav class="nav-ph" aria-label="Primary navigation placeholder">
-        <span>About</span>
-        <span>Our Business</span>
-        <span>Commitments</span>
-        <span>Newsroom</span>
-        <span>Careers</span>
-        <span>Contact</span>
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="logo" href="#hero">Lee Kum Kee</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#glance">Global</a>
+        <a href="#story">Story</a>
+        <a href="#business">Business</a>
+        <a href="#forward">Innovation</a>
+        <a href="#commitments">Commitments</a>
+        <a href="#news">News</a>
+        <a class="btn btn-ghost" href="#careers" style="padding:0.55rem 1rem;font-size:0.72rem;">Careers</a>
       </nav>
-    </header>
-  </div>
+    </div>
+  </header>
 
-  <main id="main">
-
+  <main>
     <!-- MODULE 1: HERO -->
-    <section class="module" id="module-1-hero" aria-labelledby="hero-heading">
-      <span class="module-tag">Module 1 · Hero · Reframe</span>
-      <div class="module-inner">
-        <div class="container hero-layout">
-          <div class="ph ph-image-tall" aria-hidden="true">
-            Full-width hero visual<br>
-            People · enterprise scale · forward momentum<br>
-            (Not product-led meal scene)
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Trusted since 1888</p>
+            <h1 class="display">Moving forward with the world.</h1>
+            <div class="hero-badge">Global sauces &amp; condiments · Rooted in Chinese culinary culture</div>
           </div>
-          <div class="hero-text">
-            <p class="journey-label">Know us</p>
-            <h2 id="hero-heading">Trusted since 1888. Moving forward with the world.</h2>
-            <p class="body-copy">
-              Lee Kum Kee has grown from the invention of Lee Kum Kee's oyster sauce into a global sauces and condiments company.
-              Rooted in Chinese culinary culture and guided by quality, integrity and constant entrepreneurship, we continue to create
-              value for consumers, customers and communities around the world.
+          <div class="hero-copy reveal">
+            <p>
+              Lee Kum Kee has grown from the invention of oyster sauce into a global sauces and condiments company.
+              Guided by quality, integrity and constant entrepreneurship, we create value for consumers, customers
+              and communities around the world.
             </p>
-            <a class="cta" href="#">Discover Lee Kum Kee</a>
-            <div class="annotation">
-              <strong>Designer note</strong>
-              Corporate-first introduction. Prioritise trust, heritage and forward momentum over product imagery.
-              Team to refine balance between Chinese culinary mission and broader Asian culinary relevance.
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#story">
+                Discover Lee Kum Kee
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="#glance">Explore our reach</a>
             </div>
           </div>
         </div>
@@ -591,30 +933,45 @@
     </section>
 
     <!-- MODULE 2: GLOBAL AT A GLANCE -->
-    <section class="module" id="module-2-glance" aria-labelledby="glance-heading">
-      <span class="module-tag">Module 2 · Global at a Glance · Add</span>
-      <div class="module-inner">
-        <div class="container">
-          <p class="journey-label">Know us · Immediate credibility</p>
-          <h2 id="glance-heading">Lee Kum Kee at a Glance</h2>
-          <div class="glance-layout">
-            <div>
-              <div class="facts-strip" role="list" aria-label="Global proof points">
-                <div class="fact-box" role="listitem">Founded in 1888</div>
-                <div class="fact-box" role="listitem">300+ sauces and condiments</div>
-                <div class="fact-box" role="listitem">100+ countries and regions</div>
-                <div class="fact-box" role="listitem">7 production bases</div>
-                <div class="fact-box wide" role="listitem">Around 6,500 employees worldwide</div>
+    <section class="glance" id="glance">
+      <div class="container">
+        <div class="glance-panel reveal">
+          <div class="glance-top">
+            <div class="glance-stats">
+              <p class="eyebrow eyebrow-dark">Lee Kum Kee at a Glance</p>
+              <h2 class="display">A global presence, built over generations.</h2>
+              <div class="stats-grid">
+                <div class="stat">
+                  <p class="stat-value">1888</p>
+                  <p class="stat-label">Founded — heritage and craftsmanship</p>
+                </div>
+                <div class="stat">
+                  <p class="stat-value">300+</p>
+                  <p class="stat-label">Sauces and condiments</p>
+                </div>
+                <div class="stat">
+                  <p class="stat-value">100+</p>
+                  <p class="stat-label">Countries and regions</p>
+                </div>
+                <div class="stat">
+                  <p class="stat-value">7</p>
+                  <p class="stat-label">Production bases worldwide</p>
+                </div>
+                <div class="stat" style="grid-column:1/-1">
+                  <p class="stat-value">~6,500</p>
+                  <p class="stat-label">Employees bringing flavour to tables globally</p>
+                </div>
               </div>
-              <a class="cta" href="#">Explore Our Global Presence</a>
-              <div class="annotation">
-                <strong>Designer note</strong>
-                Compact proof strip. Let numbers lead; keep copy minimal. Confirm employee count wording (approximate vs exact).
+              <div style="margin-top:1.5rem">
+                <a class="btn btn-outline" href="#business">Explore Our Global Presence</a>
               </div>
             </div>
-            <div class="ph ph-image" aria-hidden="true">
-              Interactive global map<br>
-              Hotspot interactions for markets / bases
+            <div class="glance-map">
+              <div class="map-overlay">
+                <p class="eyebrow">Global footprint</p>
+                <strong class="display" style="font-size:1.5rem;display:block;margin-top:0.25rem">From Hong Kong to kitchens worldwide</strong>
+                <p>Interactive map — explore markets, production bases and regional stories.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -622,258 +979,281 @@
     </section>
 
     <!-- MODULE 3: OUR STORY -->
-    <section class="module" id="module-3-story" aria-labelledby="story-heading">
-      <span class="module-tag">Module 3 · Our Story · Expand</span>
-      <div class="module-inner">
-        <div class="container">
-          <p class="journey-label">Know us · Where we came from</p>
-          <h2 id="story-heading">It began with an unexpected discovery.</h2>
-          <p class="body-copy">
-            In 1888, Lee Kum Sheung invented our oyster sauce after a pot of oyster soup simmered longer than intended.
-            From that single invention, Lee Kum Kee has grown across generations by responding to the evolving tastes and cooking
-            needs of consumers and chefs around the world. Today, more than 300 sauces and condiments bring Lee Kum Kee to home
-            and professional kitchens across over 100 countries and regions—continuing a story of craftsmanship, constant entrepreneurship
-            and culinary progress.
+    <section class="story" id="story">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Our Story</p>
+            <h2 class="display">It began with an unexpected discovery.</h2>
+          </div>
+          <p class="lead">
+            In 1888, Lee Kum Sheung invented oyster sauce after a pot of oyster soup simmered longer than intended.
+            From that single invention, Lee Kum Kee has grown across generations—bringing craftsmanship, constant
+            entrepreneurship and culinary progress to home and professional kitchens in over 100 countries and regions.
           </p>
-          <div class="timeline" aria-label="Story timeline">
-            <article class="timeline-step">
-              <p class="step-label">1888</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-card reveal">
+            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80" alt="Traditional cooking">
+            <div class="timeline-body">
+              <span class="timeline-year">1888</span>
               <h3>The invention of oyster sauce</h3>
-              <p>Accidental discovery becomes a category-defining innovation.</p>
-              <div class="ph ph-image-short" style="margin-top:0.6rem" aria-hidden="true">Visual</div>
-            </article>
-            <article class="timeline-step">
-              <p class="step-label">Across generations</p>
+              <p>An accidental discovery became a category-defining culinary innovation.</p>
+            </div>
+          </article>
+          <article class="timeline-card reveal">
+            <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=800&q=80" alt="Ingredients and craft">
+            <div class="timeline-body">
+              <span class="timeline-year">Across generations</span>
               <h3>Portfolio growth</h3>
-              <p>300+ sauces and condiments through constant entrepreneurship.</p>
-              <div class="ph ph-image-short" style="margin-top:0.6rem" aria-hidden="true">Visual</div>
-            </article>
-            <article class="timeline-step">
-              <p class="step-label">Today</p>
+              <p>300+ sauces and condiments through constant entrepreneurship and evolving tastes.</p>
+            </div>
+          </article>
+          <article class="timeline-card reveal">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Global kitchens">
+            <div class="timeline-body">
+              <span class="timeline-year">Today</span>
               <h3>Global kitchens</h3>
-              <p>Home and professional kitchens in 100+ countries and regions.</p>
-              <div class="ph ph-image-short" style="margin-top:0.6rem" aria-hidden="true">Visual</div>
-            </article>
-          </div>
-          <a class="cta" href="#">Discover Our Story</a>
-          <div class="annotation">
-            <strong>Designer note</strong>
-            Concise visual timeline. Do NOT include Retail / Food Service terminology here. Show reach and evolution only.
-          </div>
+              <p>Home and professional kitchens across 100+ countries and regions, every day.</p>
+            </div>
+          </article>
+        </div>
+        <div style="margin-top:2rem" class="reveal">
+          <a class="btn btn-ghost" href="#business">Discover Our Story</a>
         </div>
       </div>
     </section>
 
     <!-- MODULE 4: OUR BUSINESS -->
-    <section class="module" id="module-4-business" aria-labelledby="business-heading">
-      <span class="module-tag">Module 4 · Our Business · Reframe</span>
-      <div class="module-inner">
-        <div class="container">
-          <p class="journey-label">Know us · What we do today</p>
-          <h2 id="business-heading">Retail and Food Service.</h2>
-          <p class="body-copy">
-            Through Retail and Food Service, Lee Kum Kee brings its sauce expertise to consumer and professional markets.
-            Retail provides home cooks with trusted sauces and culinary inspiration, while Food Service supports chefs and food businesses
-            through products, culinary expertise and tailored solutions.
+    <section id="business">
+      <div class="container">
+        <div class="section-head compact reveal">
+          <div>
+            <p class="eyebrow eyebrow-dark">Our Business</p>
+            <h2 class="display">Retail and Food Service.</h2>
+          </div>
+          <p class="lead">
+            Through Retail and Food Service, Lee Kum Kee brings its sauce expertise to consumer and professional markets—
+            trusted inspiration for home cooks, and tailored solutions for chefs and food businesses.
           </p>
-          <div class="business-panels">
-            <article class="panel">
-              <div class="ph ph-image-short" aria-hidden="true">Retail visual</div>
-              <div class="panel-body">
-                <h3>Retail</h3>
-                <p>Trusted sauces and culinary inspiration for home cooking.</p>
-              </div>
-            </article>
-            <article class="panel">
-              <div class="ph ph-image-short" aria-hidden="true">Food Service visual</div>
-              <div class="panel-body">
-                <h3>Food Service</h3>
-                <p>Products, culinary expertise and tailored solutions for chefs and food businesses.</p>
-              </div>
-            </article>
-          </div>
-          <a class="cta" href="#">Explore Our Business</a>
-          <div class="annotation">
-            <strong>Designer note</strong>
-            Two equal business panels. One module-level CTA to Our Business landing page. Optional secondary links to each business page.
-            Do not repeat 1888, 300+, 100+ or origin story here.
-          </div>
+        </div>
+        <div class="business-panels">
+          <a class="biz-panel reveal" href="#">
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=80" alt="Home cooking">
+            <div class="biz-content">
+              <span class="biz-tag">Retail</span>
+              <h3>Trusted sauces &amp; culinary inspiration</h3>
+              <p>For home cooks who bring flavour, warmth and creativity to every meal.</p>
+            </div>
+          </a>
+          <a class="biz-panel reveal" href="#">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce9e7309c3f7?auto=format&fit=crop&w=1200&q=80" alt="Professional kitchen">
+            <div class="biz-content">
+              <span class="biz-tag">Food Service</span>
+              <h3>Expertise for chefs &amp; food businesses</h3>
+              <p>Products, culinary expertise and tailored solutions for professional kitchens.</p>
+            </div>
+          </a>
+        </div>
+        <div style="margin-top:1.75rem" class="reveal">
+          <a class="btn btn-outline" href="#forward">Explore Our Business</a>
         </div>
       </div>
     </section>
 
     <!-- MODULE 5: ALWAYS MOVING FORWARD -->
-    <section class="module" id="module-5-forward" aria-labelledby="forward-heading">
-      <span class="module-tag">Module 5 · Always Moving Forward · Add</span>
-      <div class="module-inner">
-        <div class="container">
-          <p class="journey-label">Believe in us · How we keep progressing</p>
-          <h2 id="forward-heading">Built on heritage. Always moving forward.</h2>
-          <div class="forward-layout">
-            <div>
-              <p class="body-copy" style="margin-top:0">
-                Built on generations of sauce and culinary expertise, Lee Kum Kee continues to progress through R&amp;D,
-                product and application innovation, and collaboration. Our partnership with UNESCO's Forever Flavors Project supports
-                the safeguarding and transmission of culinary heritage, while our role as The World's 50 Best Restaurants' Official Sauce
-                &amp; Condiment Partner connects us with leading chefs and the global culinary community.
-              </p>
-              <a class="cta" href="#">Explore Our Capabilities</a>
+    <section class="forward" id="forward">
+      <div class="container">
+        <div class="forward-layout">
+          <article class="forward-main reveal">
+            <p class="eyebrow eyebrow-dark">Always Moving Forward</p>
+            <h2 class="display">Built on heritage. Always moving forward.</h2>
+            <p class="lead">
+              Built on generations of sauce and culinary expertise, Lee Kum Kee continues to progress through R&amp;D,
+              product and application innovation, and collaboration—with UNESCO's Forever Flavors Project and
+              The World's 50 Best Restaurants as partners in preserving and advancing culinary culture.
+            </p>
+            <div style="margin-top:1.5rem">
+              <a class="btn btn-primary" href="#commitments">Explore Our Capabilities</a>
             </div>
-            <div class="proof-cards">
-              <article class="proof-card">
-                <div class="ph ph-image-short" aria-hidden="true">UNESCO visual</div>
-                <div class="proof-card-body">
-                  <h4>UNESCO Forever Flavors Project</h4>
-                  <a class="cta cta-secondary" href="#">Discover Forever Flavors</a>
-                </div>
-              </article>
-              <article class="proof-card">
-                <div class="ph ph-image-short" aria-hidden="true">50 Best visual</div>
-                <div class="proof-card-body">
-                  <h4>Official Sauce &amp; Condiment Partner — The World's 50 Best Restaurants</h4>
-                  <a class="cta cta-secondary" href="#">See Lee Kum Kee × 50 Best</a>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="annotation">
-            <strong>Designer note</strong>
-            Capability story + two proof cards. Clearly label partnerships; do not imply endorsement or certification.
-            Team to decide: one destination vs multiple feature links. Partnership wording must remain legally precise.
+          </article>
+          <div class="proof-stack">
+            <a class="proof-card reveal" href="#">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Culinary heritage">
+              <div class="proof-body">
+                <h4>UNESCO Forever Flavors Project</h4>
+                <span>Discover Forever Flavors →</span>
+              </div>
+            </a>
+            <a class="proof-card reveal" href="#">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80" alt="Fine dining">
+              <div class="proof-body">
+                <h4>Official Sauce &amp; Condiment Partner — 50 Best</h4>
+                <span>See Lee Kum Kee × 50 Best →</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- MODULE 6: OUR COMMITMENTS -->
-    <section class="module" id="module-6-commitments" aria-labelledby="commitments-heading">
-      <span class="module-tag">Module 6 · Our Commitments · Merge</span>
-      <div class="module-inner">
-        <div class="container">
-          <p class="journey-label">Believe in us · What we stand behind</p>
-          <h2 id="commitments-heading">Quality without compromise. Growth with responsibility.</h2>
-          <p class="body-copy">
-            Our commitments are rooted in quality without compromise and growth with responsibility. Our 100-1=0 zero-tolerance quality
-            philosophy guides every step from farm to fork. Guided by Si Li Ji Ren—considering others' interests—we also work to protect
-            product integrity, reduce environmental impact, care for our people and contribute to communities as we pursue more sustainable growth.
+    <section class="commitments" id="commitments">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Our Commitments</p>
+            <h2 class="display">Quality without compromise. Growth with responsibility.</h2>
+          </div>
+          <p class="lead">
+            Our 100-1=0 zero-tolerance quality philosophy guides every step from farm to fork.
+            Guided by Si Li Ji Ren, we protect product integrity, reduce environmental impact,
+            care for our people and contribute to communities.
           </p>
-          <div class="commitments-layout">
-            <article class="commitment-card">
-              <h3>100-1=0 Quality Commitment</h3>
-              <ul>
-                <li>Zero-tolerance quality philosophy</li>
-                <li>Farm-to-fork product integrity controls</li>
-                <li>Quality consistency across global operations</li>
-              </ul>
-            </article>
-            <article class="commitment-card">
-              <h3>Sustainability &amp; Responsible Growth</h3>
-              <ul>
-                <li>Reduce environmental impact</li>
-                <li>Care for employees and communities (Si Li Ji Ren)</li>
-                <li>Long-term sustainable growth pathways</li>
-              </ul>
-            </article>
-          </div>
-          <a class="cta" href="#">Explore Our Commitments</a>
-          <div class="annotation">
-            <strong>Designer note</strong>
-            Two equal commitment pathways. Sustainability must carry visible weight — not an afterthought.
-            Link to full Our Commitments channel and supporting pages.
-          </div>
+        </div>
+        <div class="commit-grid">
+          <article class="commit-card reveal">
+            <h3>100-1=0 Quality Commitment</h3>
+            <ul>
+              <li>Zero-tolerance quality philosophy</li>
+              <li>Farm-to-fork product integrity controls</li>
+              <li>Quality consistency across global operations</li>
+            </ul>
+          </article>
+          <article class="commit-card reveal">
+            <h3>Sustainability &amp; Responsible Growth</h3>
+            <ul>
+              <li>Reduce environmental impact</li>
+              <li>Care for employees and communities</li>
+              <li>Long-term sustainable growth pathways</li>
+            </ul>
+          </article>
+        </div>
+        <div style="margin-top:2rem" class="reveal">
+          <a class="btn btn-ghost" href="#news">Explore Our Commitments</a>
         </div>
       </div>
     </section>
 
     <!-- MODULE 7: LATEST NEWS -->
-    <section class="module" id="module-7-news" aria-labelledby="news-heading">
-      <span class="module-tag">Module 7 · Latest News · Add</span>
-      <div class="module-inner">
-        <div class="container">
-          <p class="journey-label">Believe in us · What is happening now</p>
-          <h2 id="news-heading">See Lee Kum Kee in action today.</h2>
-          <p class="body-copy">
-            Discover the latest developments across our business—from global partnerships and culinary initiatives to product innovation,
-            sustainability progress and stories from our markets around the world.
+    <section id="news">
+      <div class="container">
+        <div class="section-head compact reveal">
+          <div>
+            <p class="eyebrow eyebrow-dark">Latest News</p>
+            <h2 class="display">See Lee Kum Kee in action today.</h2>
+          </div>
+          <p class="lead">
+            Partnerships, culinary initiatives, product innovation, sustainability progress
+            and stories from markets around the world.
           </p>
-          <div class="news-grid">
-            <article class="news-card">
-              <div class="ph ph-image-short" aria-hidden="true">Story image</div>
-              <div class="news-card-body">
-                <p class="news-meta">Partnership · Date · Market</p>
-                <h3>[Curated story headline — dynamically populated from CMS]</h3>
-              </div>
-            </article>
-            <article class="news-card">
-              <div class="ph ph-image-short" aria-hidden="true">Story image</div>
-              <div class="news-card-body">
-                <p class="news-meta">Innovation · Date · Market</p>
-                <h3>[Curated story headline — dynamically populated from CMS]</h3>
-              </div>
-            </article>
-            <article class="news-card">
-              <div class="ph ph-image-short" aria-hidden="true">Story image</div>
-              <div class="news-card-body">
-                <p class="news-meta">Sustainability · Date · Market</p>
-                <h3>[Curated story headline — dynamically populated from CMS]</h3>
-              </div>
-            </article>
-          </div>
-          <a class="cta" href="#">Visit the Newsroom</a>
-          <div class="annotation">
-            <strong>Designer note</strong>
-            Three story cards with category, date and market metadata. Curate for narrative relevance, not generic chronological feed.
-            Content dynamically populated from Newsroom CMS.
-          </div>
+        </div>
+        <div class="news-grid">
+          <a class="news-card featured reveal" href="#">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=80" alt="Culinary partnership">
+            <div class="news-body">
+              <p class="news-meta">Partnership · Aug 2026 · Global</p>
+              <h3>Advancing culinary heritage through global collaboration</h3>
+            </div>
+          </a>
+          <a class="news-card reveal" href="#">
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=700&q=80" alt="Innovation">
+            <div class="news-body">
+              <p class="news-meta">Innovation · Aug 2026 · APAC</p>
+              <h3>Product innovation from regional chef collaborations</h3>
+            </div>
+          </a>
+          <a class="news-card reveal" href="#">
+            <img src="https://images.unsplash.com/photo-1542601906990-b46d7e57d61f?auto=format&fit=crop&w=700&q=80" alt="Sustainability">
+            <div class="news-body">
+              <p class="news-meta">Sustainability · Aug 2026 · EMEA</p>
+              <h3>Progress on responsible operations and long-term growth</h3>
+            </div>
+          </a>
+        </div>
+        <div style="margin-top:1.75rem" class="reveal">
+          <a class="btn btn-outline" href="#careers">Visit the Newsroom</a>
         </div>
       </div>
     </section>
 
     <!-- MODULE 8: CAREERS -->
-    <section class="module" id="module-8-careers" aria-labelledby="careers-heading">
-      <span class="module-tag">Module 8 · Careers · Add</span>
-      <div class="module-inner">
-        <div class="container">
-          <p class="journey-label">Join / Partner with us</p>
-          <h2 id="careers-heading">Be part of what comes next.</h2>
-          <div class="careers-layout">
-            <div>
-              <p class="body-copy" style="margin-top:0">
-                At Lee Kum Kee, people grow through meaningful work, shared values and opportunities across a global business.
-                Discover how you can build your career while helping shape the next chapter of a company trusted for generations.
-              </p>
-              <a class="cta" href="#">Explore Careers</a>
+    <section id="careers">
+      <div class="container">
+        <div class="careers-band reveal">
+          <div class="careers-visual">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Team collaboration">
+          </div>
+          <div class="careers-content">
+            <p class="eyebrow">Careers</p>
+            <h2 class="display">Be part of what comes next.</h2>
+            <p>
+              At Lee Kum Kee, people grow through meaningful work, shared values and opportunities
+              across a global business—helping shape the next chapter of a company trusted for generations.
+            </p>
+            <blockquote class="quote-card">
+              "I grow every day through meaningful work and opportunities across markets."
+              <cite>Employee story · Global Operations</cite>
+            </blockquote>
+            <div style="margin-top:1.5rem">
+              <a class="btn btn-ghost" href="#">Explore Careers</a>
             </div>
-            <aside class="employee-quote">
-              <strong>Employee story placeholder</strong>
-              Authentic employee quote and portrait. Link to Careers landing page; optional featured opportunities.
-            </aside>
-          </div>
-          <div class="ph ph-image-short" style="margin-top:1rem" aria-hidden="true">
-            People / workplace photography — authentic, not stock-generic
-          </div>
-          <div class="annotation">
-            <strong>Designer note</strong>
-            Complete the corporate journey with a direct talent path. Align tone with employer value proposition and available employee stories.
           </div>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- GLOBAL FOOTER -->
-  <footer class="site-footer">
+  <footer>
     <div class="container">
-      <div class="footer-grid" aria-label="Footer navigation placeholder">
-        <div class="footer-col"><strong>About LKK</strong> Links placeholder</div>
-        <div class="footer-col"><strong>Our Business</strong> Links placeholder</div>
-        <div class="footer-col"><strong>Commitments</strong> Links placeholder</div>
-        <div class="footer-col"><strong>Connect</strong> News · Careers · Contact</div>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Lee Kum Kee</div>
+          <p style="margin:0;max-width:32ch">Trusted since 1888. Bringing flavour, heritage and innovation to kitchens worldwide.</p>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="#">Our Story</a>
+          <a href="#">Global Presence</a>
+          <a href="#">Leadership</a>
+        </div>
+        <div class="footer-col">
+          <h4>Business</h4>
+          <a href="#">Retail</a>
+          <a href="#">Food Service</a>
+          <a href="#">Capabilities</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="#">Newsroom</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
       </div>
-      <p style="margin:0;opacity:0.8">© Lee Kum Kee · Footer legal · Social icons · Language / region</p>
+      <p style="margin:0;opacity:0.6">© Lee Kum Kee · Corporate homepage concept · EN</p>
     </div>
   </footer>
 
+  <script>
+    const header = document.getElementById("header");
+    const reveals = document.querySelectorAll(".reveal");
+
+    const onScroll = () => {
+      header.classList.toggle("scrolled", window.scrollY > 60);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+    reveals.forEach((el) => observer.observe(el));
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    window.addEventListener("load", () => {
+      document.querySelectorAll(".hero .reveal").forEach((el) => el.classList.add("visible"));
+    });
+  </script>
 </body>
 </html>
